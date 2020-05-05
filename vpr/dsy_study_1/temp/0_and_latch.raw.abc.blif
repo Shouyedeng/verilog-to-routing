@@ -1,0 +1,23 @@
+# Benchmark "and_latch" written by ABC on Sat Jan 11 19:37:09 2020
+.model and_latch
+.inputs and_latch^clock and_latch^a_in and_latch^b_in
+.outputs and_latch^out
+
+.latch         n9 and_latch^out_FF  0
+
+
+.subckt CLOCK_GATING I=and_latch^clock
+
+
+.names and_latch^a_in and_latch^b_in n9
+11 1
+.names and_latch^out_FF and_latch^out
+1 1
+.end
+
+
+.model CLOCK_GATING
+.inputs I
+.outputs
+.blackbox
+.end

@@ -1,0 +1,85 @@
+.model alu_no_jp
+
+.inputs gclk X Y Carry_in End Cmpl_X Cmpl_Y Op_XOR Op_AND Op_ARITH $false $true
+.outputs Carry_out Overflow Sum
+
+.subckt jand clk=w_gclk_8[0] dinA=dj0[7] dinB=dj0[9] dout=dj1[2] 
+.subckt jand clk=w_gclk_10[1] dinA=dj1[6] dinB=dj1[7] dout=dj2[2] 
+.subckt jand clk=w_gclk_10[2] dinA=dj1[5] dinB=dj1[8] dout=dj2[3] 
+.subckt jand clk=w_gclk_11[0] dinA=dj1[4] dinB=dj1[3] dout=dj2[4] 
+.subckt jand clk=w_gclk_11[1] dinA=dj2[7] dinB=dj2[5] dout=dj3[0] 
+.subckt jand clk=w_gclk_11[2] dinA=dj2[10] dinB=dj2[6] dout=dj3[1] 
+.subckt jand clk=w_gclk_13[1] dinA=dj3[1] dinB=dj4[3] dout=dj4[1] 
+.subckt jand clk=w_gclk_14[0] dinA=dj3[3] dinB=dj4[4] dout=dj4[7] 
+.subckt jcb dinA=dj2[3] dinB=dj2[4] dout=dj2[9] 
+.subckt jcb dinA=dj3[0] dinB=dj2[0] dout=dj3[5] 
+.subckt jcb dinA=dj4[0] dinB=dj4[1] dout=dj4[2] 
+.subckt jcb dinA=dj4[6] dinB=dj4[7] dout=dj4[10] 
+.subckt jscdff clk=w_gclk_5[0] din=Carry_in dout=dj0[0] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_5[1] din=End dout=dj0[1] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_6[1] din=Op_XOR dout=dj0[4] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_6[2] din=Op_AND dout=dj0[5] clear=$true en=$true  
+.subckt jscdff clk=w_gclk_7[0] din=Op_ARITH dout=dj0[6] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_7[1] din=dj0[0] dout=dj1[0] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_7[2] din=dj0[1] dout=dj1[1] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_8[2] din=dj0[4] dout=dj1[4] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_9[0] din=dj0[5] dout=dj1[5] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_9[1] din=dj0[6] dout=dj1[6] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_9[2] din=dj1[0] dout=dj2[0] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_10[0] din=dj1[1] dout=dj2[1] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_12[0] din=dj2[8] dout=dj3[2] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_12[1] din=dj2[11] dout=dj3[3] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_12[2] din=dj2[12] dout=dj3[4] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_13[0] din=dj3[5] dout=dj4[0] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_13[2] din=dj3[2] dout=dj4[6] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_14[1] din=dj3[4] dout=dj4[8] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_14[2] din=dj4[5] dout=dj4[9] clear=$true en=$true 
+.subckt jscdff clk=w_gclk_15[0] din=dj4[11] dout=Carry_out clear=$true en=$true 
+.subckt jspl3 din=clk doutA=w_clk_0[0] doutB=w_clk_0[1] doutC=w_clk_0[2] 
+.subckt jspl3 din=w_clk_0[0] doutA=w_clk_1[0] doutB=w_clk_1[1] doutC=w_clk_1[2] 
+.subckt jspl3 din=w_clk_3[0] doutA=w_clk_10[0] doutB=w_clk_10[1] doutC=w_clk_10[2] 
+.subckt jspl3 din=w_clk_3[1] doutA=w_clk_11[0] doutB=w_clk_11[1] doutC=w_clk_11[2] 
+.subckt jspl3 din=w_clk_3[2] doutA=w_clk_12[0] doutB=w_clk_12[1] doutC=w_clk_12[2] 
+.subckt jspl3 din=w_clk_4[0] doutA=w_clk_13[0] doutB=w_clk_13[1] doutC=w_clk_13[2] 
+.subckt jspl3 din=w_clk_4[1] doutA=w_clk_14[0] doutB=w_clk_14[1] doutC=w_clk_14[2] 
+.subckt jspl3 din=w_clk_4[2] doutA=w_clk_15[0] doutB=w_clk_15[1] doutC=w_clk_15[2] 
+.subckt jspl3 din=w_clk_0[1] doutA=w_clk_2[0] doutB=w_clk_2[1] doutC=w_clk_2[2] 
+.subckt jspl3 din=w_clk_0[2] doutA=w_clk_3[0] doutB=w_clk_3[1] doutC=w_clk_3[2] 
+.subckt jspl3 din=w_clk_1[0] doutA=w_clk_4[0] doutB=w_clk_4[1] doutC=w_clk_4[2] 
+.subckt jspl3 din=w_clk_1[1] doutA=w_clk_5[0] doutB=w_clk_5[1] doutC=w_clk_5[2] 
+.subckt jspl3 din=w_clk_1[2] doutA=w_clk_6[0] doutB=w_clk_6[1] doutC=w_clk_6[2] 
+.subckt jspl3 din=w_clk_2[0] doutA=w_clk_7[0] doutB=w_clk_7[1] doutC=w_clk_7[2] 
+.subckt jspl3 din=w_clk_2[1] doutA=w_clk_8[0] doutB=w_clk_8[1] doutC=w_clk_8[2] 
+.subckt jspl3 din=w_clk_2[2] doutA=w_clk_9[0] doutB=w_clk_9[1] doutC=w_clk_9[2] 
+.subckt jspl3 din=gclk doutA=w_gclk_0[0] doutB=w_gclk_0[1] doutC=w_gclk_0[2] 
+.subckt jspl3 din=w_gclk_0[0] doutA=w_gclk_1[0] doutB=w_gclk_1[1] doutC=w_gclk_1[2] 
+.subckt jspl3 din=w_gclk_3[0] doutA=w_gclk_10[0] doutB=w_gclk_10[1] doutC=w_gclk_10[2] 
+.subckt jspl3 din=w_gclk_3[1] doutA=w_gclk_11[0] doutB=w_gclk_11[1] doutC=w_gclk_11[2] 
+.subckt jspl3 din=w_gclk_3[2] doutA=w_gclk_12[0] doutB=w_gclk_12[1] doutC=w_gclk_12[2] 
+.subckt jspl3 din=w_gclk_4[0] doutA=w_gclk_13[0] doutB=w_gclk_13[1] doutC=w_gclk_13[2] 
+.subckt jspl3 din=w_gclk_4[1] doutA=w_gclk_14[0] doutB=w_gclk_14[1] doutC=w_gclk_14[2] 
+.subckt jspl3 din=w_gclk_4[2] doutA=w_gclk_15[0] doutB=w_gclk_15[1] doutC=w_gclk_15[2] 
+.subckt jspl3 din=w_gclk_0[1] doutA=w_gclk_2[0] doutB=w_gclk_2[1] doutC=w_gclk_2[2] 
+.subckt jspl3 din=w_gclk_0[2] doutA=w_gclk_3[0] doutB=w_gclk_3[1] doutC=w_gclk_3[2] 
+.subckt jspl3 din=w_gclk_1[0] doutA=w_gclk_4[0] doutB=w_gclk_4[1] doutC=w_gclk_4[2] 
+.subckt jspl3 din=w_gclk_1[1] doutA=w_gclk_5[0] doutB=w_gclk_5[1] doutC=w_gclk_5[2] 
+.subckt jspl3 din=w_gclk_1[2] doutA=w_gclk_6[0] doutB=w_gclk_6[1] doutC=w_gclk_6[2] 
+.subckt jspl3 din=w_gclk_2[0] doutA=w_gclk_7[0] doutB=w_gclk_7[1] doutC=w_gclk_7[2] 
+.subckt jspl3 din=w_gclk_2[1] doutA=w_gclk_8[0] doutB=w_gclk_8[1] doutC=w_gclk_8[2] 
+.subckt jspl3 din=w_gclk_2[2] doutA=w_gclk_9[0] doutB=w_gclk_9[1] doutC=w_gclk_9[2] 
+.subckt jspl3 din=dj2[9] doutA=dj2[10] doutB=dj2[11] doutC=dj2[12] 
+.subckt jspl3 din=dj4[2] doutA=dj4[3] doutB=dj4[4] doutC=dj4[5] 
+.subckt jspl din=dj0[2] doutA=dj0[7] doutB=dj0[8] 
+.subckt jspl din=dj0[3] doutA=dj0[9] doutB=dj0[10] 
+.subckt jspl din=dj1[2] doutA=dj1[7] doutB=dj1[8] 
+.subckt jspl din=dj2[1] doutA=dj2[5] doutB=dj2[6] 
+.subckt jspl din=dj2[2] doutA=dj2[7] doutB=dj2[8] 
+.subckt jspl din=dj4[10] doutA=dj4[11] doutB=dj4[12] 
+.subckt jspl din=dj4[9] doutA=dj4[13] doutB=dj4[14] 
+.subckt jxor clk=w_gclk_5[2] dinA=Y dinB=Cmpl_Y dout=dj0[2] 
+.subckt jxor clk=w_gclk_6[0] dinA=X dinB=Cmpl_X dout=dj0[3] 
+.subckt jxor clk=w_gclk_8[1] dinA=dj0[8] dinB=dj0[10] dout=dj1[3] 
+.subckt jxor clk=w_gclk_15[1] dinA=dj4[12] dinB=dj4[13] dout=Overflow 
+.subckt jxor clk=w_gclk_15[2] dinA=dj4[8] dinB=dj4[14] dout=Sum 
+
+.end

@@ -1,0 +1,16 @@
+digraph G {
+	ranksep=.25;
+	"and_latch_clock" [shape=triangle];
+	"and_latch_clock" -> "and_latch_out_FF";
+	"and_latch_out_FF" [shape=box];
+	"and_latch_out_FF" -> "and_latch_out_O";
+	"and_latch_out_O" [shape=triangle];
+	"and_latch_a_in" [shape=triangle];
+	"and_latch_a_in" -> "and_latch_bAND~0"[label="and_latch^a_in"];
+	"and_latch_bAND~0"
+	"and_latch_bAND~0" -> "and_latch_out_FF"[label="and_latch^out"];
+	"and_latch_b_in" [shape=triangle];
+	"and_latch_b_in" -> "and_latch_bAND~0"[label="and_latch^b_in"];
+	"and_latch_ZGZ"
+	"and_latch_OVC"
+}

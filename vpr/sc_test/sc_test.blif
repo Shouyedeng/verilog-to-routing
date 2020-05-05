@@ -1,0 +1,20 @@
+
+
+.model and_latch
+
+
+.inputs and_latch^clock and_latch^a_in and_latch^b_in en clear
+
+
+.outputs and_latch^out
+
+
+.subckt jand clk=clk_2 dinA=and_latch^a_in dinB=and_latch^b_in dout=n0
+
+.subckt jspl din=and_latch^clock doutA=clk_1 doutB=clk_2
+
+.subckt jscdff clear=clear clk=clk_1  din=n0 dout=and_latch^out en=en
+
+
+.end
+ 

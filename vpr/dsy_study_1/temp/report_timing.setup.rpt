@@ -1,0 +1,62 @@
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: and_latch^out_FF.Q[0] (.latch clocked by and_latch^clock)
+Endpoint  : out:and_latch^out.outpad[0] (.output clocked by and_latch^clock)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock and_latch^clock (rise edge)                                0.000     0.000
+clock source latency                                             0.000     0.000
+and_latch^clock.inpad[0] (.input)                                0.000     0.000
+and_latch^out_FF.clk[0] (.latch)                                 0.042     0.042
+and_latch^out_FF.Q[0] (.latch) [clock-to-output]                 0.124     0.166
+out:and_latch^out.outpad[0] (.output)                            0.593     0.759
+data arrival time                                                          0.759
+
+clock and_latch^clock (rise edge)                                0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -0.759
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.759
+
+
+#Path 2
+Startpoint: and_latch^a_in.inpad[0] (.input clocked by and_latch^clock)
+Endpoint  : and_latch^out_FF.D[0] (.latch clocked by and_latch^clock)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock and_latch^clock (rise edge)                                0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+and_latch^a_in.inpad[0] (.input)                                 0.000     0.000
+n9.in[0] (.names)                                                0.287     0.287
+n9.out[0] (.names)                                               0.235     0.522
+and_latch^out_FF.D[0] (.latch)                                   0.000     0.522
+data arrival time                                                          0.522
+
+clock and_latch^clock (rise edge)                                0.000     0.000
+clock source latency                                             0.000     0.000
+and_latch^clock.inpad[0] (.input)                                0.000     0.000
+and_latch^out_FF.clk[0] (.latch)                                 0.042     0.042
+clock uncertainty                                                0.000     0.042
+cell setup time                                                 -0.066    -0.024
+data required time                                                        -0.024
+--------------------------------------------------------------------------------
+data required time                                                        -0.024
+data arrival time                                                         -0.522
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.546
+
+
+#End of timing report

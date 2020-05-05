@@ -1,0 +1,144 @@
+#Timing report of worst 5 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: and_latch^a_in.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : n0.dinA[0] (jand clocked by clk_2)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+and_latch^a_in.inpad[0] (.input)                                 0.000     0.000
+n0.dinA[0] (jand)                                                0.001     0.001
+data arrival time                                                          0.001
+
+clock clk_2 (rise edge)                                          0.000     0.000
+clock source latency                                             0.000     0.000
+clk_1.doutB[0] (jspl)                                            0.000     0.000
+n0.clk[0] (jand)                                                 0.005     0.005
+clock uncertainty                                                0.000     0.005
+cell hold time                                                   0.010     0.015
+data required time                                                         0.015
+--------------------------------------------------------------------------------
+data required time                                                        -0.015
+data arrival time                                                          0.001
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.013
+
+
+#Path 2
+Startpoint: and_latch^b_in.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : n0.dinB[0] (jand clocked by clk_2)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+and_latch^b_in.inpad[0] (.input)                                 0.000     0.000
+n0.dinB[0] (jand)                                                0.001     0.001
+data arrival time                                                          0.001
+
+clock clk_2 (rise edge)                                          0.000     0.000
+clock source latency                                             0.000     0.000
+clk_1.doutB[0] (jspl)                                            0.000     0.000
+n0.clk[0] (jand)                                                 0.005     0.005
+clock uncertainty                                                0.000     0.005
+cell hold time                                                   0.010     0.015
+data required time                                                         0.015
+--------------------------------------------------------------------------------
+data required time                                                        -0.015
+data arrival time                                                          0.001
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.013
+
+
+#Path 3
+Startpoint: en.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : and_latch^out.en[0] (jscdff clocked by clk_1)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+en.inpad[0] (.input)                                             0.000     0.000
+and_latch^out.en[0] (jscdff)                                     0.001     0.001
+data arrival time                                                          0.001
+
+clock clk_1 (rise edge)                                          0.000     0.000
+clock source latency                                             0.000     0.000
+clk_1.doutA[0] (jspl)                                            0.000     0.000
+and_latch^out.clk[0] (jscdff)                                    0.004     0.004
+clock uncertainty                                                0.000     0.004
+cell hold time                                                   0.005     0.008
+data required time                                                         0.008
+--------------------------------------------------------------------------------
+data required time                                                        -0.008
+data arrival time                                                          0.001
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.007
+
+
+#Path 4
+Startpoint: clear.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : and_latch^out.clear[0] (jscdff clocked by clk_1)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+clear.inpad[0] (.input)                                          0.000     0.000
+and_latch^out.clear[0] (jscdff)                                  0.005     0.005
+data arrival time                                                          0.005
+
+clock clk_1 (rise edge)                                          0.000     0.000
+clock source latency                                             0.000     0.000
+clk_1.doutA[0] (jspl)                                            0.000     0.000
+and_latch^out.clk[0] (jscdff)                                    0.004     0.004
+clock uncertainty                                                0.000     0.004
+cell hold time                                                   0.005     0.008
+data required time                                                         0.008
+--------------------------------------------------------------------------------
+data required time                                                        -0.008
+data arrival time                                                          0.005
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 5
+Startpoint: and_latch^out.dout[0] (jscdff clocked by clk_1)
+Endpoint  : out:and_latch^out.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk_1 (rise edge)                                          0.000     0.000
+clock source latency                                             0.000     0.000
+clk_1.doutA[0] (jspl)                                            0.000     0.000
+and_latch^out.clk[0] (jscdff)                                    0.004     0.004
+and_latch^out.dout[0] (jscdff) [clock-to-output]                 0.005     0.008
+out:and_latch^out.outpad[0] (.output)                            0.002     0.011
+data arrival time                                                          0.011
+
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          0.011
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.011
+
+
+#End of timing report

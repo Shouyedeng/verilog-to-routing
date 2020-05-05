@@ -1,0 +1,2024 @@
+VPR FPGA Placement and Routing.
+Version: 8.0.0-rc1+unkown
+Revision: unkown
+Compiled: 2020-03-11T16:25:15
+Compiler: GNU 8.3.0 on Linux-5.3.0-40-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+../vpr ./k6_frac_N10_mem32K_40nm.xml ./cpu_spl_flat.blif --disp on
+
+Using up to 1 parallel worker(s)
+
+Architecture file: ./k6_frac_N10_mem32K_40nm.xml
+Circuit name: cpu_spl_flat
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.00 seconds (max_rss 14.6 MiB, delta_rss +2.1 MiB)
+# Building complex block graph
+Warning 1: io[0].clock[0] unconnected pin in architecture.
+Warning 2: memory[0].addr1[0] unconnected pin in architecture.
+Warning 3: memory[0].addr1[1] unconnected pin in architecture.
+Warning 4: memory[0].addr1[2] unconnected pin in architecture.
+Warning 5: memory[0].addr1[3] unconnected pin in architecture.
+Warning 6: memory[0].addr1[4] unconnected pin in architecture.
+Warning 7: memory[0].addr1[5] unconnected pin in architecture.
+Warning 8: memory[0].addr1[6] unconnected pin in architecture.
+Warning 9: memory[0].addr1[7] unconnected pin in architecture.
+Warning 10: memory[0].addr1[8] unconnected pin in architecture.
+Warning 11: memory[0].addr1[9] unconnected pin in architecture.
+Warning 12: memory[0].addr1[10] unconnected pin in architecture.
+Warning 13: memory[0].addr1[11] unconnected pin in architecture.
+Warning 14: memory[0].addr1[12] unconnected pin in architecture.
+Warning 15: memory[0].addr1[13] unconnected pin in architecture.
+Warning 16: memory[0].addr1[14] unconnected pin in architecture.
+Warning 17: memory[0].addr2[0] unconnected pin in architecture.
+Warning 18: memory[0].addr2[1] unconnected pin in architecture.
+Warning 19: memory[0].addr2[2] unconnected pin in architecture.
+Warning 20: memory[0].addr2[3] unconnected pin in architecture.
+Warning 21: memory[0].addr2[4] unconnected pin in architecture.
+Warning 22: memory[0].addr2[5] unconnected pin in architecture.
+Warning 23: memory[0].addr2[6] unconnected pin in architecture.
+Warning 24: memory[0].addr2[7] unconnected pin in architecture.
+Warning 25: memory[0].addr2[8] unconnected pin in architecture.
+Warning 26: memory[0].addr2[9] unconnected pin in architecture.
+Warning 27: memory[0].addr2[10] unconnected pin in architecture.
+Warning 28: memory[0].addr2[11] unconnected pin in architecture.
+Warning 29: memory[0].addr2[12] unconnected pin in architecture.
+Warning 30: memory[0].addr2[13] unconnected pin in architecture.
+Warning 31: memory[0].addr2[14] unconnected pin in architecture.
+Warning 32: memory[0].data[3] unconnected pin in architecture.
+Warning 33: memory[0].data[4] unconnected pin in architecture.
+Warning 34: memory[0].data[5] unconnected pin in architecture.
+Warning 35: memory[0].data[6] unconnected pin in architecture.
+Warning 36: memory[0].data[7] unconnected pin in architecture.
+Warning 37: memory[0].data[8] unconnected pin in architecture.
+Warning 38: memory[0].data[9] unconnected pin in architecture.
+Warning 39: memory[0].data[10] unconnected pin in architecture.
+Warning 40: memory[0].data[11] unconnected pin in architecture.
+Warning 41: memory[0].data[12] unconnected pin in architecture.
+Warning 42: memory[0].data[13] unconnected pin in architecture.
+Warning 43: memory[0].data[14] unconnected pin in architecture.
+Warning 44: memory[0].data[15] unconnected pin in architecture.
+Warning 45: memory[0].data[16] unconnected pin in architecture.
+Warning 46: memory[0].data[17] unconnected pin in architecture.
+Warning 47: memory[0].data[18] unconnected pin in architecture.
+Warning 48: memory[0].data[19] unconnected pin in architecture.
+Warning 49: memory[0].data[20] unconnected pin in architecture.
+Warning 50: memory[0].data[21] unconnected pin in architecture.
+Warning 51: memory[0].data[22] unconnected pin in architecture.
+Warning 52: memory[0].data[23] unconnected pin in architecture.
+Warning 53: memory[0].data[24] unconnected pin in architecture.
+Warning 54: memory[0].data[25] unconnected pin in architecture.
+Warning 55: memory[0].data[26] unconnected pin in architecture.
+Warning 56: memory[0].data[27] unconnected pin in architecture.
+Warning 57: memory[0].data[28] unconnected pin in architecture.
+Warning 58: memory[0].data[29] unconnected pin in architecture.
+Warning 59: memory[0].data[30] unconnected pin in architecture.
+Warning 60: memory[0].data[31] unconnected pin in architecture.
+Warning 61: memory[0].data[32] unconnected pin in architecture.
+Warning 62: memory[0].data[33] unconnected pin in architecture.
+Warning 63: memory[0].data[34] unconnected pin in architecture.
+Warning 64: memory[0].data[35] unconnected pin in architecture.
+Warning 65: memory[0].data[36] unconnected pin in architecture.
+Warning 66: memory[0].data[37] unconnected pin in architecture.
+Warning 67: memory[0].data[38] unconnected pin in architecture.
+Warning 68: memory[0].data[39] unconnected pin in architecture.
+Warning 69: memory[0].data[40] unconnected pin in architecture.
+Warning 70: memory[0].data[41] unconnected pin in architecture.
+Warning 71: memory[0].data[42] unconnected pin in architecture.
+Warning 72: memory[0].data[43] unconnected pin in architecture.
+Warning 73: memory[0].data[44] unconnected pin in architecture.
+Warning 74: memory[0].data[45] unconnected pin in architecture.
+Warning 75: memory[0].data[46] unconnected pin in architecture.
+Warning 76: memory[0].data[47] unconnected pin in architecture.
+Warning 77: memory[0].data[48] unconnected pin in architecture.
+Warning 78: memory[0].data[49] unconnected pin in architecture.
+Warning 79: memory[0].data[50] unconnected pin in architecture.
+Warning 80: memory[0].data[51] unconnected pin in architecture.
+Warning 81: memory[0].data[52] unconnected pin in architecture.
+Warning 82: memory[0].data[53] unconnected pin in architecture.
+Warning 83: memory[0].data[54] unconnected pin in architecture.
+Warning 84: memory[0].data[55] unconnected pin in architecture.
+Warning 85: memory[0].data[56] unconnected pin in architecture.
+Warning 86: memory[0].data[57] unconnected pin in architecture.
+Warning 87: memory[0].data[58] unconnected pin in architecture.
+Warning 88: memory[0].data[59] unconnected pin in architecture.
+Warning 89: memory[0].data[60] unconnected pin in architecture.
+Warning 90: memory[0].data[61] unconnected pin in architecture.
+Warning 91: memory[0].data[62] unconnected pin in architecture.
+Warning 92: memory[0].data[63] unconnected pin in architecture.
+Warning 93: memory[0].we1[0] unconnected pin in architecture.
+Warning 94: memory[0].we2[0] unconnected pin in architecture.
+Warning 95: memory[0].out[3] unconnected pin in architecture.
+Warning 96: memory[0].out[4] unconnected pin in architecture.
+Warning 97: memory[0].out[5] unconnected pin in architecture.
+Warning 98: memory[0].out[6] unconnected pin in architecture.
+Warning 99: memory[0].out[7] unconnected pin in architecture.
+Warning 100: memory[0].out[8] unconnected pin in architecture.
+Warning 101: memory[0].out[9] unconnected pin in architecture.
+Warning 102: memory[0].out[10] unconnected pin in architecture.
+Warning 103: memory[0].out[11] unconnected pin in architecture.
+Warning 104: memory[0].out[12] unconnected pin in architecture.
+Warning 105: memory[0].out[13] unconnected pin in architecture.
+Warning 106: memory[0].out[14] unconnected pin in architecture.
+Warning 107: memory[0].out[15] unconnected pin in architecture.
+Warning 108: memory[0].out[16] unconnected pin in architecture.
+Warning 109: memory[0].out[17] unconnected pin in architecture.
+Warning 110: memory[0].out[18] unconnected pin in architecture.
+Warning 111: memory[0].out[19] unconnected pin in architecture.
+Warning 112: memory[0].out[20] unconnected pin in architecture.
+Warning 113: memory[0].out[21] unconnected pin in architecture.
+Warning 114: memory[0].out[22] unconnected pin in architecture.
+Warning 115: memory[0].out[23] unconnected pin in architecture.
+Warning 116: memory[0].out[24] unconnected pin in architecture.
+Warning 117: memory[0].out[25] unconnected pin in architecture.
+Warning 118: memory[0].out[26] unconnected pin in architecture.
+Warning 119: memory[0].out[27] unconnected pin in architecture.
+Warning 120: memory[0].out[28] unconnected pin in architecture.
+Warning 121: memory[0].out[29] unconnected pin in architecture.
+Warning 122: memory[0].out[30] unconnected pin in architecture.
+Warning 123: memory[0].out[31] unconnected pin in architecture.
+Warning 124: memory[0].out[32] unconnected pin in architecture.
+Warning 125: memory[0].out[33] unconnected pin in architecture.
+Warning 126: memory[0].out[34] unconnected pin in architecture.
+Warning 127: memory[0].out[35] unconnected pin in architecture.
+Warning 128: memory[0].out[36] unconnected pin in architecture.
+Warning 129: memory[0].out[37] unconnected pin in architecture.
+Warning 130: memory[0].out[38] unconnected pin in architecture.
+Warning 131: memory[0].out[39] unconnected pin in architecture.
+Warning 132: memory[0].out[40] unconnected pin in architecture.
+Warning 133: memory[0].out[41] unconnected pin in architecture.
+Warning 134: memory[0].out[42] unconnected pin in architecture.
+Warning 135: memory[0].out[43] unconnected pin in architecture.
+Warning 136: memory[0].out[44] unconnected pin in architecture.
+Warning 137: memory[0].out[45] unconnected pin in architecture.
+Warning 138: memory[0].out[46] unconnected pin in architecture.
+Warning 139: memory[0].out[47] unconnected pin in architecture.
+Warning 140: memory[0].out[48] unconnected pin in architecture.
+Warning 141: memory[0].out[49] unconnected pin in architecture.
+Warning 142: memory[0].out[50] unconnected pin in architecture.
+Warning 143: memory[0].out[51] unconnected pin in architecture.
+Warning 144: memory[0].out[52] unconnected pin in architecture.
+Warning 145: memory[0].out[53] unconnected pin in architecture.
+Warning 146: memory[0].out[54] unconnected pin in architecture.
+Warning 147: memory[0].out[55] unconnected pin in architecture.
+Warning 148: memory[0].out[56] unconnected pin in architecture.
+Warning 149: memory[0].out[57] unconnected pin in architecture.
+Warning 150: memory[0].out[58] unconnected pin in architecture.
+Warning 151: memory[0].out[59] unconnected pin in architecture.
+Warning 152: memory[0].out[60] unconnected pin in architecture.
+Warning 153: memory[0].out[61] unconnected pin in architecture.
+Warning 154: memory[0].out[62] unconnected pin in architecture.
+Warning 155: memory[0].out[63] unconnected pin in architecture.
+# Building complex block graph took 0.00 seconds (max_rss 14.6 MiB, delta_rss +0.0 MiB)
+# Load circuit
+# Load circuit took 0.03 seconds (max_rss 18.0 MiB, delta_rss +3.4 MiB)
+# Clean circuit
+Absorbed 0 LUT buffers
+Inferred  166 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  922 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 8
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 1298
+Swept block(s)      : 656
+Constant Pins Marked: 1088
+# Clean circuit took 0.06 seconds (max_rss 18.0 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 18.3 MiB, delta_rss +0.3 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 18.3 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 905
+    .input :       4
+    .output:      18
+    jand   :     229
+    jcb    :      58
+    jcb3   :      70
+    jnot   :      60
+    jscdff :     114
+    jspl   :     148
+    jspl3  :     204
+  Nets  : 1302
+    Avg Fanout:     1.4
+    Max Fanout:   403.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 3170
+  Timing Graph Edges: 4100
+  Timing Graph Levels: 20
+# Build Timing Graph took 0.01 seconds (max_rss 18.5 MiB, delta_rss +0.3 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'gclk' Fanout: 403 pins (12.7%), 403 blocks (44.5%)
+# Load Timing Constraints
+
+SDC file 'cpu_spl_flat.sdc' not found
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock 'gclk'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'gclk' Source: 'gclk.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 18.5 MiB, delta_rss +0.0 MiB)
+Timing analysis: ON
+Circuit netlist file: cpu_spl_flat.net
+Circuit placement file: cpu_spl_flat.place
+Circuit routing file: cpu_spl_flat.route
+Circuit SDC file: cpu_spl_flat.sdc
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: PATH_TIMING_DRIVEN_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 100
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 1.000000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: NO_FIXED_CHANNEL_WIDTH
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+
+RoutingArch.directionality: BI_DIRECTIONAL
+RoutingArch.switch_block_type: UNIVERSAL
+RoutingArch.Fs: 3
+
+# Packing
+Begin packing './cpu_spl_flat.blif'.
+
+After removing unused inputs...
+	total blocks: 905, total nets: 1302, total inputs: 4, total outputs: 18
+Begin prepacking.
+Finish prepacking.
+Using inter-cluster delay: 1.5296e-10
+Packing with pin utilization targets: io:1,1 memory:0.8,1
+Packing with high fanout thresholds: io:128 memory:32
+Not enough resources expand FPGA size to (3 x 3)
+Complex block 0: 'cpumem.IOwb_fa_' (memory) .
+Not enough resources expand FPGA size to (4 x 4)
+Complex block 1: 'cpumem.Dwr_fa_' (memory) .
+Complex block 2: 'cpuio.Dwork' (memory) .
+Complex block 3: 'cpuio.Iready_fa_' (memory) .
+Not enough resources expand FPGA size to (5 x 5)
+Complex block 4: 'cpuid.aluop_fa_1' (memory) .
+Complex block 5: 'cpumem.tmpwb' (memory) .
+Complex block 6: 'cpuio.IworkD' (memory) .
+Complex block 7: 'cpuio.Iwork' (memory) .
+Complex block 8: 'cpuio.Wr_fa_' (memory) .
+Not enough resources expand FPGA size to (6 x 6)
+Complex block 9: 'cpuio.Drd1' (memory) .
+Complex block 10: 'cpuio.hold' (memory) .
+Complex block 11: 'cpuio.Rd_fa_' (memory) .
+Complex block 12: 'cpupc.pcreg_fa_0' (memory) .
+Complex block 13: 'cpuid.aluop_fa_0' (memory) .
+Complex block 14: 'cpuid.aluop_fa_2' (memory) .
+Complex block 15: 'cpuio.Adr_fa_0' (memory) .
+Not enough resources expand FPGA size to (7 x 7)
+Complex block 16: 'cpuio.Adr_fa_1' (memory) .
+Complex block 17: 'cpuio.Adr_fa_2' (memory) .
+Complex block 18: 'cpuio.Adr_fa_3' (memory) .
+Complex block 19: 'cpuio.Adr_fa_4' (memory) .
+Complex block 20: 'cpuio.Adr_fa_5' (memory) .
+Complex block 21: 'cpuio.Adr_fa_6' (memory) .
+Complex block 22: 'cpuio.Adr_fa_7' (memory) .
+Complex block 23: 'cpuid.pcsrc' (memory) .
+Complex block 24: 'cpuid.rdnum_fa_0' (memory) .
+Not enough resources expand FPGA size to (8 x 8)
+Complex block 25: 'cpuid.rdnum_fa_1' (memory) .
+Complex block 26: 'cpumem.Dadr_fa_0' (memory) .
+Complex block 27: 'cpumem.Dadr_fa_1' (memory) .
+Complex block 28: 'cpumem.Dadr_fa_2' (memory) .
+Complex block 29: 'cpumem.Dadr_fa_3' (memory) .
+Complex block 30: 'cpumem.Dadr_fa_4' (memory) .
+Complex block 31: 'cpumem.Dadr_fa_5' (memory) .
+Complex block 32: 'cpumem.Dadr_fa_6' (memory) .
+Complex block 33: 'cpumem.Dadr_fa_7' (memory) .
+Complex block 34: 'cpumem.Dout_fa_0' (memory) .
+Complex block 35: 'cpumem.Dout_fa_1' (memory) .
+Not enough resources expand FPGA size to (9 x 9)
+Complex block 36: 'cpumem.Dout_fa_2' (memory) .
+Complex block 37: 'cpumem.Dout_fa_3' (memory) .
+Complex block 38: 'cpumem.Dout_fa_4' (memory) .
+Complex block 39: 'cpumem.Dout_fa_5' (memory) .
+Complex block 40: 'cpumem.Dout_fa_6' (memory) .
+Complex block 41: 'cpumem.Dout_fa_7' (memory) .
+Complex block 42: 'cpumem.res_fa_0' (memory) .
+Complex block 43: 'cpumem.res_fa_1' (memory) .
+Complex block 44: 'cpumem.res_fa_2' (memory) .
+Complex block 45: 'cpumem.res_fa_3' (memory) .
+Complex block 46: 'cpumem.res_fa_4' (memory) .
+Complex block 47: 'cpumem.res_fa_5' (memory) .
+Complex block 48: 'cpumem.res_fa_6' (memory) .
+Not enough resources expand FPGA size to (10 x 10)
+Complex block 49: 'cpumem.res_fa_7' (memory) .
+Complex block 50: 'cpupc.pcreg_fa_1' (memory) .
+Complex block 51: 'cpupc.pcreg_fa_2' (memory) .
+Complex block 52: 'cpupc.pcreg_fa_3' (memory) .
+Complex block 53: 'cpupc.pcreg_fa_4' (memory) .
+Complex block 54: 'cpupc.pcreg_fa_5' (memory) .
+Complex block 55: 'cpupc.pcreg_fa_6' (memory) .
+Complex block 56: 'cpupc.pcreg_fa_7' (memory) .
+Complex block 57: 'cpumem.tmpwb1' (memory) .
+Complex block 58: 'zregisters.regd0[0]' (memory) .
+Complex block 59: 'zregisters.regd0[1]' (memory) .
+Complex block 60: 'zregisters.regd0[2]' (memory) .
+Complex block 61: 'zregisters.regd0[3]' (memory) .
+Complex block 62: 'zregisters.regd0[4]' (memory) .
+Complex block 63: 'zregisters.regd0[5]' (memory) .
+Not enough resources expand FPGA size to (11 x 11)
+Complex block 64: 'zregisters.regd0[6]' (memory) .
+Complex block 65: 'zregisters.regd0[7]' (memory) .
+Complex block 66: 'zregisters.regd1[0]' (memory) .
+Complex block 67: 'zregisters.regd1[1]' (memory) .
+Complex block 68: 'zregisters.regd1[2]' (memory) .
+Complex block 69: 'zregisters.regd1[3]' (memory) .
+Complex block 70: 'zregisters.regd1[4]' (memory) .
+Complex block 71: 'zregisters.regd1[5]' (memory) .
+Complex block 72: 'zregisters.regd1[6]' (memory) .
+Complex block 73: 'zregisters.regd1[7]' (memory) .
+Complex block 74: 'zregisters.regd2[0]' (memory) .
+Complex block 75: 'zregisters.regd2[1]' (memory) .
+Complex block 76: 'zregisters.regd2[2]' (memory) .
+Complex block 77: 'zregisters.regd2[3]' (memory) .
+Complex block 78: 'zregisters.regd2[4]' (memory) .
+Complex block 79: 'zregisters.regd2[5]' (memory) .
+Complex block 80: 'zregisters.regd2[6]' (memory) .
+Not enough resources expand FPGA size to (12 x 12)
+Complex block 81: 'zregisters.regd2[7]' (memory) .
+Complex block 82: 'zregisters.regd3[0]' (memory) .
+Complex block 83: 'zregisters.regd3[1]' (memory) .
+Complex block 84: 'zregisters.regd3[2]' (memory) .
+Complex block 85: 'zregisters.regd3[3]' (memory) .
+Complex block 86: 'zregisters.regd3[4]' (memory) .
+Complex block 87: 'zregisters.regd3[5]' (memory) .
+Complex block 88: 'zregisters.regd3[6]' (memory) .
+Complex block 89: 'zregisters.regd3[7]' (memory) .
+Complex block 90: 'BP8_1.aout[0]' (memory) .
+Complex block 91: 'BP8_1.aout[1]' (memory) .
+Complex block 92: 'BP8_1.aout[2]' (memory) .
+Complex block 93: 'BP8_1.aout[3]' (memory) .
+Complex block 94: 'BP8_1.aout[4]' (memory) .
+Complex block 95: 'BP8_1.aout[5]' (memory) .
+Complex block 96: 'BP8_1.aout[6]' (memory) .
+Complex block 97: 'BP8_1.aout[7]' (memory) .
+Complex block 98: 'out[0]' (memory) .
+Complex block 99: 'out[1]' (memory) .
+Not enough resources expand FPGA size to (13 x 13)
+Complex block 100: 'out[2]' (memory) .
+Complex block 101: 'out[3]' (memory) .
+Complex block 102: 'out[4]' (memory) .
+Complex block 103: 'out[5]' (memory) .
+Complex block 104: 'out[6]' (memory) .
+Complex block 105: 'out[7]' (memory) .
+Complex block 106: 'cpupc.n164' (memory) .
+Complex block 107: 'cpupc.n157' (memory) .
+Complex block 108: 'cpupc.n152' (memory) .
+Complex block 109: 'cpupc.n140' (memory) .
+Complex block 110: 'BP8_2.aout[0]' (memory) .
+Complex block 111: 'BP8_2.aout[1]' (memory) .
+Complex block 112: 'BP8_2.aout[2]' (memory) .
+Complex block 113: 'BP8_2.aout[3]' (memory) .
+Complex block 114: 'BP8_2.aout[4]' (memory) .
+Complex block 115: 'BP8_2.aout[5]' (memory) .
+Complex block 116: 'BP8_2.aout[6]' (memory) .
+Complex block 117: 'BP8_2.aout[7]' (memory) .
+Complex block 118: 'cpuid.n183' (memory) .
+Complex block 119: 'cpuid.numd_fa_1' (memory) .
+Complex block 120: 'cpuid.numd_fa_0' (memory) .
+Not enough resources expand FPGA size to (14 x 14)
+Complex block 121: 'cpuid.n163' (memory) .
+Complex block 122: 'cpuid.n162' (memory) .
+Complex block 123: 'cpuid.n165' (memory) .
+Complex block 124: 'zregisters.datad[6]' (memory) .
+Complex block 125: 'zregisters.datad[5]' (memory) .
+Complex block 126: 'zregisters.datad[2]' (memory) .
+Complex block 127: 'zregisters.datad[1]' (memory) .
+Complex block 128: 'zregisters.datad[0]' (memory) .
+Complex block 129: 'cpupc.n151' (memory) .
+Complex block 130: 'cpupc.n158' (memory) .
+Complex block 131: 'zregisters.datad[7]' (memory) .
+Complex block 132: 'zregisters.datad[4]' (memory) .
+Complex block 133: 'zregisters.datad[3]' (memory) .
+Complex block 134: 'cpuid.n182' (memory) .
+Complex block 135: 'cpupc.n139' (memory) .
+Complex block 136: 'cpuio.n216' (memory) .
+Complex block 137: 'cpuio.n218' (memory) .
+Complex block 138: 'cpupc.n129' (memory) .
+Complex block 139: 'cpupc.n153' (memory) .
+Complex block 140: 'cpupc.n163' (memory) .
+Complex block 141: 'cpumem.n213' (memory) .
+Complex block 142: 'cpuid.n192' (memory) .
+Complex block 143: 'cpupc.n146' (memory) .
+Not enough resources expand FPGA size to (15 x 15)
+Complex block 144: 'cpupc.n141' (memory) .
+Complex block 145: 'cpuio.n223' (memory) .
+Complex block 146: 'cpuio.n195' (memory) .
+Complex block 147: 'cpuio.n196' (memory) .
+Complex block 148: 'cpumem.n198' (memory) .
+Complex block 149: 'cpumem.n216' (memory) .
+Complex block 150: 'cpupc.n125' (memory) .
+Complex block 151: 'cpuid.n178' (memory) .
+Complex block 152: 'cpupc.n145' (memory) .
+Complex block 153: 'zregisters.n204' (memory) .
+Complex block 154: 'cpuio.n241' (memory) .
+Complex block 155: 'cpuio.n242' (memory) .
+Complex block 156: 'cpuio.n219' (memory) .
+Complex block 157: 'cpupc.n134' (memory) .
+Complex block 158: 'cpupc.n128' (memory) .
+Complex block 159: 'cpuio.n225' (memory) .
+Complex block 160: 'zregisters.n106' (memory) .
+Complex block 161: 'zregisters.n109' (memory) .
+Complex block 162: 'cpuid.n77' (memory) .
+Complex block 163: 'pclk' (memory) .
+Complex block 164: 'cpuio.n217' (memory) .
+Complex block 165: 'cpuio.n221' (memory) .
+Complex block 166: 'cpuio.n229' (memory) .
+Complex block 167: 'cpuio.Nohold_fa_' (memory) .
+Complex block 168: 'cpupc.n136' (memory) .
+Not enough resources expand FPGA size to (16 x 16)
+Complex block 169: 'cpupc.n148' (memory) .
+Complex block 170: 'cpuid.n166' (memory) .
+Complex block 171: 'cpuid.n170' (memory) .
+Complex block 172: 'cpuio.w_532f_1741' (memory) .
+Complex block 173: 'cpuio.w_0e87_1742' (memory) .
+Complex block 174: 'cpuio.w_74e6_1743' (memory) .
+Complex block 175: 'cpumem.n195' (memory) .
+Complex block 176: 'cpumem.n219' (memory) .
+Complex block 177: 'cpumem.n221' (memory) .
+Complex block 178: 'cpumem.n223' (memory) .
+Complex block 179: 'cpumem.n225' (memory) .
+Complex block 180: 'cpumem.n227' (memory) .
+Complex block 181: 'cpumem.n229' (memory) .
+Complex block 182: 'cpumem.n231' (memory) .
+Complex block 183: 'cpumem.n234' (memory) .
+Complex block 184: 'cpumem.n237' (memory) .
+Complex block 185: 'cpuio.w_b527_1739' (memory) .
+Complex block 186: 'cpuio.w_9f2d_1740' (memory) .
+Complex block 187: 'cpumem.n214' (memory) .
+Complex block 188: 'cpumem.n217' (memory) .
+Complex block 189: 'cpuid.n176' (memory) .
+Complex block 190: 'cpumem.n215' (memory) .
+Complex block 191: 'cpumem.n218' (memory) .
+Complex block 192: 'cpumem.n220' (memory) .
+Complex block 193: 'cpumem.n222' (memory) .
+Complex block 194: 'cpumem.n224' (memory) .
+Complex block 195: 'cpumem.n226' (memory) .
+Not enough resources expand FPGA size to (17 x 17)
+Complex block 196: 'cpumem.n228' (memory) .
+Complex block 197: 'cpumem.n230' (memory) .
+Complex block 198: 'cpumem.n232' (memory) .
+Complex block 199: 'cpumem.n235' (memory) .
+Complex block 200: 'cpumem.n238' (memory) .
+Complex block 201: 'zregisters.w_afb7_816' (memory) .
+Complex block 202: 'zregisters.w_464f_815' (memory) .
+Complex block 203: 'zregisters.w_4c56_814' (memory) .
+Complex block 204: 'zregisters.w_5dbd_765' (memory) .
+Complex block 205: 'zregisters.w_033b_764' (memory) .
+Complex block 206: 'zregisters.w_bead_763' (memory) .
+Complex block 207: 'zregisters.w_df23_762' (memory) .
+Complex block 208: 'zregisters.w_03dd_761' (memory) .
+Complex block 209: 'zregisters.w_8497_760' (memory) .
+Complex block 210: 'zregisters.w_5e87_800' (memory) .
+Complex block 211: 'zregisters.w_7c90_799' (memory) .
+Complex block 212: 'zregisters.w_2225_798' (memory) .
+Complex block 213: 'zregisters.w_02eb_773' (memory) .
+Complex block 214: 'zregisters.w_8cf1_772' (memory) .
+Complex block 215: 'zregisters.w_846a_771' (memory) .
+Complex block 216: 'zregisters.w_bd15_770' (memory) .
+Complex block 217: 'zregisters.w_b549_769' (memory) .
+Complex block 218: 'zregisters.w_1ff5_768' (memory) .
+Complex block 219: 'cpuio.w_2a80_1718' (memory) .
+Complex block 220: 'zregisters.w_bbef_759' (memory) .
+Complex block 221: 'zregisters.w_c5ac_758' (memory) .
+Complex block 222: 'zregisters.w_28b7_767' (memory) .
+Complex block 223: 'zregisters.w_2b27_766' (memory) .
+Complex block 224: 'cpuid.n175' (memory) .
+Not enough resources expand FPGA size to (18 x 18)
+Complex block 225: 'cpuid.n193' (memory) .
+Complex block 226: 'zregisters.n111' (memory) .
+Complex block 227: 'zregisters.n112' (memory) .
+Complex block 228: 'cpuio.n94' (memory) .
+Complex block 229: 'cpupc.n44' (memory) .
+Complex block 230: 'cpuid.n78' (memory) .
+Complex block 231: 'cpuid.n76' (memory) .
+Complex block 232: 'cpuio.n211' (memory) .
+Complex block 233: 'cpuio.n227' (memory) .
+Complex block 234: 'cpuio.w_fd68_1744' (memory) .
+Complex block 235: 'cpuio.w_d802_1745' (memory) .
+Complex block 236: 'cpuio.w_c513_1746' (memory) .
+Complex block 237: 'cpumem.n201' (memory) .
+Complex block 238: 'cpumem.n203' (memory) .
+Complex block 239: 'cpumem.n205' (memory) .
+Complex block 240: 'cpumem.n207' (memory) .
+Complex block 241: 'cpumem.n209' (memory) .
+Complex block 242: 'cpumem.n211' (memory) .
+Complex block 243: 'cpumem.n233' (memory) .
+Complex block 244: 'cpumem.n236' (memory) .
+Complex block 245: 'cpumem.n239' (memory) .
+Complex block 246: 'cpumem.n242' (memory) .
+Complex block 247: 'cpumem.n240' (memory) .
+Complex block 248: 'cpumem.n245' (memory) .
+Complex block 249: 'cpumem.n243' (memory) .
+Complex block 250: 'cpumem.n248' (memory) .
+Complex block 251: 'cpumem.n246' (memory) .
+Complex block 252: 'cpumem.n251' (memory) .
+Complex block 253: 'cpumem.n249' (memory) .
+Complex block 254: 'cpumem.n254' (memory) .
+Complex block 255: 'cpumem.n252' (memory) .
+Not enough resources expand FPGA size to (19 x 19)
+Complex block 256: 'cpupc.n162' (memory) .
+Complex block 257: 'cpupc.n161' (memory) .
+Complex block 258: 'cpupc.n132' (memory) .
+Complex block 259: 'cpupc.n144' (memory) .
+Complex block 260: 'zregisters.n164' (memory) .
+Complex block 261: 'zregisters.n163' (memory) .
+Complex block 262: 'zregisters.n161' (memory) .
+Complex block 263: 'zregisters.n173' (memory) .
+Complex block 264: 'zregisters.n172' (memory) .
+Complex block 265: 'zregisters.n170' (memory) .
+Complex block 266: 'zregisters.n178' (memory) .
+Complex block 267: 'zregisters.n177' (memory) .
+Complex block 268: 'zregisters.n175' (memory) .
+Complex block 269: 'zregisters.n183' (memory) .
+Complex block 270: 'zregisters.n182' (memory) .
+Complex block 271: 'zregisters.n180' (memory) .
+Complex block 272: 'zregisters.n188' (memory) .
+Complex block 273: 'zregisters.n187' (memory) .
+Complex block 274: 'zregisters.n185' (memory) .
+Complex block 275: 'zregisters.n193' (memory) .
+Complex block 276: 'zregisters.n192' (memory) .
+Complex block 277: 'zregisters.n190' (memory) .
+Complex block 278: 'zregisters.n198' (memory) .
+Complex block 279: 'zregisters.n197' (memory) .
+Complex block 280: 'zregisters.n195' (memory) .
+Complex block 281: 'zregisters.n203' (memory) .
+Complex block 282: 'zregisters.n202' (memory) .
+Complex block 283: 'zregisters.n200' (memory) .
+Complex block 284: 'cpumem.n196' (memory) .
+Complex block 285: 'cpumem.n199' (memory) .
+Complex block 286: 'cpupc.n121' (memory) .
+Complex block 287: 'cpupc.n122' (memory) .
+Complex block 288: 'cpuio.n228' (memory) .
+Not enough resources expand FPGA size to (20 x 20)
+Complex block 289: 'cpuid.n173' (memory) .
+Complex block 290: 'cpuio.n202' (memory) .
+Complex block 291: 'cpuio.n205' (memory) .
+Complex block 292: 'cpuio.n208' (memory) .
+Complex block 293: 'cpuio.n233' (memory) .
+Complex block 294: 'cpuio.n236' (memory) .
+Complex block 295: 'cpuio.n239' (memory) .
+Complex block 296: 'cpuio.n43' (memory) .
+Complex block 297: 'cpuio.n210' (memory) .
+Complex block 298: 'cpuio.N66' (memory) .
+Complex block 299: 'cpumem.n241' (memory) .
+Complex block 300: 'cpumem.n244' (memory) .
+Complex block 301: 'cpumem.n247' (memory) .
+Complex block 302: 'cpumem.n250' (memory) .
+Complex block 303: 'cpumem.n253' (memory) .
+Complex block 304: 'cpupc.n124' (memory) .
+Complex block 305: 'zregisters.n174' (memory) .
+Complex block 306: 'zregisters.n179' (memory) .
+Complex block 307: 'zregisters.n184' (memory) .
+Complex block 308: 'zregisters.n189' (memory) .
+Complex block 309: 'zregisters.n194' (memory) .
+Complex block 310: 'zregisters.n199' (memory) .
+Complex block 311: 'zregisters.w_2ce8_821' (memory) .
+Complex block 312: 'zregisters.w_9f49_820' (memory) .
+Complex block 313: 'zregisters.w_162d_819' (memory) .
+Complex block 314: 'zregisters.w_7640_818' (memory) .
+Complex block 315: 'zregisters.w_7406_817' (memory) .
+Complex block 316: 'zregisters.w_9b1d_805' (memory) .
+Complex block 317: 'zregisters.w_6a2a_804' (memory) .
+Complex block 318: 'zregisters.w_5f32_803' (memory) .
+Complex block 319: 'zregisters.w_880b_802' (memory) .
+Complex block 320: 'zregisters.w_ac23_801' (memory) .
+Complex block 321: 'cpuid.n179' (memory) .
+Complex block 322: 'cpuid.n186' (memory) .
+Complex block 323: 'cpuid.n191' (memory) .
+Not enough resources expand FPGA size to (21 x 21)
+Complex block 324: 'cpuio.n194' (memory) .
+Complex block 325: 'cpuio.n199' (memory) .
+Complex block 326: 'zregisters.n160' (memory) .
+Complex block 327: 'zregisters.n169' (memory) .
+Complex block 328: 'cpuio.n222' (memory) .
+Complex block 329: 'cpuio.n224' (memory) .
+Complex block 330: 'cpupc.n133' (memory) .
+Complex block 331: 'cpuio.n99' (memory) .
+Complex block 332: 'cpuio.n98' (memory) .
+Complex block 333: 'cpuio.n97' (memory) .
+Complex block 334: 'cpuio.n96' (memory) .
+Complex block 335: 'cpuio.n95' (memory) .
+Complex block 336: 'cpuio.n102' (memory) .
+Complex block 337: 'cpuio.n101' (memory) .
+Complex block 338: 'cpuio.n100' (memory) .
+Complex block 339: 'cpumem.n107' (memory) .
+Complex block 340: 'cpumem.n106' (memory) .
+Complex block 341: 'cpumem.n105' (memory) .
+Complex block 342: 'cpumem.n104' (memory) .
+Complex block 343: 'cpumem.n103' (memory) .
+Complex block 344: 'cpumem.n102' (memory) .
+Complex block 345: 'cpumem.n101' (memory) .
+Complex block 346: 'cpumem.n100' (memory) .
+Complex block 347: 'cpupc.n37' (memory) .
+Complex block 348: 'cpupc.n43' (memory) .
+Complex block 349: 'cpupc.n42' (memory) .
+Complex block 350: 'cpupc.n41' (memory) .
+Complex block 351: 'cpupc.n40' (memory) .
+Complex block 352: 'cpupc.n39' (memory) .
+Complex block 353: 'cpupc.n38' (memory) .
+Complex block 354: 'cpuid.n187' (memory) .
+Complex block 355: 'cpuid.n189' (memory) .
+Complex block 356: 'cpuid.n185' (memory) .
+Complex block 357: 'cpuid.n190' (memory) .
+Complex block 358: 'cpuid.N92' (memory) .
+Complex block 359: 'cpuio.n214' (memory) .
+Complex block 360: 'cpuio.n35' (memory) .
+Not enough resources expand FPGA size to (22 x 22)
+Complex block 361: 'cpuid.n167' (memory) .
+Complex block 362: 'cpuid.n171' (memory) .
+Complex block 363: 'cpuid.n172' (memory) .
+Complex block 364: 'cpuio.n212' (memory) .
+Complex block 365: 'cpuio.N55' (memory) .
+Complex block 366: 'cpumem.N6' (memory) .
+Complex block 367: 'cpuio.n215' (memory) .
+Complex block 368: 'zregisters.n167' (memory) .
+Complex block 369: 'zregisters.n166' (memory) .
+Complex block 370: 'zregisters.n165' (memory) .
+Complex block 371: 'cpuid.n174' (memory) .
+Complex block 372: 'cpuid.n180' (memory) .
+Complex block 373: 'cpuid.n188' (memory) .
+Complex block 374: 'cpumem.n194' (memory) .
+Complex block 375: 'cpuio.n209' (memory) .
+Complex block 376: 'cpuio.n226' (memory) .
+Complex block 377: 'cpuio.n243' (memory) .
+Complex block 378: 'cpuid.n199' (memory) .
+Complex block 379: 'cpuid.n201' (memory) .
+Complex block 380: 'cpumem.n197' (memory) .
+Complex block 381: 'cpumem.n200' (memory) .
+Complex block 382: 'cpumem.n202' (memory) .
+Complex block 383: 'cpumem.n204' (memory) .
+Complex block 384: 'cpupc.n159' (memory) .
+Complex block 385: 'cpupc.n123' (memory) .
+Complex block 386: 'cpupc.n126' (memory) .
+Complex block 387: 'cpupc.n130' (memory) .
+Complex block 388: 'cpupc.n137' (memory) .
+Complex block 389: 'cpupc.n142' (memory) .
+Complex block 390: 'cpupc.n149' (memory) .
+Complex block 391: 'cpupc.n154' (memory) .
+Complex block 392: 'cpuio.n201' (memory) .
+Complex block 393: 'cpuio.n200' (memory) .
+Complex block 394: 'cpuio.n204' (memory) .
+Complex block 395: 'cpuio.n203' (memory) .
+Complex block 396: 'cpuio.n207' (memory) .
+Complex block 397: 'cpuio.n206' (memory) .
+Complex block 398: 'cpuio.n232' (memory) .
+Complex block 399: 'cpuio.n231' (memory) .
+Not enough resources expand FPGA size to (23 x 23)
+Complex block 400: 'cpuio.n235' (memory) .
+Complex block 401: 'cpuio.n234' (memory) .
+Complex block 402: 'cpuio.n238' (memory) .
+Complex block 403: 'cpuio.n237' (memory) .
+Complex block 404: 'cpumem.n206' (memory) .
+Complex block 405: 'cpumem.n208' (memory) .
+Complex block 406: 'cpumem.n210' (memory) .
+Complex block 407: 'cpumem.n212' (memory) .
+Complex block 408: 'cpuio.n193' (memory) .
+Complex block 409: 'cpuio.n192' (memory) .
+Complex block 410: 'cpuio.n198' (memory) .
+Complex block 411: 'cpuio.n197' (memory) .
+Complex block 412: 'cpumem.n82' (memory) .
+Complex block 413: 'cpupc.n105' (memory) .
+Complex block 414: 'cpupc.n106' (memory) .
+Complex block 415: 'cpupc.n156' (memory) .
+Complex block 416: 'cpuid.n169' (memory) .
+Complex block 417: 'cpuid.n145' (memory) .
+Complex block 418: 'cpuid.n156' (memory) .
+Complex block 419: 'cpuid.n161' (memory) .
+Complex block 420: 'cpuid.n164' (memory) .
+Complex block 421: 'zregisters.n171' (memory) .
+Complex block 422: 'zregisters.n176' (memory) .
+Complex block 423: 'zregisters.n191' (memory) .
+Complex block 424: 'zregisters.n196' (memory) .
+Complex block 425: 'zregisters.n201' (memory) .
+Complex block 426: 'cpupc.n107' (memory) .
+Complex block 427: 'cpupc.n160' (memory) .
+Complex block 428: 'cpupc.n155' (memory) .
+Complex block 429: 'cpupc.n150' (memory) .
+Complex block 430: 'zregisters.n162' (memory) .
+Complex block 431: 'zregisters.n181' (memory) .
+Complex block 432: 'zregisters.n186' (memory) .
+Complex block 433: 'cpuid.n143' (memory) .
+Complex block 434: 'cpupc.n109' (memory) .
+Complex block 435: 'cpuio.n176' (memory) .
+Complex block 436: 'cpupc.n131' (memory) .
+Complex block 437: 'cpupc.n127' (memory) .
+Complex block 438: 'cpuio.n181' (memory) .
+Complex block 439: 'cpuio.n240' (memory) .
+Complex block 440: 'cpumem.n33' (memory) .
+Not enough resources expand FPGA size to (24 x 24)
+Complex block 441: 'cpuid.n142' (memory) .
+Complex block 442: 'cpupc.n108' (memory) .
+Complex block 443: 'cpupc.n147' (memory) .
+Complex block 444: 'cpumem.n125' (memory) .
+Complex block 445: 'cpupc.n143' (memory) .
+Complex block 446: 'cpupc.n138' (memory) .
+Complex block 447: 'cpuio.n179' (memory) .
+Complex block 448: 'cpuio.n180' (memory) .
+Complex block 449: 'cpumem.n124' (memory) .
+Complex block 450: 'zregisters.n168' (memory) .
+Complex block 451: 'cpuio.n182' (memory) .
+Complex block 452: 'cpuio.n183' (memory) .
+Complex block 453: 'cpupc.n110' (memory) .
+Complex block 454: 'cpupc.n135' (memory) .
+Complex block 455: 'cpumem.n191' (memory) .
+Complex block 456: 'cpuio.n16' (memory) .
+Complex block 457: 'cpuio.n104' (memory) .
+Complex block 458: 'cpupc.n111' (memory) .
+Complex block 459: 'cpuio.n184' (memory) .
+Complex block 460: 'cpuio.n178' (memory) .
+Complex block 461: 'cpuio.n213' (memory) .
+Complex block 462: 'zregisters.n9' (memory) .
+Complex block 463: 'zregisters.n8' (memory) .
+Complex block 464: 'cpuid.n181' (memory) .
+Complex block 465: 'cpupc.n120' (memory) .
+Complex block 466: 'cpuio.n191' (memory) .
+Complex block 467: 'cpuid.n168' (memory) .
+Complex block 468: 'cpuid.n177' (memory) .
+Complex block 469: 'cpumem.n32' (memory) .
+Complex block 470: 'cpupc.n119' (memory) .
+Complex block 471: 'cpuid.n150' (memory) .
+Complex block 472: 'cpuid.n152' (memory) .
+Complex block 473: 'zregisters.n7' (memory) .
+Complex block 474: 'zregisters.n10' (memory) .
+Complex block 475: 'cpuio.n177' (memory) .
+Complex block 476: 'cpuio.n244' (memory) .
+Complex block 477: 'cpuio.n185' (memory) .
+Complex block 478: 'cpupc.n113' (memory) .
+Complex block 479: 'cpupc.n114' (memory) .
+Complex block 480: 'cpupc.n115' (memory) .
+Complex block 481: 'cpupc.n116' (memory) .
+Complex block 482: 'cpupc.n117' (memory) .
+Complex block 483: 'cpupc.n118' (memory) .
+Not enough resources expand FPGA size to (25 x 25)
+Complex block 484: 'cpuio.n230' (memory) .
+Complex block 485: 'cpuid.n148' (memory) .
+Complex block 486: 'cpuid.n151' (memory) .
+Complex block 487: 'cpuio.n186' (memory) .
+Complex block 488: 'cpuid.n80' (memory) .
+Complex block 489: 'cpuid.n79' (memory) .
+Complex block 490: 'cpuio.n105' (memory) .
+Complex block 491: 'cpuio.n103' (memory) .
+Complex block 492: 'cpumem.n123' (memory) .
+Complex block 493: 'cpumem.n122' (memory) .
+Complex block 494: 'cpumem.n121' (memory) .
+Complex block 495: 'cpumem.n120' (memory) .
+Complex block 496: 'cpumem.n119' (memory) .
+Complex block 497: 'cpumem.n118' (memory) .
+Complex block 498: 'cpumem.n117' (memory) .
+Complex block 499: 'cpumem.n116' (memory) .
+Complex block 500: 'cpumem.n115' (memory) .
+Complex block 501: 'cpumem.n114' (memory) .
+Complex block 502: 'cpumem.n113' (memory) .
+Complex block 503: 'cpumem.n112' (memory) .
+Complex block 504: 'cpumem.n111' (memory) .
+Complex block 505: 'cpumem.n110' (memory) .
+Complex block 506: 'cpumem.n109' (memory) .
+Complex block 507: 'cpumem.n108' (memory) .
+Complex block 508: 'cpuid.n184' (memory) .
+Complex block 509: 'cpuio.n220' (memory) .
+Complex block 510: 'cpuio.n187' (memory) .
+Complex block 511: 'cpupc.n112' (memory) .
+Complex block 512: 'cpuid.n149' (memory) .
+Complex block 513: 'cpuid.n153' (memory) .
+Complex block 514: 'cpuid.n154' (memory) .
+Complex block 515: 'cpuid.n155' (memory) .
+Complex block 516: 'cpuid.n157' (memory) .
+Complex block 517: 'cpuid.n194' (memory) .
+Complex block 518: 'cpuid.n200' (memory) .
+Complex block 519: 'cpuid.n159' (memory) .
+Complex block 520: 'cpuid.n144' (memory) .
+Complex block 521: 'cpuio.n189' (memory) .
+Complex block 522: 'cpuio.n190' (memory) .
+Complex block 523: 'cpuio.n245' (memory) .
+Complex block 524: 'zregisters.n110' (memory) .
+Complex block 525: 'zregisters.n108' (memory) .
+Complex block 526: 'zregisters.n205' (memory) .
+Complex block 527: 'zregisters.n206' (memory) .
+Complex block 528: 'cpuio.n188' (memory) .
+Not enough resources expand FPGA size to (26 x 26)
+Complex block 529: 'cpumem.n193' (memory) .
+Complex block 530: 'zregisters.n107' (memory) .
+Complex block 531: 'cpupc.w_n112_0[0]' (memory) .
+Complex block 532: 'cpupc.w_n113_0[0]' (memory) .
+Complex block 533: 'cpupc.w_n140_0[0]' (memory) .
+Complex block 534: 'cpupc.w_n152_0[0]' (memory) .
+Complex block 535: 'cpupc.w_n157_0[0]' (memory) .
+Complex block 536: 'cpuid.w_n153_0[0]' (memory) .
+Complex block 537: 'cpuid.w_n155_0[0]' (memory) .
+Complex block 538: 'cpuid.w_n169_0[0]' (memory) .
+Complex block 539: 'cpuid.w_n169_1[0]' (memory) .
+Complex block 540: 'cpuid.w_n169_4[0]' (memory) .
+Complex block 541: 'cpuid.w_n183_0[0]' (memory) .
+Complex block 542: 'w_datad00_0[0]' (memory) .
+Complex block 543: 'w_datad01_0[0]' (memory) .
+Complex block 544: 'w_datad02_0[0]' (memory) .
+Complex block 545: 'w_datad05_0[0]' (memory) .
+Complex block 546: 'w_datad06_0[0]' (memory) .
+Complex block 547: 'cpupc.w_n115_0[0]' (memory) .
+Complex block 548: 'cpupc.w_n124_0[0]' (memory) .
+Complex block 549: 'cpupc.w_n150_0[0]' (memory) .
+Complex block 550: 'cpupc.w_n155_0[0]' (memory) .
+Complex block 551: 'w_datad03_0[0]' (memory) .
+Complex block 552: 'w_datad04_0[0]' (memory) .
+Complex block 553: 'w_datad07_0[0]' (memory) .
+Complex block 554: 'cpuid.w_n183_1[0]' (memory) .
+Complex block 555: 'cpupc.w_n140_1[0]' (memory) .
+Complex block 556: 'cpuio.w_pcsrc_0[0]' (memory) .
+Complex block 557: 'cpuio.w_n218_0[0]' (memory) .
+Complex block 558: 'w_pcsrc_0[0]' (memory) .
+Complex block 559: 'cpupc.w_n124_1[0]' (memory) .
+Complex block 560: 'cpupc.w_n127_0[0]' (memory) .
+Complex block 561: 'cpuio.w_n240_0[0]' (memory) .
+Complex block 562: 'cpuio.w_n43_0[0]' (memory) .
+Complex block 563: 'cpuio.w_n43_1[0]' (memory) .
+Complex block 564: 'cpumem.w_n213_0[0]' (memory) .
+Complex block 565: 'cpumem.w_n82_0[0]' (memory) .
+Complex block 566: 'cpumem.w_n82_2[0]' (memory) .
+Complex block 567: 'cpupc.w_n119_0[0]' (memory) .
+Complex block 568: 'cpupc.w_n119_1[0]' (memory) .
+Complex block 569: 'cpuid.w_n157_0[0]' (memory) .
+Complex block 570: 'cpuid.w_n157_1[0]' (memory) .
+Complex block 571: 'cpuio.w_n182_0[0]' (memory) .
+Complex block 572: 'cpumem.w_n82_1[0]' (memory) .
+Complex block 573: 'cpumem.w_n82_5[0]' (memory) .
+Complex block 574: 'cpupc.w_n117_0[0]' (memory) .
+Complex block 575: 'cpupc.w_n138_0[0]' (memory) .
+Not enough resources expand FPGA size to (27 x 27)
+Complex block 576: 'cpuio.w_pcsrc_1[0]' (memory) .
+Complex block 577: 'cpupc.w_n122_0[0]' (memory) .
+Complex block 578: 'cpumem.w_n33_0[0]' (memory) .
+Complex block 579: 'cpumem.w_n33_7[0]' (memory) .
+Complex block 580: 'cpumem.w_n33_2[0]' (memory) .
+Complex block 581: 'zregisters.w_n165_0[0]' (memory) .
+Complex block 582: 'zregisters.w_n165_1[0]' (memory) .
+Complex block 583: 'zregisters.w_n166_0[0]' (memory) .
+Complex block 584: 'zregisters.w_n166_1[0]' (memory) .
+Complex block 585: 'zregisters.w_n167_0[0]' (memory) .
+Complex block 586: 'zregisters.w_n167_1[0]' (memory) .
+Complex block 587: 'cpuio.w_Ready_0[0]' (memory) .
+Complex block 588: 'cpuio.w_Ready_1[0]' (memory) .
+Complex block 589: 'cpuio.w_n219_0[0]' (memory) .
+Complex block 590: 'cpuio.w_n210_0[0]' (memory) .
+Complex block 591: 'cpuio.w_n243_0[0]' (memory) .
+Complex block 592: 'cpuio.w_Dwork_0[0]' (memory) .
+Complex block 593: 'cpuio.w_Iready_0[0]' (memory) .
+Complex block 594: 'cpupc.w_pcreg2_0[0]' (memory) .
+Complex block 595: 'cpupc.w_pcreg4_0[0]' (memory) .
+Complex block 596: 'cpumem.w_N6_0[0]' (memory) .
+Complex block 597: 'cpumem.w_N6_1[0]' (memory) .
+Complex block 598: 'cpumem.w_N6_4[0]' (memory) .
+Complex block 599: 'cpuio.w_n35_0[0]' (memory) .
+Complex block 600: 'cpuio.w_n35_1[0]' (memory) .
+Complex block 601: 'cpuio.w_n43_2[0]' (memory) .
+Complex block 602: 'cpupc.w_n119_2[0]' (memory) .
+Complex block 603: 'cpuio.w_Iwork_0[0]' (memory) .
+Complex block 604: 'cpuio.w_n183_0[0]' (memory) .
+Complex block 605: 'cpuio.w_n183_1[0]' (memory) .
+Complex block 606: 'cpupc.w_n112_1[0]' (memory) .
+Complex block 607: 'zregisters.w_n107_0[0]' (memory) .
+Complex block 608: 'zregisters.w_n107_1[0]' (memory) .
+Complex block 609: 'cpuid.w_n143_0[0]' (memory) .
+Complex block 610: 'cpuid.w_n152_0[0]' (memory) .
+Complex block 611: 'cpupc.w_pcsrc_0[0]' (memory) .
+Complex block 612: 'cpupc.w_pcsrc_3[0]' (memory) .
+Complex block 613: 'cpuio.w_n215_0[0]' (memory) .
+Complex block 614: 'cpuio.w_Nohold_0' (memory) .
+Complex block 615: 'cpuio.w_Clear_0[0]' (memory) .
+Complex block 616: 'cpuio.w_Clear_1[0]' (memory) .
+Complex block 617: 'cpuio.w_Clear_15[0]' (memory) .
+Complex block 618: 'cpuio.w_Clear_18[0]' (memory) .
+Complex block 619: 'cpuio.w_Clear_4[0]' (memory) .
+Complex block 620: 'cpuio.w_Clear_5[0]' (memory) .
+Complex block 621: 'cpuio.w_Sclk_0[0]' (memory) .
+Complex block 622: 'cpuio.w_Sclk_1[0]' (memory) .
+Complex block 623: 'cpuio.w_Sclk_15[0]' (memory) .
+Complex block 624: 'cpuio.w_Sclk_18[0]' (memory) .
+Not enough resources expand FPGA size to (28 x 28)
+Complex block 625: 'cpuio.w_Sclk_4[0]' (memory) .
+Complex block 626: 'cpuio.w_Sclk_5[0]' (memory) .
+Complex block 627: 'cpuid.w_N92_0[0]' (memory) .
+Complex block 628: 'cpuid.w_n168_0[0]' (memory) .
+Complex block 629: 'cpuio.w_n43_4[0]' (memory) .
+Complex block 630: 'cpumem.w_n216_0[0]' (memory) .
+Complex block 631: 'cpumem.w_n216_1[0]' (memory) .
+Complex block 632: 'cpumem.w_n216_4[0]' (memory) .
+Complex block 633: 'cpumem.w_n216_5[0]' (memory) .
+Complex block 634: 'cpumem.w_n216_6[0]' (memory) .
+Complex block 635: 'cpumem.w_n82_4[0]' (memory) .
+Complex block 636: 'cpuio.w_Clear_6[0]' (memory) .
+Complex block 637: 'cpuio.w_Sclk_6[0]' (memory) .
+Complex block 638: 'cpuio.w_Clear_19[0]' (memory) .
+Complex block 639: 'cpuio.w_Sclk_19[0]' (memory) .
+Complex block 640: 'cpuio.w_n43_5[0]' (memory) .
+Complex block 641: 'cpumem.w_n216_2[0]' (memory) .
+Complex block 642: 'cpumem.w_n216_7[0]' (memory) .
+Complex block 643: 'cpuid.w_n155_1[0]' (memory) .
+Complex block 644: 'cpumem.w_n33_1[0]' (memory) .
+Complex block 645: 'cpumem.w_n33_4[0]' (memory) .
+Complex block 646: 'cpumem.w_n33_5[0]' (memory) .
+Complex block 647: 'cpumem.w_n33_6[0]' (memory) .
+Complex block 648: 'zregisters.w_n10_0[0]' (memory) .
+Complex block 649: 'zregisters.w_n10_1[0]' (memory) .
+Complex block 650: 'zregisters.w_n10_5[0]' (memory) .
+Complex block 651: 'zregisters.w_n10_6[0]' (memory) .
+Complex block 652: 'zregisters.w_n7_0[0]' (memory) .
+Complex block 653: 'zregisters.w_n7_1[0]' (memory) .
+Complex block 654: 'zregisters.w_n7_4[0]' (memory) .
+Complex block 655: 'zregisters.w_n8_0[0]' (memory) .
+Complex block 656: 'zregisters.w_n8_1[0]' (memory) .
+Complex block 657: 'zregisters.w_n8_5[0]' (memory) .
+Complex block 658: 'zregisters.w_n8_6[0]' (memory) .
+Complex block 659: 'zregisters.w_n9_0[0]' (memory) .
+Complex block 660: 'zregisters.w_n9_1[0]' (memory) .
+Complex block 661: 'zregisters.w_n9_4[0]' (memory) .
+Complex block 662: 'cpupc.w_pcsrc_1[0]' (memory) .
+Complex block 663: 'cpupc.w_pcsrc_2[0]' (memory) .
+Complex block 664: 'zregisters.w_n10_2[0]' (memory) .
+Complex block 665: 'zregisters.w_n8_2[0]' (memory) .
+Complex block 666: 'zregisters.w_n10_7[0]' (memory) .
+Complex block 667: 'zregisters.w_n8_7[0]' (memory) .
+Complex block 668: 'cpuio.w_n214_0[0]' (memory) .
+Complex block 669: 'cpuio.w_Ready_2[0]' (memory) .
+Complex block 670: 'cpupc.w_n133_0[0]' (memory) .
+Complex block 671: 'cpupc.w_n133_3[0]' (memory) .
+Complex block 672: 'cpuio.w_n180_0[0]' (memory) .
+Complex block 673: 'cpupc.w_pcreg1_0[0]' (memory) .
+Complex block 674: 'cpupc.w_pcreg3_0[0]' (memory) .
+Complex block 675: 'cpupc.w_pcreg5_0[0]' (memory) .
+Not enough resources expand FPGA size to (29 x 29)
+Complex block 676: 'cpupc.w_pcreg6_0[0]' (memory) .
+Complex block 677: 'cpupc.w_pcreg7_0[0]' (memory) .
+Complex block 678: 'cpuid.w_n144_0[0]' (memory) .
+Complex block 679: 'cpuid.w_n149_0[0]' (memory) .
+Complex block 680: 'cpuio.w_n185_0[0]' (memory) .
+Complex block 681: 'cpupc.w_n118_0[0]' (memory) .
+Complex block 682: 'zregisters.w_n108_0[0]' (memory) .
+Complex block 683: 'zregisters.w_n110_0[0]' (memory) .
+Complex block 684: 'cpuio.w_Dwork_1[0]' (memory) .
+Complex block 685: 'cpupc.w_pcreg1_1' (memory) .
+Complex block 686: 'cpupc.w_pcreg2_1' (memory) .
+Complex block 687: 'cpupc.w_pcreg3_1' (memory) .
+Complex block 688: 'cpupc.w_pcreg4_1' (memory) .
+Complex block 689: 'cpupc.w_pcreg5_1' (memory) .
+Complex block 690: 'cpupc.w_pcreg6_1' (memory) .
+Complex block 691: 'cpuio.w_Clear_10[0]' (memory) .
+Complex block 692: 'cpuio.w_Clear_11[0]' (memory) .
+Complex block 693: 'cpuio.w_Clear_12[0]' (memory) .
+Complex block 694: 'cpuio.w_Clear_2[0]' (memory) .
+Complex block 695: 'cpuio.w_Clear_3[0]' (memory) .
+Complex block 696: 'cpuio.w_Clear_7[0]' (memory) .
+Complex block 697: 'cpuio.w_Clear_8[0]' (memory) .
+Complex block 698: 'cpuio.w_Clear_9[0]' (memory) .
+Complex block 699: 'cpuio.w_Sclk_2[0]' (memory) .
+Complex block 700: 'cpuio.w_Sclk_7[0]' (memory) .
+Complex block 701: 'cpuio.w_Sclk_8[0]' (memory) .
+Complex block 702: 'cpuio.w_Sclk_9[0]' (memory) .
+Complex block 703: 'cpuio.w_n195_0[0]' (memory) .
+Complex block 704: 'cpuio.w_n195_1[0]' (memory) .
+Complex block 705: 'cpuio.w_n195_2[0]' (memory) .
+Complex block 706: 'cpuio.w_n196_0[0]' (memory) .
+Complex block 707: 'cpuio.w_n196_1[0]' (memory) .
+Complex block 708: 'cpuio.w_n196_2[0]' (memory) .
+Complex block 709: 'cpuio.w_n43_3[0]' (memory) .
+Complex block 710: 'cpumem.w_N6_2[0]' (memory) .
+Complex block 711: 'cpumem.w_N6_3[0]' (memory) .
+Complex block 712: 'cpumem.w_n198_0[0]' (memory) .
+Complex block 713: 'cpumem.w_n198_1[0]' (memory) .
+Complex block 714: 'cpumem.w_n198_2[0]' (memory) .
+Complex block 715: 'cpumem.w_n216_3[0]' (memory) .
+Complex block 716: 'cpumem.w_n82_3[0]' (memory) .
+Complex block 717: 'cpupc.w_n133_1[0]' (memory) .
+Complex block 718: 'cpupc.w_n133_2[0]' (memory) .
+Complex block 719: 'zregisters.w_n165_2[0]' (memory) .
+Complex block 720: 'zregisters.w_n165_3[0]' (memory) .
+Complex block 721: 'zregisters.w_n166_2[0]' (memory) .
+Complex block 722: 'zregisters.w_n166_3[0]' (memory) .
+Complex block 723: 'zregisters.w_n167_2[0]' (memory) .
+Complex block 724: 'zregisters.w_n167_3[0]' (memory) .
+Complex block 725: 'cpuid.w_n156_0[0]' (memory) .
+Complex block 726: 'cpuid.w_n156_1[0]' (memory) .
+Complex block 727: 'cpuio.w_n195_3[0]' (memory) .
+Complex block 728: 'cpuio.w_n196_3[0]' (memory) .
+Not enough resources expand FPGA size to (30 x 30)
+Complex block 729: 'cpumem.w_n198_3[0]' (memory) .
+Complex block 730: 'cpuio.w_Drd1_0[0]' (memory) .
+Complex block 731: 'cpuio.w_Sclk_10[0]' (memory) .
+Complex block 732: 'cpuio.w_Sclk_11[0]' (memory) .
+Complex block 733: 'cpuio.w_Sclk_12[0]' (memory) .
+Complex block 734: 'cpuio.w_Sclk_3[0]' (memory) .
+Complex block 735: 'cpuio.w_n181_0[0]' (memory) .
+Complex block 736: 'cpuio.w_n181_1[0]' (memory) .
+Complex block 737: 'cpuio.w_n181_2[0]' (memory) .
+Complex block 738: 'cpuio.w_n191_0[0]' (memory) .
+Complex block 739: 'cpuio.w_n191_1[0]' (memory) .
+Complex block 740: 'cpuio.w_n191_2[0]' (memory) .
+Complex block 741: 'cpumem.w_n33_3[0]' (memory) .
+Complex block 742: 'zregisters.w_n168_0[0]' (memory) .
+Complex block 743: 'zregisters.w_n168_1[0]' (memory) .
+Complex block 744: 'zregisters.w_n168_2[0]' (memory) .
+Complex block 745: 'zregisters.w_n7_2[0]' (memory) .
+Complex block 746: 'zregisters.w_n7_3[0]' (memory) .
+Complex block 747: 'zregisters.w_n9_2[0]' (memory) .
+Complex block 748: 'zregisters.w_n9_3[0]' (memory) .
+Complex block 749: 'cpuid.w_n145_0[0]' (memory) .
+Complex block 750: 'cpuid.w_n145_1[0]' (memory) .
+Complex block 751: 'cpuio.w_n181_3[0]' (memory) .
+Complex block 752: 'zregisters.w_n168_3[0]' (memory) .
+Complex block 753: 'cpuio.w_Iwork_1[0]' (memory) .
+Complex block 754: 'w_iwait_0[0]' (memory) .
+Complex block 755: 'cpumem.w_datas20_0[0]' (memory) .
+Complex block 756: 'cpumem.w_datas21_0[0]' (memory) .
+Complex block 757: 'cpumem.w_datas22_0[0]' (memory) .
+Complex block 758: 'cpumem.w_datas23_0[0]' (memory) .
+Complex block 759: 'cpumem.w_datas24_0[0]' (memory) .
+Complex block 760: 'cpumem.w_datas25_0[0]' (memory) .
+Complex block 761: 'cpumem.w_datas26_0[0]' (memory) .
+Complex block 762: 'cpumem.w_datas27_0[0]' (memory) .
+Complex block 763: 'w_datas10_0[0]' (memory) .
+Complex block 764: 'w_datas11_0[0]' (memory) .
+Complex block 765: 'w_datas12_0[0]' (memory) .
+Complex block 766: 'w_datas13_0[0]' (memory) .
+Complex block 767: 'w_datas14_0[0]' (memory) .
+Complex block 768: 'w_datas15_0[0]' (memory) .
+Complex block 769: 'w_datas16_0[0]' (memory) .
+Complex block 770: 'w_datas17_0[0]' (memory) .
+Complex block 771: 'out:rd' (io) .
+Complex block 772: 'out:wr' (io) .
+Complex block 773: 'out:adr[0]' (io) .
+Complex block 774: 'out:adr[1]' (io) .
+Complex block 775: 'out:adr[2]' (io) .
+Complex block 776: 'out:adr[3]' (io) .
+Complex block 777: 'out:adr[4]' (io) .
+Complex block 778: 'out:adr[5]' (io) .
+Complex block 779: 'out:adr[6]' (io) .
+Complex block 780: 'out:adr[7]' (io) .
+Complex block 781: 'cpuio.w_Adr0_0' (memory) .
+Complex block 782: 'cpuio.w_Adr1_0' (memory) .
+Complex block 783: 'cpuio.w_Adr2_0' (memory) .
+Complex block 784: 'cpuio.w_Adr3_0' (memory) .
+Complex block 785: 'cpuio.w_Adr4_0' (memory) .
+Complex block 786: 'cpuio.w_Adr5_0' (memory) .
+Complex block 787: 'cpuio.w_Adr6_0' (memory) .
+Complex block 788: 'cpuio.w_Adr7_0' (memory) .
+Complex block 789: 'cpuio.w_Rd_0' (memory) .
+Complex block 790: 'cpuio.w_Wr_0' (memory) .
+Complex block 791: 'cpuid.w_n172_0[0]' (memory) .
+Complex block 792: 'cpuid.w_n178_0[0]' (memory) .
+Complex block 793: 'cpuio.w_N66_0[0]' (memory) .
+Not enough resources expand FPGA size to (31 x 31)
+Complex block 794: 'cpupc.w_pcreg0_0[0]' (memory) .
+Complex block 795: 'cpuid.w_numd0_0' (memory) .
+Complex block 796: 'cpuid.w_numd1_0' (memory) .
+Complex block 797: 'cpuid.w_n148_0[0]' (memory) .
+Complex block 798: 'cpumem.w_n32_0[0]' (memory) .
+Complex block 799: 'cpupc.w_n120_0[0]' (memory) .
+Complex block 800: 'zregisters.w_n205_0[0]' (memory) .
+Complex block 801: 'zregisters.w_n206_0[0]' (memory) .
+Complex block 802: 'cpuid.w_aluop0_0' (memory) .
+Complex block 803: 'cpuid.w_aluop1_0' (memory) .
+Complex block 804: 'cpuid.w_aluop2_0' (memory) .
+Complex block 805: 'cpuid.w_rdnum0_0' (memory) .
+Complex block 806: 'cpuid.w_rdnum1_0' (memory) .
+Complex block 807: 'cpumem.w_Dadr0_0' (memory) .
+Complex block 808: 'cpumem.w_Dadr1_0' (memory) .
+Complex block 809: 'cpumem.w_Dadr2_0' (memory) .
+Complex block 810: 'cpumem.w_Dadr3_0' (memory) .
+Complex block 811: 'cpumem.w_Dadr4_0' (memory) .
+Complex block 812: 'cpumem.w_Dadr5_0' (memory) .
+Complex block 813: 'cpumem.w_Dadr6_0' (memory) .
+Complex block 814: 'cpumem.w_Dadr7_0' (memory) .
+Complex block 815: 'cpumem.w_Dout0_0' (memory) .
+Complex block 816: 'cpumem.w_Dout1_0' (memory) .
+Complex block 817: 'cpumem.w_Dout2_0' (memory) .
+Complex block 818: 'cpumem.w_Dout3_0' (memory) .
+Complex block 819: 'cpumem.w_Dout4_0' (memory) .
+Complex block 820: 'cpumem.w_Dout5_0' (memory) .
+Complex block 821: 'cpumem.w_Dout6_0' (memory) .
+Complex block 822: 'cpumem.w_Dout7_0' (memory) .
+Complex block 823: 'cpumem.w_Dwr_0' (memory) .
+Complex block 824: 'cpumem.w_IOwb_0' (memory) .
+Complex block 825: 'cpumem.w_res0_0' (memory) .
+Complex block 826: 'cpumem.w_res1_0' (memory) .
+Complex block 827: 'cpumem.w_res2_0' (memory) .
+Complex block 828: 'cpumem.w_res3_0' (memory) .
+Complex block 829: 'cpumem.w_res4_0' (memory) .
+Complex block 830: 'cpumem.w_res5_0' (memory) .
+Complex block 831: 'cpumem.w_res6_0' (memory) .
+Complex block 832: 'cpumem.w_res7_0' (memory) .
+Complex block 833: 'w_datad0_0[0]' (memory) .
+Complex block 834: 'w_datad1_0[0]' (memory) .
+Complex block 835: 'w_datad2_0[0]' (memory) .
+Complex block 836: 'w_datad3_0[0]' (memory) .
+Complex block 837: 'w_datad4_0[0]' (memory) .
+Complex block 838: 'w_datad5_0[0]' (memory) .
+Complex block 839: 'w_datad6_0[0]' (memory) .
+Complex block 840: 'w_datad7_0[0]' (memory) .
+Complex block 841: 'out:out[0]' (io) .
+Complex block 842: 'out:out[1]' (io) .
+Complex block 843: 'out:out[2]' (io) .
+Complex block 844: 'out:out[3]' (io) .
+Complex block 845: 'out:out[4]' (io) .
+Complex block 846: 'out:out[5]' (io) .
+Complex block 847: 'out:out[6]' (io) .
+Complex block 848: 'out:out[7]' (io) .
+Complex block 849: 'cpuid.w_inst0_1[0]' (memory) .
+Complex block 850: 'cpuid.w_inst0_2[0]' (memory) .
+Complex block 851: 'cpuid.w_inst1_1[0]' (memory) .
+Complex block 852: 'cpuid.w_inst2_1[0]' (memory) .
+Complex block 853: 'cpuid.w_inst6_1[0]' (memory) .
+Complex block 854: 'cpuid.w_inst7_1[0]' (memory) .
+Complex block 855: 'cpuid.w_n159_0[0]' (memory) .
+Complex block 856: 'cpuid.w_inst1_2[0]' (memory) .
+Complex block 857: 'cpuid.w_inst2_2[0]' (memory) .
+Complex block 858: 'cpuid.w_inst4_1[0]' (memory) .
+Not enough resources expand FPGA size to (32 x 32)
+Complex block 859: 'cpuid.w_inst5_1[0]' (memory) .
+Complex block 860: 'cpuio.w_Drd_1[0]' (memory) .
+Complex block 861: 'cpumem.w_LB_1[0]' (memory) .
+Complex block 862: 'zregisters.w_wdata0_1[0]' (memory) .
+Complex block 863: 'zregisters.w_wdata1_1[0]' (memory) .
+Complex block 864: 'zregisters.w_wdata2_1[0]' (memory) .
+Complex block 865: 'zregisters.w_wdata3_1[0]' (memory) .
+Complex block 866: 'zregisters.w_wdata4_1[0]' (memory) .
+Complex block 867: 'zregisters.w_wdata5_1[0]' (memory) .
+Complex block 868: 'zregisters.w_wdata6_1[0]' (memory) .
+Complex block 869: 'zregisters.w_wdata7_1[0]' (memory) .
+Complex block 870: 'zregisters.w_wdata0_3[0]' (memory) .
+Complex block 871: 'zregisters.w_wdata1_3[0]' (memory) .
+Complex block 872: 'zregisters.w_wdata2_3[0]' (memory) .
+Complex block 873: 'zregisters.w_wdata3_3[0]' (memory) .
+Complex block 874: 'zregisters.w_wdata4_3[0]' (memory) .
+Complex block 875: 'zregisters.w_wdata5_3[0]' (memory) .
+Complex block 876: 'zregisters.w_wdata6_3[0]' (memory) .
+Complex block 877: 'zregisters.w_wdata7_3[0]' (memory) .
+Complex block 878: 'cpuid.w_inst0_0[0]' (memory) .
+Complex block 879: 'cpuid.w_inst1_0[0]' (memory) .
+Complex block 880: 'cpuid.w_inst2_0[0]' (memory) .
+Complex block 881: 'cpuid.w_inst3_0[0]' (memory) .
+Complex block 882: 'cpuid.w_inst4_0[0]' (memory) .
+Complex block 883: 'cpuid.w_inst5_0[0]' (memory) .
+Complex block 884: 'cpuid.w_inst6_0[0]' (memory) .
+Complex block 885: 'cpuid.w_inst7_0[0]' (memory) .
+Complex block 886: 'cpuio.w_Drd_0[0]' (memory) .
+Complex block 887: 'cpuio.w_Dwr_0[0]' (memory) .
+Complex block 888: 'cpumem.w_LB_0[0]' (memory) .
+Complex block 889: 'zregisters.w_wdata0_0[0]' (memory) .
+Complex block 890: 'zregisters.w_wdata1_0[0]' (memory) .
+Complex block 891: 'zregisters.w_wdata2_0[0]' (memory) .
+Complex block 892: 'zregisters.w_wdata3_0[0]' (memory) .
+Complex block 893: 'zregisters.w_wdata4_0[0]' (memory) .
+Complex block 894: 'zregisters.w_wdata5_0[0]' (memory) .
+Complex block 895: 'zregisters.w_wdata6_0[0]' (memory) .
+Complex block 896: 'zregisters.w_wdata7_0[0]' (memory) .
+Complex block 897: 'zregisters.w_wnum0_0[0]' (memory) .
+Complex block 898: 'zregisters.w_wnum1_0[0]' (memory) .
+Complex block 899: 'zregisters.w_numd0_0[0]' (memory) .
+Complex block 900: 'zregisters.w_numd1_0[0]' (memory) .
+Complex block 901: 'gclk' (io) .
+Complex block 902: 'ready' (io) .
+Complex block 903: 'sclk' (io) .
+Complex block 904: 'clear' (io) .
+
+Pb types usage...
+  inpad        : 4
+  mem_32768x1_2_sp : 229
+  memory       : 883
+  io           : 22
+  outpad       : 18
+  memory_slice : 403
+  mem_32768x1_3_sp : 114
+  spl3         : 204
+  mem_32768x1_4_sp : 60
+  spl2         : 148
+  cb3          : 70
+  cb2          : 58
+
+	EMPTY: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	io: # blocks: 22, average # input + clock pins used: 0.818182, average # output pins used: 0.181818
+	memory: # blocks: 883, average # input + clock pins used: 2.09513, average # output pins used: 1.46999
+Absorbed logical nets 0 out of 1302 nets, 1302 nets not absorbed.
+FPGA sized to 32 x 32 (auto)
+Device Utilization: 0.88 (target 1.00)
+	Block Utilization: 0.18 Type: io
+	Block Utilization: 0.98 Type: memory
+
+
+Netlist conversion complete.
+
+# Packing took 2.90 seconds (max_rss 23.4 MiB, delta_rss +4.9 MiB)
+# Load Packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'cpu_spl_flat.net'.
+Detected 23 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 1.50055 seconds).
+Warning 156: Treated 337 constant nets as global which will not be routed (to see net names increase packer verbosity).
+# Load Packing took 1.67 seconds (max_rss 24.8 MiB, delta_rss +1.4 MiB)
+Warning 157: Netlist contains 674 global net to non-global architecture pin connections
+
+Netlist num_nets: 1302
+Netlist num_blocks: 905
+Netlist EMPTY blocks: 0.
+Netlist io blocks: 22.
+Netlist memory blocks: 883.
+Netlist inputs pins: 4
+Netlist output pins: 18
+
+# Create Device
+## Build Device Grid
+FPGA sized to 32 x 32: 1024 grid tiles (auto)
+
+Resource usage...
+	Netlist
+		22	blocks of type: io
+	Architecture
+		120	blocks of type: io
+	Netlist
+		883	blocks of type: memory
+	Architecture
+		900	blocks of type: memory
+
+Device Utilization: 0.88 (target 1.00)
+	Physical Tile io:
+	Block Utilization: 0.18 Logical Block: io
+	Physical Tile memory:
+	Block Utilization: 0.98 Logical Block: memory
+
+FPGA size limited by block type(s): memory
+
+## Build Device Grid took 0.03 seconds (max_rss 24.8 MiB, delta_rss +0.0 MiB)
+## Build routing resource graph
+Warning 158: Sized nonsensical R=0 transistor to minimum width
+Warning 159: Sized nonsensical R=0 transistor to minimum width
+Warning 160: Sized nonsensical R=0 transistor to minimum width
+Warning 161: Sized nonsensical R=0 transistor to minimum width
+Warning 162: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 3.15 seconds (max_rss 197.9 MiB, delta_rss +173.1 MiB)
+  RR Graph Nodes: 477600
+  RR Graph Edges: 15649940
+# Create Device took 3.26 seconds (max_rss 197.9 MiB, delta_rss +173.1 MiB)
+
+# Placement
+## Computing placement delta delay look-up
+### Build routing resource graph
+Warning 163: Sized nonsensical R=0 transistor to minimum width
+Warning 164: Sized nonsensical R=0 transistor to minimum width
+Warning 165: Sized nonsensical R=0 transistor to minimum width
+Warning 166: Sized nonsensical R=0 transistor to minimum width
+Warning 167: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+### Build routing resource graph took 27.19 seconds (max_rss 976.6 MiB, delta_rss +778.7 MiB)
+  RR Graph Nodes: 1489440
+  RR Graph Edges: 99989524
+### Computing delta delays
+### Computing delta delays took 0.94 seconds (max_rss 976.6 MiB, delta_rss +0.0 MiB)
+## Computing placement delta delay look-up took 28.55 seconds (max_rss 976.6 MiB, delta_rss +778.7 MiB)
+
+There are 1128 point to point connections in this circuit.
+
+
+BB estimate of min-dist (placement) wire length: 21847
+
+Completed placement consistency check successfully.
+Initial placement cost: 1 bb_cost: 33.9231 td_cost: 9.6783e-09
+Initial placement estimated Critical Path Delay (CPD): 0.290095 ns
+Initial placement estimated setup Total Negative Slack (sTNS): -49.4011 ns
+Initial placement estimated setup Worst Negative Slack (sWNS): -0.290095 ns
+
+Initial placement estimated setup slack histogram:
+[ -2.9e-10: -2.6e-10)   4 ( 0.5%) |*
+[ -2.6e-10: -2.3e-10)   2 ( 0.3%) |
+[ -2.3e-10:   -2e-10)   1 ( 0.1%) |
+[   -2e-10: -1.8e-10)  14 ( 1.9%) |***
+[ -1.8e-10: -1.5e-10)  45 ( 6.0%) |*********
+[ -1.5e-10: -1.2e-10)  58 ( 7.8%) |************
+[ -1.2e-10: -9.1e-11)  78 (10.4%) |***************
+[ -9.1e-11: -6.2e-11) 101 (13.5%) |********************
+[ -6.2e-11: -3.4e-11) 208 (27.8%) |*****************************************
+[ -3.4e-11:   -5e-12) 237 (31.7%) |***********************************************
+Placement contains 0 placement macros involving 0 blocks (average macro size -nan)
+
+------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+      T Av Cost Av BB Cost Av TD Cost     CPD       sTNS     sWNS Ac Rate Std Dev  R lim Crit Exp Tot Moves  Alpha
+------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+3.3e-01   0.978      33.77 9.7499e-09   0.259        -48   -0.259   0.999  0.0150   31.0     1.00       8751  0.500
+1.7e-01   0.969      34.02 8.3177e-09   0.310      -48.8   -0.310   0.997  0.0126   31.0     1.00      17502  0.500
+8.3e-02   0.977      33.54 7.5837e-09   0.322      -45.7   -0.322   0.994  0.0135   31.0     1.00      26253  0.500
+4.2e-02   0.964      33.63 8.5962e-09   0.283        -46   -0.283   0.988  0.0156   31.0     1.00      35004  0.500
+2.1e-02   0.947      33.46 8.9661e-09   0.282      -48.4   -0.282   0.980  0.0129   31.0     1.00      43755  0.500
+1.0e-02   0.961      33.20 7.8023e-09   0.315      -47.6   -0.315   0.958  0.0148   31.0     1.00      52506  0.900
+9.4e-03   0.957      33.25 9.7192e-09   0.254      -48.1   -0.254   0.955  0.0164   31.0     1.00      61257  0.900
+8.4e-03   0.988      32.95 8.0656e-09   0.289      -46.6   -0.289   0.946  0.0145   31.0     1.00      70008  0.900
+7.6e-03   0.974      32.70 7.5999e-09   0.307      -45.9   -0.307   0.934  0.0121   31.0     1.00      78759  0.900
+6.8e-03   0.984      32.90 9.2451e-09   0.253        -47   -0.253   0.934  0.0150   31.0     1.00      87510  0.900
+6.1e-03   0.962      32.60 1.0227e-08   0.237      -49.3   -0.237   0.927  0.0184   31.0     1.00      96261  0.900
+5.5e-03   0.968      32.56 8.6844e-09   0.269      -46.1   -0.269   0.917  0.0182   31.0     1.00     105012  0.900
+5.0e-03   0.968      32.20 7.9244e-09   0.281      -45.8   -0.281   0.906  0.0163   31.0     1.00     113763  0.900
+4.5e-03   0.958      32.07 8.2893e-09   0.277      -46.4   -0.277   0.891  0.0189   31.0     1.00     122514  0.900
+4.0e-03   0.971      32.04 7.0588e-09   0.313      -44.6   -0.313   0.887  0.0144   31.0     1.00     131265  0.900
+3.6e-03   0.956      31.79 7.5836e-09   0.295      -45.8   -0.295   0.867  0.0133   31.0     1.00     140016  0.900
+3.3e-03   0.931      31.79 7.0315e-09   0.322        -47   -0.322   0.865  0.0166   31.0     1.00     148767  0.900
+2.9e-03   0.942      31.45 8.0515e-09   0.269      -44.6   -0.269   0.838  0.0189   31.0     1.00     157518  0.900
+2.6e-03   0.955      31.16 6.6027e-09   0.315      -44.2   -0.315   0.822  0.0131   31.0     1.00     166269  0.900
+2.4e-03   0.964      31.07 7.2183e-09   0.294      -44.6   -0.294   0.808  0.0138   31.0     1.00     175020  0.900
+2.1e-03   0.934      30.05 7.6535e-09   0.270      -46.1   -0.270   0.766  0.0185   31.0     1.00     183771  0.950
+2.0e-03   0.975      30.34 7.7304e-09   0.253      -43.8   -0.253   0.760  0.0113   31.0     1.00     192522  0.950
+1.9e-03   0.975      30.29 8.2705e-09   0.234      -42.3   -0.234   0.751  0.0154   31.0     1.00     201273  0.950
+1.8e-03   0.957      29.76 8.0078e-09   0.238      -42.5   -0.238   0.727  0.0185   31.0     1.00     210024  0.950
+1.7e-03   0.971      29.44 9.053e-09    0.205      -43.3   -0.205   0.710  0.0144   31.0     1.00     218775  0.950
+1.7e-03   0.971      29.45 8.473e-09    0.212      -41.4   -0.212   0.705  0.0123   31.0     1.00     227526  0.950
+1.6e-03   0.963      29.29 8.1562e-09   0.221      -41.8   -0.221   0.696  0.0167   31.0     1.00     236277  0.950
+1.5e-03   0.966      28.84 8.3184e-09   0.212      -41.3   -0.212   0.671  0.0136   31.0     1.00     245028  0.950
+1.4e-03   0.954      28.66 7.0697e-09   0.247      -40.9   -0.247   0.656  0.0186   31.0     1.00     253779  0.950
+1.3e-03   0.964      28.65 6.6103e-09   0.265      -42.1   -0.265   0.652  0.0141   31.0     1.00     262530  0.950
+1.3e-03   0.945      28.26 8.673e-09    0.196      -41.6   -0.196   0.642  0.0159   31.0     1.00     271281  0.950
+1.2e-03   0.938      27.78 6.7384e-09   0.247      -41.7   -0.247   0.607  0.0233   31.0     1.00     280032  0.950
+1.2e-03   0.940      27.34 7.5052e-09   0.224      -41.7   -0.224   0.585  0.0191   31.0     1.00     288783  0.950
+1.1e-03   0.953      27.13 6.3673e-09   0.253      -41.1   -0.253   0.564  0.0161   31.0     1.00     297534  0.950
+1.0e-03   0.965      26.54 6.8889e-09   0.221      -39.9   -0.221   0.538  0.0095   31.0     1.00     306285  0.950
+9.9e-04   0.956      26.59 7.4657e-09   0.207      -40.6   -0.207   0.522  0.0177   31.0     1.00     315036  0.950
+9.4e-04   0.944      26.04 6.7386e-09   0.216        -39   -0.216   0.505  0.0164   31.0     1.00     323787  0.950
+9.0e-04   0.935      25.30 6.8182e-09   0.205      -38.7   -0.205   0.460  0.0192   31.0     1.00     332538  0.950
+8.5e-04   0.932      25.27 6.4226e-09   0.216      -38.6   -0.216   0.454  0.0191   31.0     1.00     341289  0.950
+8.1e-04   0.948      24.26 6.4844e-09   0.199      -38.4   -0.199   0.400  0.0150   31.0     1.00     350040  0.950
+7.7e-04   0.939      23.89 5.7289e-09   0.166      -36.4   -0.166   0.393  0.0225   29.8     1.29     358791  0.950
+7.3e-04   0.936      23.44 3.9544e-09   0.175      -36.5   -0.175   0.370  0.0244   28.3     1.62     367542  0.950
+6.9e-04   0.906      22.18 2.9232e-09   0.160      -35.6   -0.160   0.337  0.0308   26.3     2.09     376293  0.950
+6.6e-04   0.914      22.47 1.328e-09    0.176      -34.3   -0.176   0.340  0.0227   23.6     2.72     385044  0.950
+6.3e-04   0.901      22.13 1.7102e-09   0.140      -33.8   -0.140   0.341  0.0343   21.3     3.27     393795  0.950
+5.9e-04   0.876      21.63 1.4067e-09   0.134      -33.8   -0.134   0.345  0.0454   19.2     3.76     402546  0.950
+5.6e-04   0.863      20.85 1.2356e-09   0.128      -33.3   -0.128   0.344  0.0448   17.3     4.19     411297  0.950
+5.4e-04   0.884      20.64 7.6584e-10   0.129      -31.9   -0.129   0.353  0.0437   15.7     4.58     420048  0.950
+5.1e-04   0.879      21.03 6.521e-10    0.132      -32.4   -0.132   0.374  0.0331   14.3     4.90     428799  0.950
+4.8e-04   0.858      20.37 8.8242e-10   0.122      -32.5   -0.122   0.362  0.0562   13.4     5.12     437550  0.950
+4.6e-04   0.860      19.63 1.0498e-09   0.111      -32.2   -0.111   0.358  0.0507   12.3     5.36     446301  0.950
+4.4e-04   0.862      19.17 6.6422e-10   0.118      -32.1   -0.118   0.362  0.0497   11.3     5.60     455052  0.950
+4.1e-04   0.966      19.62 2.5906e-10   0.141      -30.7   -0.141   0.440  0.0117   10.4     5.80     463803  0.950
+3.9e-04   0.897      19.37 3.7345e-10   0.146      -32.3   -0.146   0.421  0.0317   10.4     5.80     472554  0.950
+3.7e-04   0.879      18.66 5.5366e-10   0.124      -31.7   -0.124   0.381  0.0509   10.2     5.85     481305  0.950
+3.6e-04   0.932      18.26 3.4651e-10   0.132      -30.3   -0.132   0.406  0.0220    9.6     5.99     490056  0.950
+3.4e-04   0.863      17.63 5.272e-10    0.125      -30.9   -0.125   0.371  0.0514    9.3     6.06     498807  0.950
+3.2e-04   0.864      16.60 6.6571e-10   0.108      -29.7   -0.108   0.339  0.0506    8.7     6.21     507558  0.950
+3.0e-04   0.932      15.81 3.7297e-10   0.108      -27.8   -0.108   0.382  0.0286    7.8     6.42     516309  0.950
+2.9e-04   0.922      14.99 3.757e-10    0.109        -28   -0.109   0.349  0.0301    7.3     6.52     525060  0.950
+2.8e-04   0.948      14.62 2.8769e-10   0.110      -27.3   -0.110   0.386  0.0272    6.7     6.68     533811  0.950
+2.6e-04   0.950      13.77 2.3235e-10   0.111        -27   -0.111   0.355  0.0236    6.3     6.76     542562  0.950
+2.5e-04   0.933      13.32 3.4396e-10   0.102      -26.1   -0.102   0.376  0.0318    5.8     6.89     551313  0.950
+2.4e-04   0.939      12.84 2.6592e-10   0.104        -27   -0.104   0.350  0.0278    5.4     6.98     560064  0.950
+2.2e-04   0.959      12.26 2.5703e-10   0.100      -25.6   -0.100   0.389  0.0137    4.9     7.09     568815  0.950
+2.1e-04   0.951      12.04 2.7551e-10   0.102      -25.8   -0.102   0.363  0.0220    4.7     7.15     577566  0.950
+2.0e-04   0.936      11.47 3.8945e-10   0.094      -25.4   -0.094   0.326  0.0235    4.3     7.23     586317  0.950
+1.9e-04   0.974      10.94 1.8783e-10   0.091        -24   -0.091   0.383  0.0128    3.8     7.34     595068  0.950
+1.8e-04   0.975      10.63 2.2538e-10   0.094      -23.4   -0.094   0.362  0.0118    3.6     7.40     603819  0.950
+1.7e-04   0.966      10.27 2.8279e-10   0.086      -24.1   -0.086   0.338  0.0139    3.3     7.46     612570  0.950
+1.6e-04   0.986       9.98 1.7945e-10   0.086      -22.8   -0.086   0.408  0.0064    3.0     7.54     621321  0.950
+1.6e-04   0.959       9.78 3.5229e-10   0.082      -23.5   -0.082   0.376  0.0170    2.9     7.56     630072  0.950
+1.5e-04   0.981       9.51 2.3243e-10   0.082      -22.9   -0.082   0.370  0.0089    2.7     7.60     638823  0.950
+1.4e-04   0.981       9.30 2.6219e-10   0.082      -22.7   -0.082   0.337  0.0089    2.5     7.65     647574  0.950
+1.3e-04   0.992       9.11 1.7673e-10   0.083      -22.3   -0.083   0.334  0.0052    2.3     7.71     656325  0.950
+1.3e-04   0.992       9.04 1.9939e-10   0.083      -22.3   -0.083   0.321  0.0032    2.0     7.76     665076  0.950
+1.2e-04   0.986       8.81 1.6972e-10   0.083      -22.2   -0.083   0.439  0.0056    1.8     7.82     673827  0.950
+1.2e-04   0.991       8.61 2.0672e-10   0.082        -22   -0.082   0.407  0.0046    1.8     7.82     682578  0.950
+1.1e-04   0.993       8.44 1.7525e-10   0.082      -21.6   -0.082   0.389  0.0036    1.7     7.83     691329  0.950
+1.0e-04   0.995       8.34 1.6892e-10   0.082      -21.6   -0.082   0.382  0.0017    1.6     7.85     700080  0.950
+9.9e-05   0.992       8.24 1.6688e-10   0.082      -21.6   -0.082   0.354  0.0025    1.5     7.88     708831  0.950
+9.4e-05   0.994       8.13 1.703e-10    0.082      -21.6   -0.082   0.351  0.0018    1.4     7.91     717582  0.950
+8.9e-05   0.996       8.10 1.5664e-10   0.082      -21.6   -0.082   0.333  0.0018    1.3     7.94     726333  0.950
+8.5e-05   0.996       8.02 1.5566e-10   0.082      -21.3   -0.082   0.332  0.0023    1.1     7.97     735084  0.950
+8.0e-05   0.995       7.94 1.5442e-10   0.082      -21.1   -0.082   0.303  0.0020    1.0     8.00     743835  0.950
+7.6e-05   0.999       7.88 1.5985e-10   0.082      -21.2   -0.082   0.288  0.0011    1.0     8.00     752586  0.950
+7.3e-05   0.995       7.84 1.6248e-10   0.082      -21.3   -0.082   0.287  0.0027    1.0     8.00     761337  0.950
+6.9e-05   0.998       7.80 1.4977e-10   0.082      -21.2   -0.082   0.275  0.0019    1.0     8.00     770088  0.950
+6.5e-05   0.996       7.70 1.498e-10    0.082      -21.1   -0.082   0.266  0.0017    1.0     8.00     778839  0.950
+6.2e-05   0.995       7.64 1.7566e-10   0.081      -21.2   -0.081   0.255  0.0030    1.0     8.00     787590  0.950
+5.9e-05   0.996       7.57 1.57e-10     0.081        -21   -0.081   0.250  0.0014    1.0     8.00     796341  0.950
+5.6e-05   0.998       7.51 1.6413e-10   0.081      -21.1   -0.081   0.227  0.0019    1.0     8.00     805092  0.950
+5.3e-05   0.997       7.40 1.5376e-10   0.081      -20.8   -0.081   0.220  0.0014    1.0     8.00     813843  0.950
+5.1e-05   0.998       7.37 1.6874e-10   0.081      -20.9   -0.081   0.213  0.0009    1.0     8.00     822594  0.950
+4.8e-05   0.999       7.36 1.5517e-10   0.081      -20.8   -0.081   0.205  0.0005    1.0     8.00     831345  0.950
+4.6e-05   0.998       7.34 1.5534e-10   0.081      -20.8   -0.081   0.206  0.0016    1.0     8.00     840096  0.950
+4.3e-05   0.998       7.28 1.5462e-10   0.081      -20.8   -0.081   0.191  0.0007    1.0     8.00     848847  0.950
+4.1e-05   0.999       7.26 1.6068e-10   0.081      -20.8   -0.081   0.198  0.0004    1.0     8.00     857598  0.950
+3.9e-05   1.000       7.26 1.5585e-10   0.081      -20.7   -0.081   0.191  0.0005    1.0     8.00     866349  0.950
+3.7e-05   0.999       7.26 1.6052e-10   0.081      -20.8   -0.081   0.179  0.0011    1.0     8.00     875100  0.950
+3.5e-05   0.999       7.24 1.5913e-10   0.081      -20.7   -0.081   0.184  0.0005    1.0     8.00     883851  0.950
+3.4e-05   0.999       7.21 1.5735e-10   0.081      -20.7   -0.081   0.183  0.0009    1.0     8.00     892602  0.950
+3.2e-05   0.999       7.19 1.5642e-10   0.081      -20.7   -0.081   0.169  0.0004    1.0     8.00     901353  0.950
+3.0e-05   0.999       7.19 1.5485e-10   0.081      -20.7   -0.081   0.179  0.0005    1.0     8.00     910104  0.950
+2.9e-05   0.999       7.17 1.5252e-10   0.081      -20.7   -0.081   0.179  0.0004    1.0     8.00     918855  0.950
+2.7e-05   0.999       7.16 1.5676e-10   0.081      -20.6   -0.081   0.180  0.0006    1.0     8.00     927606  0.950
+2.6e-05   0.999       7.14 1.5154e-10   0.081      -20.6   -0.081   0.164  0.0004    1.0     8.00     936357  0.950
+2.5e-05   1.000       7.14 1.531e-10    0.081      -20.6   -0.081   0.172  0.0003    1.0     8.00     945108  0.950
+2.3e-05   1.000       7.14 1.5073e-10   0.081      -20.6   -0.081   0.168  0.0001    1.0     8.00     953859  0.950
+2.2e-05   1.000       7.14 1.4644e-10   0.081      -20.6   -0.081   0.163  0.0001    1.0     8.00     962610  0.950
+2.1e-05   1.000       7.14 1.464e-10    0.081      -20.6   -0.081   0.165  0.0001    1.0     8.00     971361  0.950
+2.0e-05   1.000       7.14 1.4726e-10   0.081      -20.6   -0.081   0.164  0.0002    1.0     8.00     980112  0.950
+1.9e-05   1.000       7.13 1.4603e-10   0.081      -20.6   -0.081   0.164  0.0001    1.0     8.00     988863  0.950
+1.8e-05   1.000       7.13 1.4709e-10   0.081      -20.5   -0.081   0.160  0.0000    1.0     8.00     997614  0.950
+1.7e-05   1.000       7.13 1.4708e-10   0.081      -20.5   -0.081   0.160  0.0001    1.0     8.00    1006365  0.950
+1.6e-05   1.000       7.12 1.4691e-10   0.081      -20.5   -0.081   0.168  0.0002    1.0     8.00    1015116  0.950
+1.6e-05   1.000       7.12 1.4581e-10   0.081      -20.5   -0.081   0.159  0.0000    1.0     8.00    1023867  0.950
+1.5e-05   1.000       7.12 1.4726e-10   0.081      -20.6   -0.081   0.159  0.0000    1.0     8.00    1032618  0.950
+1.4e-05   1.000       7.12 1.4599e-10   0.081      -20.5   -0.081   0.156  0.0001    1.0     8.00    1041369  0.950
+1.3e-05   1.000       7.12 1.4915e-10   0.081      -20.5   -0.081   0.156  0.0000    1.0     8.00    1050120  0.950
+1.3e-05   1.000       7.12 1.5007e-10   0.081      -20.6   -0.081   0.148  0.0001    1.0     8.00    1058871  0.800
+1.0e-05   1.000       7.12 1.4888e-10   0.081      -20.6   -0.081   0.161  0.0001    1.0     8.00    1067622  0.950
+9.6e-06   1.000       7.12 1.4941e-10   0.081      -20.6   -0.081   0.158  0.0001    1.0     8.00    1076373  0.950
+9.2e-06   1.000       7.12 1.4791e-10   0.081      -20.5   -0.081   0.160  0.0000    1.0     8.00    1085124  0.950
+8.7e-06   1.000       7.12 1.4909e-10   0.081      -20.5   -0.081   0.150  0.0001    1.0     8.00    1093875  0.950
+8.3e-06   1.000       7.12 1.4852e-10   0.081      -20.5   -0.081   0.145  0.0001    1.0     8.00    1102626  0.800
+6.6e-06   1.000       7.12 1.494e-10    0.081      -20.5   -0.081   0.152  0.0001    1.0     8.00    1111377  0.950
+6.3e-06   1.000       7.12 1.4837e-10   0.081      -20.5   -0.081   0.155  0.0000    1.0     8.00    1120128  0.950
+6.0e-06   1.000       7.12 1.4909e-10   0.081      -20.5   -0.081   0.152  0.0000    1.0     8.00    1128879  0.950
+5.7e-06   1.000       7.12 1.4791e-10   0.081      -20.5   -0.081   0.158  0.0001    1.0     8.00    1137630  0.950
+5.4e-06   1.000       7.12 1.4876e-10   0.081      -20.5   -0.081   0.159  0.0000    1.0     8.00    1146381  0.950
+5.1e-06   1.000       7.12 1.4784e-10   0.081      -20.5   -0.081   0.153  0.0000    1.0     8.00    1155132  0.950
+4.9e-06   1.000       7.12 1.4911e-10   0.081      -20.5   -0.081   0.149  0.0001    1.0     8.00    1163883  0.800
+3.9e-06   1.000       7.12 1.4767e-10   0.081      -20.5   -0.081   0.153  0.0000    1.0     8.00    1172634  0.950
+3.9e-06   1.000       7.12 1.4816e-10   0.081      -20.5   -0.081   0.134  0.0001    1.0     8.00    1181385  0.000
+
+BB estimate of min-dist (placement) wire length: 4582
+
+Completed placement consistency check successfully.
+
+Swaps called: 1182290
+
+Placement estimated critical path delay: 0.08097 ns
+Placement estimated setup Total Negative Slack (sTNS): -20.5079 ns
+Placement estimated setup Worst Negative Slack (sWNS): -0.08097 ns
+
+Placement estimated setup slack histogram:
+[ -8.1e-11: -7.3e-11)   3 ( 0.4%) |*
+[ -7.3e-11: -6.6e-11)   7 ( 0.9%) |**
+[ -6.6e-11: -5.8e-11)  16 ( 2.1%) |****
+[ -5.8e-11: -5.1e-11)  36 ( 4.8%) |*********
+[ -5.1e-11: -4.3e-11)  41 ( 5.5%) |**********
+[ -4.3e-11: -3.5e-11)  88 (11.8%) |**********************
+[ -3.5e-11: -2.8e-11) 119 (15.9%) |******************************
+[ -2.8e-11:   -2e-11) 176 (23.5%) |*********************************************
+[   -2e-11: -1.3e-11) 185 (24.7%) |***********************************************
+[ -1.3e-11:   -5e-12)  77 (10.3%) |********************
+
+Placement cost: 0.999764, bb_cost: 7.11564, td_cost: 1.48034e-10, 
+
+Placement resource usage:
+  io     implemented as io    : 22
+  memory implemented as memory: 883
+
+Placement number of temperatures: 135
+Placement total # of swap attempts: 1182290
+	Swaps accepted:  493608 (41.8 %)
+	Swaps rejected:  688682 (58.2 %)
+	Swaps aborted :       0 ( 0.0 %)
+
+Aborted Move Reasons:
+# Placement took 53.28 seconds (max_rss 986.0 MiB, delta_rss +788.0 MiB)
+
+# Routing
+Initializing minimum channel width search based on maximum CLB pins
+
+Attempting to route at 162 channels (binary search bounds: [-1, -1])
+## Build routing resource graph
+Warning 168: Sized nonsensical R=0 transistor to minimum width
+Warning 169: Sized nonsensical R=0 transistor to minimum width
+Warning 170: Sized nonsensical R=0 transistor to minimum width
+Warning 171: Sized nonsensical R=0 transistor to minimum width
+Warning 172: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 4.83 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 592920
+  RR Graph Edges: 25262172
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.5     0.0    0 1970331     964    1128     730 ( 0.123%)    4537 ( 1.5%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2  154.9     0.5    0  218943     345     509      61 ( 0.010%)    4350 ( 1.4%)    0.093     -23.64     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0   24152      48      65       4 ( 0.001%)    4365 ( 1.4%)    0.093     -23.62     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0    1019       4       4       1 ( 0.000%)    4364 ( 1.4%)    0.093     -23.62     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0    2203       1       4       0 ( 0.000%)    4363 ( 1.4%)    0.093     -23.62     -0.093   -0.06352     -0.005      N/A
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 5 routing iterations.
+Router Stats: total_nets_routed: 1362 total_connections_routed: 1710 total_heap_pushes: 2216648 total_heap_pops: 512987
+
+Attempting to route at 81 channels (binary search bounds: [-1, 162])
+## Build routing resource graph
+Warning 173: Sized nonsensical R=0 transistor to minimum width
+Warning 174: Sized nonsensical R=0 transistor to minimum width
+Warning 175: Sized nonsensical R=0 transistor to minimum width
+Warning 176: Sized nonsensical R=0 transistor to minimum width
+Warning 177: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 2.36 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 442260
+  RR Graph Edges: 12704256
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.3     0.0    0 1075233     964    1128     724 ( 0.164%)    4525 ( 3.0%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  178624     352     515      63 ( 0.014%)    4341 ( 2.9%)    0.093     -23.71     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0   21613      53      75       4 ( 0.001%)    4354 ( 2.9%)    0.093     -23.57     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0    1042       4       4       1 ( 0.000%)    4354 ( 2.9%)    0.093     -23.57     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0    2903       1       6       0 ( 0.000%)    4359 ( 2.9%)    0.093     -23.56     -0.093   -0.06352     -0.005      N/A
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 5 routing iterations.
+Router Stats: total_nets_routed: 1374 total_connections_routed: 1728 total_heap_pushes: 1279415 total_heap_pops: 353293
+
+Attempting to route at 40 channels (binary search bounds: [-1, 81])
+## Build routing resource graph
+Warning 178: Sized nonsensical R=0 transistor to minimum width
+Warning 179: Sized nonsensical R=0 transistor to minimum width
+Warning 180: Sized nonsensical R=0 transistor to minimum width
+Warning 181: Sized nonsensical R=0 transistor to minimum width
+Warning 182: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 1.34 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 366000
+  RR Graph Edges: 6347780
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.2     0.0    0  656797     964    1128     715 ( 0.195%)    4536 ( 6.1%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  135926     351     515      62 ( 0.017%)    4348 ( 5.8%)    0.093     -23.83     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0   14878      53      62       6 ( 0.002%)    4355 ( 5.9%)    0.093     -23.81     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0    1630       4       5       1 ( 0.000%)    4355 ( 5.9%)    0.093     -23.81     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0     452       1       1       0 ( 0.000%)    4355 ( 5.9%)    0.093     -23.81     -0.093   -0.06352     -0.005      N/A
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 5 routing iterations.
+Router Stats: total_nets_routed: 1373 total_connections_routed: 1711 total_heap_pushes: 809683 total_heap_pops: 270848
+
+Attempting to route at 20 channels (binary search bounds: [-1, 40])
+## Build routing resource graph
+Warning 183: Sized nonsensical R=0 transistor to minimum width
+Warning 184: Sized nonsensical R=0 transistor to minimum width
+Warning 185: Sized nonsensical R=0 transistor to minimum width
+Warning 186: Sized nonsensical R=0 transistor to minimum width
+Warning 187: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.77 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 328800
+  RR Graph Edges: 3247060
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  399150     964    1128     764 ( 0.232%)    4542 (12.2%)    0.093     -22.42     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  127658     387     551      57 ( 0.017%)    4352 (11.7%)    0.093     -23.72     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0   23268      53      98       7 ( 0.002%)    4352 (11.7%)    0.093     -23.53     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0    2413       7       8       1 ( 0.000%)    4352 (11.7%)    0.093     -23.54     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0     154       1       1       0 ( 0.000%)    4353 (11.7%)    0.093     -23.54     -0.093   -0.06352     -0.005      N/A
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 5 routing iterations.
+Router Stats: total_nets_routed: 1412 total_connections_routed: 1786 total_heap_pushes: 552643 total_heap_pops: 227919
+
+Attempting to route at 10 channels (binary search bounds: [-1, 20])
+## Build routing resource graph
+Warning 188: Sized nonsensical R=0 transistor to minimum width
+Warning 189: Sized nonsensical R=0 transistor to minimum width
+Warning 190: Sized nonsensical R=0 transistor to minimum width
+Warning 191: Sized nonsensical R=0 transistor to minimum width
+Warning 192: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.44 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 310200
+  RR Graph Edges: 1696700
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  299549     964    1128     807 ( 0.260%)    4533 (24.4%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  132752     448     612      71 ( 0.023%)    4355 (23.4%)    0.093     -23.61     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0   27547      68     116      11 ( 0.004%)    4356 (23.4%)    0.093     -23.36     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0    8530      13      31       2 ( 0.001%)    4355 (23.4%)    0.093     -23.25     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0    1158       4       4       1 ( 0.000%)    4354 (23.4%)    0.093     -23.25     -0.093   -0.06352     -0.005      N/A
+   6    0.1     1.4    0     227       1       1       0 ( 0.000%)    4356 (23.4%)    0.093     -23.25     -0.093   -0.06352     -0.005      N/A
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 6 routing iterations.
+Router Stats: total_nets_routed: 1498 total_connections_routed: 1892 total_heap_pushes: 469763 total_heap_pops: 229178
+
+Attempting to route at 5 channels (binary search bounds: [-1, 10])
+## Build routing resource graph
+Warning 193: Sized nonsensical R=0 transistor to minimum width
+Warning 194: Sized nonsensical R=0 transistor to minimum width
+Warning 195: Sized nonsensical R=0 transistor to minimum width
+Warning 196: Sized nonsensical R=0 transistor to minimum width
+Warning 197: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.39 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 300900
+  RR Graph Edges: 921520
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  242113     964    1128     979 ( 0.325%)    4538 (48.8%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  165326     615     779     283 ( 0.094%)    4337 (46.6%)    0.093     -23.87     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0  115550     345     488     214 ( 0.071%)    4335 (46.6%)    0.093     -23.11     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0  101715     258     412     187 ( 0.062%)    4383 (47.1%)    0.093     -23.41     -0.093   -0.06352     -0.005      N/A
+   5    0.1     1.1    0   93844     215     336     143 ( 0.048%)    4377 (47.1%)    0.093     -23.33     -0.093   -0.06232     -0.005      N/A
+   6    0.1     1.4    0   81697     147     299      80 ( 0.027%)    4408 (47.4%)    0.093     -23.47     -0.093   -0.06232     -0.005      N/A
+   7    0.1     1.9    0   52236      96     188      53 ( 0.018%)    4415 (47.5%)    0.093     -23.44     -0.093   -0.06113     -0.005      N/A
+   8    0.1     2.4    0   28824      64      83      38 ( 0.013%)    4429 (47.6%)    0.093     -23.66     -0.093   -0.06113     -0.005      N/A
+   9    0.1     3.1    0   19864      56      56      28 ( 0.009%)    4443 (47.8%)    0.093     -23.69     -0.093   -0.06113     -0.005      N/A
+  10    0.1     4.1    0   23939      46      79      21 ( 0.007%)    4473 (48.1%)    0.093     -23.63     -0.093   -0.06113     -0.005       17
+  11    0.1     5.3    0   14014      28      36      12 ( 0.004%)    4482 (48.2%)    0.093     -23.65     -0.093   -0.06113     -0.005       19
+  12    0.1     6.9    0   10135      19      27      11 ( 0.004%)    4497 (48.4%)    0.093     -23.71     -0.093   -0.05948     -0.005       18
+  13    0.1     9.0    0   11788      16      39       7 ( 0.002%)    4505 (48.4%)    0.093     -23.83     -0.093   -0.05948     -0.005       19
+  14    0.1    11.6    0    3630       8       9       7 ( 0.002%)    4509 (48.5%)    0.093     -23.84     -0.093   -0.05948     -0.005       19
+  15    0.1    15.1    0    6264      10      11       4 ( 0.001%)    4509 (48.5%)    0.093     -23.84     -0.093   -0.05948     -0.005       20
+  16    0.1    19.7    0    2223       4       4       5 ( 0.002%)    4508 (48.5%)    0.093     -23.84     -0.093   -0.05948     -0.005       20
+  17    0.1    25.6    0    6026       8       8       5 ( 0.002%)    4514 (48.5%)    0.093     -23.86     -0.093   -0.05948     -0.005       21
+  18    0.1    33.3    0    3331       7       7       3 ( 0.001%)    4524 (48.6%)    0.093     -23.87     -0.093   -0.05948     -0.005       23
+  19    0.1    43.3    1    2508       8       8       4 ( 0.001%)    4529 (48.7%)    0.093     -23.89     -0.093   -0.05948     -0.005       23
+  20    0.1    56.2    1     669       5       5       1 ( 0.000%)    4539 (48.8%)    0.093     -23.92     -0.093   -0.05948     -0.005       25
+  21    0.1    73.1    1     629       2       2       1 ( 0.000%)    4540 (48.8%)    0.093     -23.92     -0.093   -0.05948     -0.005       23
+  22    0.1    95.0    0    7454       3      28       0 ( 0.000%)    4552 (48.9%)    0.093     -24.53     -0.093   -0.05948     -0.005       22
+Restoring best routing
+Critical path: 0.09292 ns
+Successfully routed after 22 routing iterations.
+Router Stats: total_nets_routed: 2924 total_connections_routed: 4032 total_heap_pushes: 993779 total_heap_pops: 530694
+
+Attempting to route at 2 channels (binary search bounds: [-1, 5])
+## Build routing resource graph
+Warning 198: Sized nonsensical R=0 transistor to minimum width
+Warning 199: Sized nonsensical R=0 transistor to minimum width
+Warning 200: Sized nonsensical R=0 transistor to minimum width
+Warning 201: Sized nonsensical R=0 transistor to minimum width
+Warning 202: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.31 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 295320
+  RR Graph Edges: 456412
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  202829     964    1128    1305 ( 0.442%)    4538 (122.0%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+Wire length usage ratio 1.21989 exceeds limit of 0.85, fail routing.
+Routing failed.
+Router Stats: total_nets_routed: 964 total_connections_routed: 1128 total_heap_pushes: 202829 total_heap_pops: 122932
+
+Attempting to route at 3 channels (binary search bounds: [2, 5])
+## Build routing resource graph
+Warning 203: Sized nonsensical R=0 transistor to minimum width
+Warning 204: Sized nonsensical R=0 transistor to minimum width
+Warning 205: Sized nonsensical R=0 transistor to minimum width
+Warning 206: Sized nonsensical R=0 transistor to minimum width
+Warning 207: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.42 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 297180
+  RR Graph Edges: 611448
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  215570     964    1128    1187 ( 0.399%)    4538 (81.3%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  192248     813     977     832 ( 0.280%)    4348 (77.9%)    0.093     -23.71     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0  194321     697     854     892 ( 0.300%)    4393 (78.7%)    0.093     -23.07     -0.093   -0.06214     -0.005      N/A
+   4    0.1     0.8    0  250281     724     888     890 ( 0.299%)    4514 (80.9%)    0.093     -24.11     -0.093   -0.06067     -0.005      N/A
+   5    0.1     1.1    1  263699     696     860     789 ( 0.265%)    4558 (81.7%)    0.093     -23.56     -0.093   -0.05901     -0.005      N/A
+   6    0.2     1.4    1  296972     657     821     757 ( 0.255%)    4669 (83.7%)    0.093     -24.63     -0.093   -0.05435     -0.005      N/A
+   7    0.2     1.9    1  300290     635     799     739 ( 0.249%)    4690 (84.1%)    0.093     -24.08     -0.093   -0.05662     -0.005      N/A
+   8    0.2     2.4    2  319753     633     792     664 ( 0.223%)    4743 (85.0%)    0.106     -25.38     -0.106   -0.05708     -0.005      N/A
+   9    0.2     3.1    2  367576     642     803     661 ( 0.222%)    4801 (86.0%)    0.098     -25.40     -0.098   -0.05975     -0.005      N/A
+  10    0.2     4.1    3  345647     581     744     647 ( 0.218%)    4857 (87.0%)    0.104     -25.81     -0.104   -0.05809     -0.005      143
+  11    0.2     5.3    5  423656     597     760     673 ( 0.226%)    4948 (88.7%)    0.093     -24.69     -0.093   -0.05690     -0.005      162
+Routing aborted, the predicted iteration for a successful route (161.7) is too high.
+Routing failed.
+Router Stats: total_nets_routed: 7639 total_connections_routed: 9426 total_heap_pushes: 3170013 total_heap_pops: 1876718
+
+Attempting to route at 4 channels (binary search bounds: [3, 5])
+## Build routing resource graph
+Warning 208: Sized nonsensical R=0 transistor to minimum width
+Warning 209: Sized nonsensical R=0 transistor to minimum width
+Warning 210: Sized nonsensical R=0 transistor to minimum width
+Warning 211: Sized nonsensical R=0 transistor to minimum width
+Warning 212: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.28 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 299040
+  RR Graph Edges: 766484
+Confirming router algorithm: TIMING_DRIVEN.
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  232736     964    1128    1168 ( 0.391%)    4538 (61.0%)    0.093     -22.44     -0.093   -0.06352     -0.005      N/A
+   2    0.1     0.5    0  189501     725     889     490 ( 0.164%)    4355 (58.5%)    0.093     -23.79     -0.093   -0.06352     -0.005      N/A
+   3    0.1     0.6    0  150938     474     636     505 ( 0.169%)    4353 (58.5%)    0.093     -23.00     -0.093   -0.06352     -0.005      N/A
+   4    0.1     0.8    0  166350     469     625     463 ( 0.155%)    4458 (59.9%)    0.093     -23.75     -0.093   -0.05948     -0.005      N/A
+   5    0.1     1.1    0  171805     466     627     383 ( 0.128%)    4453 (59.9%)    0.093     -23.23     -0.093   -0.05994     -0.005      N/A
+   6    0.2     1.4    0  172369     388     544     304 ( 0.102%)    4530 (60.9%)    0.093     -24.06     -0.093   -0.05782     -0.005      N/A
+   7    0.1     1.9    1  152358     334     455     264 ( 0.088%)    4600 (61.8%)    0.093     -23.66     -0.093   -0.06186     -0.005      N/A
+   8    0.2     2.4    0  164439     280     422     194 ( 0.065%)    4657 (62.6%)    0.093     -23.79     -0.093   -0.05975     -0.005      N/A
+   9    0.2     3.1    1  148748     246     348     182 ( 0.061%)    4727 (63.5%)    0.093     -23.63     -0.093   -0.05975     -0.005      N/A
+  10    0.2     4.1    1  135455     196     305     155 ( 0.052%)    4783 (64.3%)    0.095     -24.66     -0.095   -0.05688     -0.005       36
+  11    0.2     5.3    1  133227     212     310     141 ( 0.047%)    4789 (64.4%)    0.093     -24.49     -0.093   -0.05809     -0.005       39
+  12    0.2     6.9    2  131871     197     288     133 ( 0.044%)    4856 (65.3%)    0.093     -24.34     -0.093   -0.05644     -0.005       42
+  13    0.2     9.0    1  134922     177     270     131 ( 0.044%)    4855 (65.3%)    0.095     -25.96     -0.095   -0.05644     -0.005       49
+  14    0.2    11.6    1  200817     211     346     152 ( 0.051%)    4960 (66.7%)    0.093     -25.35     -0.093   -0.05313     -0.005       56
+  15    0.2    15.1    3  188918     161     297     115 ( 0.038%)    4976 (66.9%)    0.093     -25.78     -0.093   -0.05478     -0.005      102
+  16    0.2    19.7    2  220798     184     321     137 ( 0.046%)    4978 (66.9%)    0.093     -24.81     -0.093   -0.05370     -0.005       93
+  17    0.3    25.6    0  244969     153     276     122 ( 0.041%)    5019 (67.5%)    0.106     -26.86     -0.106   -0.05478     -0.005      140
+  18    0.2    33.3    3  228671     177     317     120 ( 0.040%)    5012 (67.4%)    0.093     -26.27     -0.093   -0.05690     -0.005      145
+  19    0.2    43.3    1  177873     161     289     121 ( 0.040%)    5032 (67.6%)    0.097     -25.77     -0.097   -0.05975     -0.005      206
+Routing aborted, the predicted iteration for a successful route (206.0) is too high.
+Routing failed.
+Router Stats: total_nets_routed: 6175 total_connections_routed: 8693 total_heap_pushes: 3346765 total_heap_pops: 1833140
+## Build routing resource graph
+Warning 213: Sized nonsensical R=0 transistor to minimum width
+Warning 214: Sized nonsensical R=0 transistor to minimum width
+Warning 215: Sized nonsensical R=0 transistor to minimum width
+Warning 216: Sized nonsensical R=0 transistor to minimum width
+Warning 217: in check_rr_graph: fringe node 3 IPIN at (0,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build routing resource graph took 0.57 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 300900
+  RR Graph Edges: 921520
+Best routing used a channel width factor of 5.
+# Routing took 178.73 seconds (max_rss 986.0 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -638026795
+Circuit successfully routed with a channel width factor of 5.
+
+Average number of bends per net: 1.92842  Maximum # of bends: 123
+
+Number of global nets: 338
+Number of routed nets (nonglobal): 964
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 4552, average net length: 4.72199
+	Maximum net length: 270
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 4552, average wire segments per net: 4.72199
+	Maximum segments used by a net: 270
+	Total local nets with reserved CLB opins: 0
+
+Routing channel utilization histogram:
+[        1:      inf)   0 ( 0.0%) |
+[      0.9:        1) 248 (12.9%) |***************************
+[      0.8:      0.9)   0 ( 0.0%) |
+[      0.7:      0.8) 380 (19.8%) |*****************************************
+[      0.5:      0.6) 438 (22.8%) |***********************************************
+[      0.4:      0.5)   0 ( 0.0%) |
+[      0.3:      0.4) 340 (17.7%) |************************************
+[      0.2:      0.3)   0 ( 0.0%) |
+[      0.1:      0.2) 190 ( 9.9%) |********************
+[        0:      0.1) 326 (17.0%) |***********************************
+Maximum routing channel utilization:         1 at (4,11)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       4   1.781        5
+                         1       5   1.688        5
+                         2       5   2.156        5
+                         3       5   2.688        5
+                         4       5   2.625        5
+                         5       5   3.125        5
+                         6       5   2.875        5
+                         7       5   2.500        5
+                         8       5   2.938        5
+                         9       5   2.531        5
+                        10       5   2.750        5
+                        11       5   2.500        5
+                        12       5   2.094        5
+                        13       5   2.781        5
+                        14       5   2.656        5
+                        15       4   2.281        5
+                        16       5   2.250        5
+                        17       5   2.438        5
+                        18       5   3.125        5
+                        19       5   2.969        5
+                        20       5   2.812        5
+                        21       5   3.000        5
+                        22       5   3.031        5
+                        23       5   2.719        5
+                        24       5   3.125        5
+                        25       5   2.562        5
+                        26       5   2.812        5
+                        27       5   2.125        5
+                        28       5   2.188        5
+                        29       4   1.281        5
+                        30       4   0.844        5
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       2   0.312        5
+                         1       4   1.031        5
+                         2       4   1.406        5
+                         3       4   1.594        5
+                         4       5   1.875        5
+                         5       5   2.281        5
+                         6       5   1.938        5
+                         7       5   3.250        5
+                         8       5   2.562        5
+                         9       5   2.062        5
+                        10       4   2.125        5
+                        11       4   2.000        5
+                        12       4   2.125        5
+                        13       5   2.531        5
+                        14       5   2.969        5
+                        15       5   3.031        5
+                        16       5   2.562        5
+                        17       5   2.781        5
+                        18       5   2.156        5
+                        19       5   2.906        5
+                        20       5   3.062        5
+                        21       5   2.969        5
+                        22       5   2.688        5
+                        23       5   2.531        5
+                        24       5   2.938        5
+                        25       5   2.156        5
+                        26       4   1.906        5
+                        27       4   1.812        5
+                        28       3   1.000        5
+                        29       3   0.375        5
+                        30       1   0.062        5
+
+Total tracks in x-direction: 155, in y-direction: 155
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 4.932e+08
+	Total used logic block area: 4.83884e+08
+Warning 218: Sized nonsensical R=0 transistor to minimum width
+Warning 219: Sized nonsensical R=0 transistor to minimum width
+Warning 220: Sized nonsensical R=0 transistor to minimum width
+Warning 221: Sized nonsensical R=0 transistor to minimum width
+Warning 222: Sized nonsensical R=0 transistor to minimum width
+Warning 223: Sized nonsensical R=0 transistor to minimum width
+Warning 224: Sized nonsensical R=0 transistor to minimum width
+Warning 225: Sized nonsensical R=0 transistor to minimum width
+Warning 226: Sized nonsensical R=0 transistor to minimum width
+
+Routing area (in minimum width transistor areas)...
+	Assuming no buffer sharing (pessimistic). Total: 4.56106e+06, per logic tile: 4454.16
+	Assuming buffer sharing (slightly optimistic). Total: 4.02854e+06, per logic tile: 3934.12
+
+
+Segment usage by type (index): type utilization
+                               ---- -----------
+                                  0       0.489
+
+Segment usage by length: length utilization
+                         ------ -----------
+                              1       0.489
+
+
+Hold Worst Negative Slack (hWNS): -0.0048 ns
+Hold Total Negative Slack (hTNS): -0.059475 ns
+
+Hold slack histogram:
+[ -4.8e-12:  2.9e-12)  54 ( 7.2%) |***************
+[  2.9e-12:  1.1e-11) 166 (22.2%) |***********************************************
+[  1.1e-11:  1.8e-11) 148 (19.8%) |******************************************
+[  1.8e-11:  2.6e-11) 105 (14.0%) |******************************
+[  2.6e-11:  3.4e-11) 107 (14.3%) |******************************
+[  3.4e-11:  4.1e-11)  63 ( 8.4%) |******************
+[  4.1e-11:  4.9e-11)  40 ( 5.3%) |***********
+[  4.9e-11:  5.6e-11)  35 ( 4.7%) |**********
+[  5.6e-11:  6.4e-11)  16 ( 2.1%) |*****
+[  6.4e-11:  7.2e-11)  14 ( 1.9%) |****
+
+Final critical path: 0.09292 ns, Fmax: 10761.9 MHz
+Setup Worst Negative Slack (sWNS): -0.09292 ns
+Setup Total Negative Slack (sTNS): -24.5345 ns
+
+Setup slack histogram:
+[ -9.3e-11: -8.4e-11)   3 ( 0.4%) |*
+[ -8.4e-11: -7.5e-11)   3 ( 0.4%) |*
+[ -7.5e-11: -6.7e-11)  24 ( 3.2%) |******
+[ -6.7e-11: -5.8e-11)  49 ( 6.6%) |************
+[ -5.8e-11: -4.9e-11)  59 ( 7.9%) |***************
+[ -4.9e-11:   -4e-11)  94 (12.6%) |***********************
+[   -4e-11: -3.1e-11) 119 (15.9%) |*****************************
+[ -3.1e-11: -2.3e-11) 139 (18.6%) |**********************************
+[ -2.3e-11: -1.4e-11) 190 (25.4%) |***********************************************
+[ -1.4e-11:   -5e-12)  68 ( 9.1%) |*****************
+
+Timing analysis took 0.509635 seconds (0.451744 STA, 0.0578909 slack) (218 full updates: 138 setup, 0 hold, 80 combined).
+VPR suceeded
+The entire flow of VPR took 245.23 seconds (max_rss 986.0 MiB)

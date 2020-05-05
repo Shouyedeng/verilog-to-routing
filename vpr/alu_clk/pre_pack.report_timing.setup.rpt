@@ -1,0 +1,1491 @@
+#Timing report of worst 53 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: dj4[1].dout[0] (jand clocked by w_gclk_13[1])
+Endpoint  : dj4[1].dinB[0] (jand clocked by w_gclk_13[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock w_gclk_13[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutB[0] (jspl3)                                    0.000     0.000
+dj4[1].clk[0] (jand)                                             0.153     0.153
+dj4[1].dout[0] (jand) [clock-to-output]                          0.008     0.161
+dj4[2].dinB[0] (jcb)                                             0.153     0.314
+dj4[2].dout[0] (jcb)                                             0.008     0.321
+dj4[3].din[0] (jspl3)                                            0.153     0.474
+dj4[3].doutA[0] (jspl3)                                          0.006     0.480
+dj4[1].dinB[0] (jand)                                            0.153     0.633
+data arrival time                                                          0.633
+
+clock w_gclk_13[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutB[0] (jspl3)                                    0.000     0.000
+dj4[1].clk[0] (jand)                                             0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                  0.000     0.153
+data required time                                                         0.153
+--------------------------------------------------------------------------------
+data required time                                                         0.153
+data arrival time                                                         -0.633
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.480
+
+
+#Path 2
+Startpoint: Sum.dout[0] (jxor clocked by w_gclk_15[2])
+Endpoint  : out:Sum.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock w_gclk_15[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_15[0].doutC[0] (jspl3)                                    0.000     0.000
+Sum.clk[0] (jxor)                                                0.153     0.153
+Sum.dout[0] (jxor) [clock-to-output]                             0.007     0.160
+out:Sum.outpad[0] (.output)                                      0.153     0.313
+data arrival time                                                          0.313
+
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -0.313
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.313
+
+
+#Path 3
+Startpoint: Overflow.dout[0] (jxor clocked by w_gclk_15[1])
+Endpoint  : out:Overflow.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock w_gclk_15[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_15[0].doutB[0] (jspl3)                                    0.000     0.000
+Overflow.clk[0] (jxor)                                           0.153     0.153
+Overflow.dout[0] (jxor) [clock-to-output]                        0.007     0.160
+out:Overflow.outpad[0] (.output)                                 0.153     0.313
+data arrival time                                                          0.313
+
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -0.313
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.313
+
+
+#Path 4
+Startpoint: Carry_out.dout[0] (jscdff clocked by w_gclk_15[0])
+Endpoint  : out:Carry_out.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock w_gclk_15[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_15[0].doutA[0] (jspl3)                                    0.000     0.000
+Carry_out.clk[0] (jscdff)                                        0.153     0.153
+Carry_out.dout[0] (jscdff) [clock-to-output]                     0.005     0.158
+out:Carry_out.outpad[0] (.output)                                0.153     0.310
+data arrival time                                                          0.310
+
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                         0.000
+data arrival time                                                         -0.310
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.310
+
+
+#Path 5
+Startpoint: X.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[3].dinA[0] (jxor clocked by w_gclk_6[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+X.inpad[0] (.input)                                              0.000     0.000
+dj0[3].dinA[0] (jxor)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[3].clk[0] (jxor)                                             0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.005     0.148
+data required time                                                         0.148
+--------------------------------------------------------------------------------
+data required time                                                         0.148
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.005
+
+
+#Path 6
+Startpoint: Cmpl_X.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[3].dinB[0] (jxor clocked by w_gclk_6[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Cmpl_X.inpad[0] (.input)                                         0.000     0.000
+dj0[3].dinB[0] (jxor)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[3].clk[0] (jxor)                                             0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.005     0.148
+data required time                                                         0.148
+--------------------------------------------------------------------------------
+data required time                                                         0.148
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.005
+
+
+#Path 7
+Startpoint: Cmpl_Y.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[2].dinB[0] (jxor clocked by w_gclk_5[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Cmpl_Y.inpad[0] (.input)                                         0.000     0.000
+dj0[2].dinB[0] (jxor)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutC[0] (jspl3)                                     0.000     0.000
+dj0[2].clk[0] (jxor)                                             0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.005     0.148
+data required time                                                         0.148
+--------------------------------------------------------------------------------
+data required time                                                         0.148
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.005
+
+
+#Path 8
+Startpoint: Y.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[2].dinA[0] (jxor clocked by w_gclk_5[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Y.inpad[0] (.input)                                              0.000     0.000
+dj0[2].dinA[0] (jxor)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutC[0] (jspl3)                                     0.000     0.000
+dj0[2].clk[0] (jxor)                                             0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.005     0.148
+data required time                                                         0.148
+--------------------------------------------------------------------------------
+data required time                                                         0.148
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.005
+
+
+#Path 9
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[4].en[0] (jscdff clocked by w_gclk_8[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[4].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_8[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_8[0].doutC[0] (jspl3)                                     0.000     0.000
+dj1[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 10
+Startpoint: Op_AND.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[5].din[0] (jscdff clocked by w_gclk_6[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Op_AND.inpad[0] (.input)                                         0.000     0.000
+dj0[5].din[0] (jscdff)                                           0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutC[0] (jspl3)                                     0.000     0.000
+dj0[5].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 11
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[5].clear[0] (jscdff clocked by w_gclk_6[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[5].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutC[0] (jspl3)                                     0.000     0.000
+dj0[5].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 12
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[5].en[0] (jscdff clocked by w_gclk_6[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[5].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutC[0] (jspl3)                                     0.000     0.000
+dj0[5].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 13
+Startpoint: Op_ARITH.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[6].din[0] (jscdff clocked by w_gclk_7[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Op_ARITH.inpad[0] (.input)                                       0.000     0.000
+dj0[6].din[0] (jscdff)                                           0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 14
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[6].clear[0] (jscdff clocked by w_gclk_7[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[6].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 15
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[6].en[0] (jscdff clocked by w_gclk_7[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[6].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 16
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[0].clear[0] (jscdff clocked by w_gclk_7[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[0].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutB[0] (jspl3)                                     0.000     0.000
+dj1[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 17
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[0].en[0] (jscdff clocked by w_gclk_7[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[0].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutB[0] (jspl3)                                     0.000     0.000
+dj1[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 18
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[1].clear[0] (jscdff clocked by w_gclk_7[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[1].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutC[0] (jspl3)                                     0.000     0.000
+dj1[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 19
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[1].en[0] (jscdff clocked by w_gclk_7[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[1].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_7[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_7[0].doutC[0] (jspl3)                                     0.000     0.000
+dj1[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 20
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[4].clear[0] (jscdff clocked by w_gclk_8[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[4].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_8[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_8[0].doutC[0] (jspl3)                                     0.000     0.000
+dj1[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 21
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[4].en[0] (jscdff clocked by w_gclk_6[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[4].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 22
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[5].clear[0] (jscdff clocked by w_gclk_9[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[5].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutA[0] (jspl3)                                     0.000     0.000
+dj1[5].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 23
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[5].en[0] (jscdff clocked by w_gclk_9[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[5].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutA[0] (jspl3)                                     0.000     0.000
+dj1[5].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 24
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[6].clear[0] (jscdff clocked by w_gclk_9[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[6].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutB[0] (jspl3)                                     0.000     0.000
+dj1[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 25
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj1[6].en[0] (jscdff clocked by w_gclk_9[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj1[6].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutB[0] (jspl3)                                     0.000     0.000
+dj1[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 26
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj2[0].clear[0] (jscdff clocked by w_gclk_9[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj2[0].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutC[0] (jspl3)                                     0.000     0.000
+dj2[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 27
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj2[0].en[0] (jscdff clocked by w_gclk_9[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj2[0].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_9[2] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_9[0].doutC[0] (jspl3)                                     0.000     0.000
+dj2[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 28
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[3].clear[0] (jscdff clocked by w_gclk_12[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[3].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutB[0] (jspl3)                                    0.000     0.000
+dj3[3].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 29
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[2].en[0] (jscdff clocked by w_gclk_12[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[2].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutA[0] (jspl3)                                    0.000     0.000
+dj3[2].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 30
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[2].clear[0] (jscdff clocked by w_gclk_12[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[2].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutA[0] (jspl3)                                    0.000     0.000
+dj3[2].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 31
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj2[1].en[0] (jscdff clocked by w_gclk_10[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj2[1].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_10[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_10[0].doutA[0] (jspl3)                                    0.000     0.000
+dj2[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 32
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[0].clear[0] (jscdff clocked by w_gclk_5[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[0].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 33
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[0].en[0] (jscdff clocked by w_gclk_13[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[0].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_13[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutA[0] (jspl3)                                    0.000     0.000
+dj4[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 34
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[6].clear[0] (jscdff clocked by w_gclk_13[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[6].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_13[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutC[0] (jspl3)                                    0.000     0.000
+dj4[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 35
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[6].en[0] (jscdff clocked by w_gclk_13[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[6].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_13[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutC[0] (jspl3)                                    0.000     0.000
+dj4[6].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 36
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[8].clear[0] (jscdff clocked by w_gclk_14[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[8].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_14[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_14[0].doutB[0] (jspl3)                                    0.000     0.000
+dj4[8].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 37
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[8].en[0] (jscdff clocked by w_gclk_14[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[8].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_14[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_14[0].doutB[0] (jspl3)                                    0.000     0.000
+dj4[8].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 38
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[9].clear[0] (jscdff clocked by w_gclk_14[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[9].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_14[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_14[0].doutC[0] (jspl3)                                    0.000     0.000
+dj4[9].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 39
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[9].en[0] (jscdff clocked by w_gclk_14[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[9].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_14[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_14[0].doutC[0] (jspl3)                                    0.000     0.000
+dj4[9].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 40
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : Carry_out.clear[0] (jscdff clocked by w_gclk_15[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+Carry_out.clear[0] (jscdff)                                      0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_15[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_15[0].doutA[0] (jspl3)                                    0.000     0.000
+Carry_out.clk[0] (jscdff)                                        0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 41
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : Carry_out.en[0] (jscdff clocked by w_gclk_15[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+Carry_out.en[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_15[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_15[0].doutA[0] (jspl3)                                    0.000     0.000
+Carry_out.clk[0] (jscdff)                                        0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 42
+Startpoint: Carry_in.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[0].din[0] (jscdff clocked by w_gclk_5[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Carry_in.inpad[0] (.input)                                       0.000     0.000
+dj0[0].din[0] (jscdff)                                           0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 43
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj4[0].clear[0] (jscdff clocked by w_gclk_13[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj4[0].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_13[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_13[0].doutA[0] (jspl3)                                    0.000     0.000
+dj4[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 44
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[0].en[0] (jscdff clocked by w_gclk_5[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[0].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[0] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutA[0] (jspl3)                                     0.000     0.000
+dj0[0].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 45
+Startpoint: End.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[1].din[0] (jscdff clocked by w_gclk_5[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+End.inpad[0] (.input)                                            0.000     0.000
+dj0[1].din[0] (jscdff)                                           0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 46
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[1].clear[0] (jscdff clocked by w_gclk_5[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[1].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 47
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[1].en[0] (jscdff clocked by w_gclk_5[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[1].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_5[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_5[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 48
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[4].en[0] (jscdff clocked by w_gclk_12[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[4].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutC[0] (jspl3)                                    0.000     0.000
+dj3[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 49
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[4].clear[0] (jscdff clocked by w_gclk_12[2])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[4].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[2] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutC[0] (jspl3)                                    0.000     0.000
+dj3[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 50
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj2[1].clear[0] (jscdff clocked by w_gclk_10[0])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj2[1].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_10[0] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_10[0].doutA[0] (jspl3)                                    0.000     0.000
+dj2[1].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 51
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj3[3].en[0] (jscdff clocked by w_gclk_12[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj3[3].en[0] (jscdff)                                            0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_12[1] (rise edge)                                   0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_12[0].doutB[0] (jspl3)                                    0.000     0.000
+dj3[3].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 52
+Startpoint: Op_XOR.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[4].din[0] (jscdff clocked by w_gclk_6[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+Op_XOR.inpad[0] (.input)                                         0.000     0.000
+dj0[4].din[0] (jscdff)                                           0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#Path 53
+Startpoint: $true.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : dj0[4].clear[0] (jscdff clocked by w_gclk_6[1])
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                               0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+$true.inpad[0] (.input)                                          0.000     0.000
+dj0[4].clear[0] (jscdff)                                         0.153     0.153
+data arrival time                                                          0.153
+
+clock w_gclk_6[1] (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+w_gclk_6[0].doutB[0] (jspl3)                                     0.000     0.000
+dj0[4].clk[0] (jscdff)                                           0.153     0.153
+clock uncertainty                                                0.000     0.153
+cell setup time                                                 -0.003     0.150
+data required time                                                         0.150
+--------------------------------------------------------------------------------
+data required time                                                         0.150
+data arrival time                                                         -0.153
+--------------------------------------------------------------------------------
+slack (VIOLATED)                                                          -0.003
+
+
+#End of timing report

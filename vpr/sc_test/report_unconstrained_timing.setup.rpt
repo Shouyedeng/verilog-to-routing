@@ -1,0 +1,9 @@
+#Unconstrained setup timing startpoint/endpoint
+
+timing_node_id node_type node_name
+-------------- --------- ---------
+0 .input and_latch^clock.inpad[0]
+15 jand n0.dout[0]
+17 jscdff and_latch^out.din[0]
+
+#End of unconstrained setup startpoint/endpoint report

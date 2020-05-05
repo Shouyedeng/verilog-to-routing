@@ -1,0 +1,1547 @@
+.model cpu
+
+.inputs gclk ready in[0] in[1] in[2] in[3] in[4] in[5] in[6] in[7] sclk clear
+
+.outputs rd wr adr[0] adr[1] adr[2] adr[3] adr[4] adr[5] adr[6] adr[7] out[0] out[1] out[2] out[3] out[4] out[5] out[6] out[7]
+
+.subckt jscdff clear=$true clk=gclk din=w_rdnumw11_0[1] dout=BP2_1.aout[0] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_rdnumw10_0[1] dout=BP2_1.aout[1] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad07_0[1] dout=BP8_1.aout[0] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad06_0[1] dout=BP8_1.aout[1] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad05_0[1] dout=BP8_1.aout[2] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad04_0[1] dout=BP8_1.aout[3] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad03_0[1] dout=BP8_1.aout[4] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad02_0[1] dout=BP8_1.aout[5] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad01_0[1] dout=BP8_1.aout[6] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_datad00_0[1] dout=BP8_1.aout[7] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[0] dout=BP8_2.aout[0] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[1] dout=BP8_2.aout[1] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[2] dout=BP8_2.aout[2] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[3] dout=BP8_2.aout[3] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[4] dout=BP8_2.aout[4] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[5] dout=BP8_2.aout[5] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[6] dout=BP8_2.aout[6] en=pclk 
+.subckt jscdff clear=$true clk=gclk din=datas[7] dout=BP8_2.aout[7] en=pclk 
+.subckt jnot clk=gclk din=w_pcsrc_0[0] dout=n1 
+.subckt jand clk=gclk dinA=sclk dinB=cpuio.Nohold dout=pclk 
+.subckt jand clk=gclk dinA=clear dinB=n1 dout=n_0_net_ 
+.subckt jscdff clear=clear clk=aluex.gclk din=EX dout=aluex.EXwb en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[0] dout=aluex.alures[0] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[1] dout=aluex.alures[1] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[2] dout=aluex.alures[2] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[3] dout=aluex.alures[3] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[4] dout=aluex.alures[4] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[5] dout=aluex.alures[5] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[6] dout=aluex.alures[6] en=sclk 
+.subckt jscdff clear=clear clk=aluex.gclk din=aluex.ex_alu.out[7] dout=aluex.alures[7] en=sclk 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b7_0[1] dout=aluex.ex_alu.n9 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_3[1] dinB=aluex.ex_alu.n100 dinC=aluex.ex_alu.n101 dout=aluex.ex_alu.n99 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_3[1] dinB=aluex.ex_alu.n7 dout=aluex.ex_alu.n101 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a1_1[1] dinB=aluex.ex_alu.w_n34_1[2] dout=aluex.ex_alu.n100 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a1_1[0] dinB=aluex.ex_alu.n102 dout=aluex.ex_alu.n95 
+.subckt jcb dinA=aluex.ex_alu.n103 dinB=aluex.ex_alu.w_n30_3[0] dout=aluex.ex_alu.n102 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_3[0] dinB=aluex.ex_alu.n15 dout=aluex.ex_alu.n103 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a2_0[2] dinB=aluex.ex_alu.w_n18_1[0] dout=aluex.ex_alu.n93 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[1] dinB=aluex.ex_alu.w_n28_1[1] dout=aluex.ex_alu.n92 
+.subckt jcb3 dinA=aluex.ex_alu.n104 dinB=aluex.ex_alu.n105 dinC=aluex.ex_alu.n106 dout=aluex.ex_alu.out[0] 
+.subckt jcb dinA=aluex.ex_alu.n107 dinB=aluex.ex_alu.n108 dout=aluex.ex_alu.n106 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b6_0[1] dout=aluex.ex_alu.n10 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a1_0[2] dinB=aluex.ex_alu.w_n18_0[2] dout=aluex.ex_alu.n108 
+.subckt jcb3 dinA=aluex.ex_alu.w_op0_1[1] dinB=aluex.ex_alu.w_n21_1[1] dinC=aluex.ex_alu.w_n20_0[1] dout=aluex.ex_alu.n109 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[0] dinB=aluex.ex_alu.w_n28_1[0] dout=aluex.ex_alu.n107 
+.subckt jcb dinA=aluex.ex_alu.w_n17_0[0] dinB=aluex.ex_alu.n110 dout=aluex.ex_alu.n28 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n111_0[1] dinB=aluex.ex_alu.w_n21_1[0] dout=aluex.ex_alu.n110 
+.subckt jcb3 dinA=aluex.ex_alu.w_op2_0[1] dinB=aluex.ex_alu.w_op0_1[0] dinC=aluex.ex_alu.w_n21_0[2] dout=aluex.ex_alu.n112 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b0_0[0] dinB=aluex.ex_alu.n113 dout=aluex.ex_alu.n105 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_2[2] dinB=aluex.ex_alu.n114 dinC=aluex.ex_alu.n115 dout=aluex.ex_alu.n113 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_2[2] dinB=aluex.ex_alu.n8 dout=aluex.ex_alu.n115 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a0_0[2] dinB=aluex.ex_alu.w_n34_1[1] dout=aluex.ex_alu.n114 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b5_0[1] dout=aluex.ex_alu.n11 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a0_0[1] dinB=aluex.ex_alu.n116 dout=aluex.ex_alu.n104 
+.subckt jcb dinA=aluex.ex_alu.n117 dinB=aluex.ex_alu.w_n30_2[1] dout=aluex.ex_alu.n116 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_op0_0[2] dinB=aluex.ex_alu.w_n34_1[0] dout=aluex.ex_alu.n30 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n21_0[1] dinB=aluex.ex_alu.w_op2_0[0] dout=aluex.ex_alu.n34 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_2[1] dinB=aluex.ex_alu.n16 dout=aluex.ex_alu.n117 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n111_0[0] dinB=aluex.ex_alu.w_op1_0[0] dout=aluex.ex_alu.n33 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n20_0[0] dinB=aluex.ex_alu.w_op0_0[1] dout=aluex.ex_alu.n111 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b4_0[1] dout=aluex.ex_alu.n12 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b3_0[1] dout=aluex.ex_alu.n13 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b2_0[1] dout=aluex.ex_alu.n14 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b1_0[1] dout=aluex.ex_alu.n15 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_b0_0[1] dout=aluex.ex_alu.n16 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.n112 dout=aluex.ex_alu.n17 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.n109 dout=aluex.ex_alu.n18 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a7_1[1] dout=aluex.ex_alu.n1 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.n98 dout=aluex.ex_alu.n19 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_op2_0[2] dout=aluex.ex_alu.n20 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_op1_0[1] dout=aluex.ex_alu.n21 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_op0_1[2] dout=aluex.ex_alu.n22 
+.subckt jcb3 dinA=aluex.ex_alu.n23 dinB=aluex.ex_alu.n24 dinC=aluex.ex_alu.n25 dout=aluex.ex_alu.out[7] 
+.subckt jcb dinA=aluex.ex_alu.n26 dinB=aluex.ex_alu.n27 dout=aluex.ex_alu.n25 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[7] dinB=aluex.ex_alu.w_n28_3[1] dout=aluex.ex_alu.n27 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a6_1[2] dinB=aluex.ex_alu.w_n19_2[2] dout=aluex.ex_alu.n26 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b7_0[0] dinB=aluex.ex_alu.n29 dout=aluex.ex_alu.n24 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_7[1] dinB=aluex.ex_alu.n31 dinC=aluex.ex_alu.n32 dout=aluex.ex_alu.n29 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a6_2[0] dout=aluex.ex_alu.n2 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_7[1] dinB=aluex.ex_alu.n1 dout=aluex.ex_alu.n32 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a7_1[0] dinB=aluex.ex_alu.w_n34_3[2] dout=aluex.ex_alu.n31 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a7_0[2] dinB=aluex.ex_alu.n35 dout=aluex.ex_alu.n23 
+.subckt jcb dinA=aluex.ex_alu.n36 dinB=aluex.ex_alu.w_n30_7[0] dout=aluex.ex_alu.n35 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_7[0] dinB=aluex.ex_alu.n9 dout=aluex.ex_alu.n36 
+.subckt jcb3 dinA=aluex.ex_alu.n37 dinB=aluex.ex_alu.n38 dinC=aluex.ex_alu.n39 dout=aluex.ex_alu.out[6] 
+.subckt jcb3 dinA=aluex.ex_alu.n40 dinB=aluex.ex_alu.n41 dinC=aluex.ex_alu.n42 dout=aluex.ex_alu.n39 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a5_1[2] dinB=aluex.ex_alu.w_n19_2[1] dout=aluex.ex_alu.n42 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b6_0[0] dinB=aluex.ex_alu.n43 dout=aluex.ex_alu.n41 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_6[2] dinB=aluex.ex_alu.n44 dinC=aluex.ex_alu.n45 dout=aluex.ex_alu.n43 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a5_2[0] dout=aluex.ex_alu.n3 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_6[2] dinB=aluex.ex_alu.n2 dout=aluex.ex_alu.n45 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a6_1[1] dinB=aluex.ex_alu.w_n34_3[1] dout=aluex.ex_alu.n44 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a6_1[0] dinB=aluex.ex_alu.n46 dout=aluex.ex_alu.n40 
+.subckt jcb dinA=aluex.ex_alu.n47 dinB=aluex.ex_alu.w_n30_6[1] dout=aluex.ex_alu.n46 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_6[1] dinB=aluex.ex_alu.n10 dout=aluex.ex_alu.n47 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n18_2[2] dinB=aluex.ex_alu.w_a7_0[1] dout=aluex.ex_alu.n38 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[6] dinB=aluex.ex_alu.w_n28_3[0] dout=aluex.ex_alu.n37 
+.subckt jcb3 dinA=aluex.ex_alu.n48 dinB=aluex.ex_alu.n49 dinC=aluex.ex_alu.n50 dout=aluex.ex_alu.out[5] 
+.subckt jcb3 dinA=aluex.ex_alu.n51 dinB=aluex.ex_alu.n52 dinC=aluex.ex_alu.n53 dout=aluex.ex_alu.n50 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a4_1[2] dinB=aluex.ex_alu.w_n19_2[0] dout=aluex.ex_alu.n53 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a4_2[0] dout=aluex.ex_alu.n4 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b5_0[0] dinB=aluex.ex_alu.n54 dout=aluex.ex_alu.n52 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_6[0] dinB=aluex.ex_alu.n55 dinC=aluex.ex_alu.n56 dout=aluex.ex_alu.n54 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_6[0] dinB=aluex.ex_alu.n3 dout=aluex.ex_alu.n56 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a5_1[1] dinB=aluex.ex_alu.w_n34_3[0] dout=aluex.ex_alu.n55 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a5_1[0] dinB=aluex.ex_alu.n57 dout=aluex.ex_alu.n51 
+.subckt jcb dinA=aluex.ex_alu.n58 dinB=aluex.ex_alu.w_n30_5[2] dout=aluex.ex_alu.n57 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_5[2] dinB=aluex.ex_alu.n11 dout=aluex.ex_alu.n58 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n18_2[1] dinB=aluex.ex_alu.w_a6_0[2] dout=aluex.ex_alu.n49 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[5] dinB=aluex.ex_alu.w_n28_2[2] dout=aluex.ex_alu.n48 
+.subckt jcb3 dinA=aluex.ex_alu.n59 dinB=aluex.ex_alu.n60 dinC=aluex.ex_alu.n61 dout=aluex.ex_alu.out[4] 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a3_2[0] dout=aluex.ex_alu.n5 
+.subckt jcb3 dinA=aluex.ex_alu.n62 dinB=aluex.ex_alu.n63 dinC=aluex.ex_alu.n64 dout=aluex.ex_alu.n61 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a3_1[2] dinB=aluex.ex_alu.w_n19_1[2] dout=aluex.ex_alu.n64 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b4_0[0] dinB=aluex.ex_alu.n65 dout=aluex.ex_alu.n63 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_5[1] dinB=aluex.ex_alu.n66 dinC=aluex.ex_alu.n67 dout=aluex.ex_alu.n65 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_5[1] dinB=aluex.ex_alu.n4 dout=aluex.ex_alu.n67 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a4_1[1] dinB=aluex.ex_alu.w_n34_2[2] dout=aluex.ex_alu.n66 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a4_1[0] dinB=aluex.ex_alu.n68 dout=aluex.ex_alu.n62 
+.subckt jcb dinA=aluex.ex_alu.n69 dinB=aluex.ex_alu.w_n30_5[0] dout=aluex.ex_alu.n68 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_5[0] dinB=aluex.ex_alu.n12 dout=aluex.ex_alu.n69 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n18_2[0] dinB=aluex.ex_alu.w_a5_0[2] dout=aluex.ex_alu.n60 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a2_2[0] dout=aluex.ex_alu.n6 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[4] dinB=aluex.ex_alu.w_n28_2[1] dout=aluex.ex_alu.n59 
+.subckt jcb3 dinA=aluex.ex_alu.n70 dinB=aluex.ex_alu.n71 dinC=aluex.ex_alu.n72 dout=aluex.ex_alu.out[3] 
+.subckt jcb3 dinA=aluex.ex_alu.n73 dinB=aluex.ex_alu.n74 dinC=aluex.ex_alu.n75 dout=aluex.ex_alu.n72 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a2_1[2] dinB=aluex.ex_alu.w_n19_1[1] dout=aluex.ex_alu.n75 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b3_0[0] dinB=aluex.ex_alu.n76 dout=aluex.ex_alu.n74 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_4[2] dinB=aluex.ex_alu.n77 dinC=aluex.ex_alu.n78 dout=aluex.ex_alu.n76 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_4[2] dinB=aluex.ex_alu.n5 dout=aluex.ex_alu.n78 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a3_1[1] dinB=aluex.ex_alu.w_n34_2[1] dout=aluex.ex_alu.n77 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a3_1[0] dinB=aluex.ex_alu.n79 dout=aluex.ex_alu.n73 
+.subckt jcb dinA=aluex.ex_alu.n80 dinB=aluex.ex_alu.w_n30_4[1] dout=aluex.ex_alu.n79 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a1_2[0] dout=aluex.ex_alu.n7 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_4[1] dinB=aluex.ex_alu.n13 dout=aluex.ex_alu.n80 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a4_0[2] dinB=aluex.ex_alu.w_n18_1[2] dout=aluex.ex_alu.n71 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[3] dinB=aluex.ex_alu.w_n28_2[0] dout=aluex.ex_alu.n70 
+.subckt jcb3 dinA=aluex.ex_alu.n81 dinB=aluex.ex_alu.n82 dinC=aluex.ex_alu.n83 dout=aluex.ex_alu.out[2] 
+.subckt jcb3 dinA=aluex.ex_alu.n84 dinB=aluex.ex_alu.n85 dinC=aluex.ex_alu.n86 dout=aluex.ex_alu.n83 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a1_1[2] dinB=aluex.ex_alu.w_n19_1[0] dout=aluex.ex_alu.n86 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b2_0[0] dinB=aluex.ex_alu.n87 dout=aluex.ex_alu.n85 
+.subckt jcb3 dinA=aluex.ex_alu.w_n30_4[0] dinB=aluex.ex_alu.n88 dinC=aluex.ex_alu.n89 dout=aluex.ex_alu.n87 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_4[0] dinB=aluex.ex_alu.n6 dout=aluex.ex_alu.n89 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a2_1[1] dinB=aluex.ex_alu.w_n34_2[0] dout=aluex.ex_alu.n88 
+.subckt jnot clk=aluex.ex_alu.gclk din=aluex.ex_alu.w_a0_1[1] dout=aluex.ex_alu.n8 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a2_1[0] dinB=aluex.ex_alu.n90 dout=aluex.ex_alu.n84 
+.subckt jcb dinA=aluex.ex_alu.n91 dinB=aluex.ex_alu.w_n30_3[2] dout=aluex.ex_alu.n90 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_n33_3[2] dinB=aluex.ex_alu.n14 dout=aluex.ex_alu.n91 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a3_0[2] dinB=aluex.ex_alu.w_n18_1[1] dout=aluex.ex_alu.n82 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.u_sub.sum[2] dinB=aluex.ex_alu.w_n28_1[2] dout=aluex.ex_alu.n81 
+.subckt jcb3 dinA=aluex.ex_alu.n92 dinB=aluex.ex_alu.n93 dinC=aluex.ex_alu.n94 dout=aluex.ex_alu.out[1] 
+.subckt jcb3 dinA=aluex.ex_alu.n95 dinB=aluex.ex_alu.n96 dinC=aluex.ex_alu.n97 dout=aluex.ex_alu.n94 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_a0_1[0] dinB=aluex.ex_alu.w_n19_0[2] dout=aluex.ex_alu.n97 
+.subckt jcb3 dinA=aluex.ex_alu.n22 dinB=aluex.ex_alu.w_n21_1[2] dinC=aluex.ex_alu.w_n20_0[2] dout=aluex.ex_alu.n98 
+.subckt jand clk=aluex.ex_alu.gclk dinA=aluex.ex_alu.w_b1_0[0] dinB=aluex.ex_alu.n99 dout=aluex.ex_alu.n96 
+.subckt jspl3 din=aluex.datad[0] doutA=aluex.ex_alu.w_a0_0[0] doutB=aluex.ex_alu.w_a0_0[1] doutC=aluex.ex_alu.w_a0_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a0_0[0] doutA=aluex.ex_alu.w_a0_1[0] doutB=aluex.ex_alu.w_a0_1[1] doutC=aluex.ex_alu.w_a0_1[2] 
+.subckt jspl3 din=aluex.datad[1] doutA=aluex.ex_alu.w_a1_0[0] doutB=aluex.ex_alu.w_a1_0[1] doutC=aluex.ex_alu.w_a1_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a1_0[0] doutA=aluex.ex_alu.w_a1_1[0] doutB=aluex.ex_alu.w_a1_1[1] doutC=aluex.ex_alu.w_a1_1[2] 
+.subckt jspl3 din=aluex.datad[2] doutA=aluex.ex_alu.w_a2_0[0] doutB=aluex.ex_alu.w_a2_0[1] doutC=aluex.ex_alu.w_a2_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a2_0[0] doutA=aluex.ex_alu.w_a2_1[0] doutB=aluex.ex_alu.w_a2_1[1] doutC=aluex.ex_alu.w_a2_1[2] 
+.subckt jspl3 din=aluex.datad[3] doutA=aluex.ex_alu.w_a3_0[0] doutB=aluex.ex_alu.w_a3_0[1] doutC=aluex.ex_alu.w_a3_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a3_0[0] doutA=aluex.ex_alu.w_a3_1[0] doutB=aluex.ex_alu.w_a3_1[1] doutC=aluex.ex_alu.w_a3_1[2] 
+.subckt jspl3 din=aluex.datad[4] doutA=aluex.ex_alu.w_a4_0[0] doutB=aluex.ex_alu.w_a4_0[1] doutC=aluex.ex_alu.w_a4_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a4_0[0] doutA=aluex.ex_alu.w_a4_1[0] doutB=aluex.ex_alu.w_a4_1[1] doutC=aluex.ex_alu.w_a4_1[2] 
+.subckt jspl3 din=aluex.datad[5] doutA=aluex.ex_alu.w_a5_0[0] doutB=aluex.ex_alu.w_a5_0[1] doutC=aluex.ex_alu.w_a5_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a5_0[0] doutA=aluex.ex_alu.w_a5_1[0] doutB=aluex.ex_alu.w_a5_1[1] doutC=aluex.ex_alu.w_a5_1[2] 
+.subckt jspl3 din=aluex.datad[6] doutA=aluex.ex_alu.w_a6_0[0] doutB=aluex.ex_alu.w_a6_0[1] doutC=aluex.ex_alu.w_a6_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a6_0[0] doutA=aluex.ex_alu.w_a6_1[0] doutB=aluex.ex_alu.w_a6_1[1] doutC=aluex.ex_alu.w_a6_1[2] 
+.subckt jspl3 din=aluex.datad[7] doutA=aluex.ex_alu.w_a7_0[0] doutB=aluex.ex_alu.w_a7_0[1] doutC=aluex.ex_alu.w_a7_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_a7_0[0] doutA=aluex.ex_alu.w_a7_1[0] doutB=aluex.ex_alu.w_a7_1[1] doutC=aluex.ex_alu.w_a7_1[2] 
+.subckt jspl3 din=aluex.datas[0] doutA=aluex.ex_alu.w_b0_0[0] doutB=aluex.ex_alu.w_b0_0[1] doutC=aluex.ex_alu.w_b0_0[2] 
+.subckt jspl3 din=aluex.datas[1] doutA=aluex.ex_alu.w_b1_0[0] doutB=aluex.ex_alu.w_b1_0[1] doutC=aluex.ex_alu.w_b1_0[2] 
+.subckt jspl3 din=aluex.datas[2] doutA=aluex.ex_alu.w_b2_0[0] doutB=aluex.ex_alu.w_b2_0[1] doutC=aluex.ex_alu.w_b2_0[2] 
+.subckt jspl3 din=aluex.datas[3] doutA=aluex.ex_alu.w_b3_0[0] doutB=aluex.ex_alu.w_b3_0[1] doutC=aluex.ex_alu.w_b3_0[2] 
+.subckt jspl3 din=aluex.datas[4] doutA=aluex.ex_alu.w_b4_0[0] doutB=aluex.ex_alu.w_b4_0[1] doutC=aluex.ex_alu.w_b4_0[2] 
+.subckt jspl3 din=aluex.datas[5] doutA=aluex.ex_alu.w_b5_0[0] doutB=aluex.ex_alu.w_b5_0[1] doutC=aluex.ex_alu.w_b5_0[2] 
+.subckt jspl3 din=aluex.datas[6] doutA=aluex.ex_alu.w_b6_0[0] doutB=aluex.ex_alu.w_b6_0[1] doutC=aluex.ex_alu.w_b6_0[2] 
+.subckt jspl3 din=aluex.datas[7] doutA=aluex.ex_alu.w_b7_0[0] doutB=aluex.ex_alu.w_b7_0[1] doutC=aluex.ex_alu.w_b7_0[2] 
+.subckt jspl3 din=aluex.ex_alu.n18 doutA=aluex.ex_alu.w_n18_0[0] doutB=aluex.ex_alu.w_n18_0[1] doutC=aluex.ex_alu.w_n18_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n18_0[0] doutA=aluex.ex_alu.w_n18_1[0] doutB=aluex.ex_alu.w_n18_1[1] doutC=aluex.ex_alu.w_n18_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n18_0[1] doutA=aluex.ex_alu.w_n18_2[0] doutB=aluex.ex_alu.w_n18_2[1] doutC=aluex.ex_alu.w_n18_2[2] 
+.subckt jspl3 din=aluex.ex_alu.n19 doutA=aluex.ex_alu.w_n19_0[0] doutB=aluex.ex_alu.w_n19_0[1] doutC=aluex.ex_alu.w_n19_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n19_0[0] doutA=aluex.ex_alu.w_n19_1[0] doutB=aluex.ex_alu.w_n19_1[1] doutC=aluex.ex_alu.w_n19_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n19_0[1] doutA=aluex.ex_alu.w_n19_2[0] doutB=aluex.ex_alu.w_n19_2[1] doutC=aluex.ex_alu.w_n19_2[2] 
+.subckt jspl3 din=aluex.ex_alu.n20 doutA=aluex.ex_alu.w_n20_0[0] doutB=aluex.ex_alu.w_n20_0[1] doutC=aluex.ex_alu.w_n20_0[2] 
+.subckt jspl3 din=aluex.ex_alu.n21 doutA=aluex.ex_alu.w_n21_0[0] doutB=aluex.ex_alu.w_n21_0[1] doutC=aluex.ex_alu.w_n21_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n21_0[0] doutA=aluex.ex_alu.w_n21_1[0] doutB=aluex.ex_alu.w_n21_1[1] doutC=aluex.ex_alu.w_n21_1[2] 
+.subckt jspl3 din=aluex.ex_alu.n28 doutA=aluex.ex_alu.w_n28_0[0] doutB=aluex.ex_alu.w_n28_0[1] doutC=aluex.ex_alu.w_n28_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n28_0[0] doutA=aluex.ex_alu.w_n28_1[0] doutB=aluex.ex_alu.w_n28_1[1] doutC=aluex.ex_alu.w_n28_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n28_0[1] doutA=aluex.ex_alu.w_n28_2[0] doutB=aluex.ex_alu.w_n28_2[1] doutC=aluex.ex_alu.w_n28_2[2] 
+.subckt jspl3 din=aluex.ex_alu.n30 doutA=aluex.ex_alu.w_n30_0[0] doutB=aluex.ex_alu.w_n30_0[1] doutC=aluex.ex_alu.w_n30_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_0[0] doutA=aluex.ex_alu.w_n30_1[0] doutB=aluex.ex_alu.w_n30_1[1] doutC=aluex.ex_alu.w_n30_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_0[1] doutA=aluex.ex_alu.w_n30_2[0] doutB=aluex.ex_alu.w_n30_2[1] doutC=aluex.ex_alu.w_n30_2[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_0[2] doutA=aluex.ex_alu.w_n30_3[0] doutB=aluex.ex_alu.w_n30_3[1] doutC=aluex.ex_alu.w_n30_3[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_1[0] doutA=aluex.ex_alu.w_n30_4[0] doutB=aluex.ex_alu.w_n30_4[1] doutC=aluex.ex_alu.w_n30_4[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_1[1] doutA=aluex.ex_alu.w_n30_5[0] doutB=aluex.ex_alu.w_n30_5[1] doutC=aluex.ex_alu.w_n30_5[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n30_1[2] doutA=aluex.ex_alu.w_n30_6[0] doutB=aluex.ex_alu.w_n30_6[1] doutC=aluex.ex_alu.w_n30_6[2] 
+.subckt jspl3 din=aluex.ex_alu.n33 doutA=aluex.ex_alu.w_n33_0[0] doutB=aluex.ex_alu.w_n33_0[1] doutC=aluex.ex_alu.w_n33_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_0[0] doutA=aluex.ex_alu.w_n33_1[0] doutB=aluex.ex_alu.w_n33_1[1] doutC=aluex.ex_alu.w_n33_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_0[1] doutA=aluex.ex_alu.w_n33_2[0] doutB=aluex.ex_alu.w_n33_2[1] doutC=aluex.ex_alu.w_n33_2[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_0[2] doutA=aluex.ex_alu.w_n33_3[0] doutB=aluex.ex_alu.w_n33_3[1] doutC=aluex.ex_alu.w_n33_3[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_1[0] doutA=aluex.ex_alu.w_n33_4[0] doutB=aluex.ex_alu.w_n33_4[1] doutC=aluex.ex_alu.w_n33_4[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_1[1] doutA=aluex.ex_alu.w_n33_5[0] doutB=aluex.ex_alu.w_n33_5[1] doutC=aluex.ex_alu.w_n33_5[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n33_1[2] doutA=aluex.ex_alu.w_n33_6[0] doutB=aluex.ex_alu.w_n33_6[1] doutC=aluex.ex_alu.w_n33_6[2] 
+.subckt jspl3 din=aluex.ex_alu.n34 doutA=aluex.ex_alu.w_n34_0[0] doutB=aluex.ex_alu.w_n34_0[1] doutC=aluex.ex_alu.w_n34_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n34_0[0] doutA=aluex.ex_alu.w_n34_1[0] doutB=aluex.ex_alu.w_n34_1[1] doutC=aluex.ex_alu.w_n34_1[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n34_0[1] doutA=aluex.ex_alu.w_n34_2[0] doutB=aluex.ex_alu.w_n34_2[1] doutC=aluex.ex_alu.w_n34_2[2] 
+.subckt jspl3 din=aluex.ex_alu.w_n34_0[2] doutA=aluex.ex_alu.w_n34_3[0] doutB=aluex.ex_alu.w_n34_3[1] doutC=aluex.ex_alu.w_n34_3[2] 
+.subckt jspl3 din=aluex.aluop[0] doutA=aluex.ex_alu.w_op0_0[0] doutB=aluex.ex_alu.w_op0_0[1] doutC=aluex.ex_alu.w_op0_0[2] 
+.subckt jspl3 din=aluex.ex_alu.w_op0_0[0] doutA=aluex.ex_alu.w_op0_1[0] doutB=aluex.ex_alu.w_op0_1[1] doutC=aluex.ex_alu.w_op0_1[2] 
+.subckt jspl3 din=aluex.aluop[2] doutA=aluex.ex_alu.w_op2_0[0] doutB=aluex.ex_alu.w_op2_0[1] doutC=aluex.ex_alu.w_op2_0[2] 
+.subckt jspl din=aluex.ex_alu.w_a1_0[1] doutA=aluex.ex_alu.w_a1_2[0] doutB=aluex.ex_alu.w_a1_2[1] 
+.subckt jspl din=aluex.ex_alu.w_a2_0[1] doutA=aluex.ex_alu.w_a2_2[0] doutB=aluex.ex_alu.w_a2_2[1] 
+.subckt jspl din=aluex.ex_alu.w_a3_0[1] doutA=aluex.ex_alu.w_a3_2[0] doutB=aluex.ex_alu.w_a3_2[1] 
+.subckt jspl din=aluex.ex_alu.w_a4_0[1] doutA=aluex.ex_alu.w_a4_2[0] doutB=aluex.ex_alu.w_a4_2[1] 
+.subckt jspl din=aluex.ex_alu.w_a5_0[1] doutA=aluex.ex_alu.w_a5_2[0] doutB=aluex.ex_alu.w_a5_2[1] 
+.subckt jspl din=aluex.ex_alu.w_a6_0[1] doutA=aluex.ex_alu.w_a6_2[0] doutB=aluex.ex_alu.w_a6_2[1] 
+.subckt jspl din=aluex.ex_alu.n111 doutA=aluex.ex_alu.w_n111_0[0] doutB=aluex.ex_alu.w_n111_0[1] 
+.subckt jspl din=aluex.ex_alu.n17 doutA=aluex.ex_alu.w_n17_0[0] doutB=aluex.ex_alu.w_n17_0[1] 
+.subckt jspl din=aluex.ex_alu.w_n28_0[2] doutA=aluex.ex_alu.w_n28_3[0] doutB=aluex.ex_alu.w_n28_3[1] 
+.subckt jspl din=aluex.ex_alu.w_n30_2[0] doutA=aluex.ex_alu.w_n30_7[0] doutB=aluex.ex_alu.w_n30_7[1] 
+.subckt jspl din=aluex.ex_alu.w_n33_2[0] doutA=aluex.ex_alu.w_n33_7[0] doutB=aluex.ex_alu.w_n33_7[1] 
+.subckt jspl din=aluex.aluop[1] doutA=aluex.ex_alu.w_op1_0[0] doutB=aluex.ex_alu.w_op1_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_n1_0[1] dinB=aluex.ex_alu.u_sub.add0.n2 dout=aluex.ex_alu.u_sub.add0.sum[3] 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_3.p dinB=aluex.ex_alu.u_sub.add0.w_n1_0[0] dout=aluex.ex_alu.u_sub.add0.n8 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.n9 dinB=aluex.ex_alu.u_sub.add0.u_clc_2.g dout=aluex.ex_alu.u_sub.add0.n1 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_2.p dinB=aluex.ex_alu.u_sub.add0.w_n3_0[0] dout=aluex.ex_alu.u_sub.add0.n9 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.n10 dinB=aluex.ex_alu.u_sub.add0.u_clc_1.g dout=aluex.ex_alu.u_sub.add0.n3 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_1.p dinB=aluex.ex_alu.u_sub.add0.w_n5_0[0] dout=aluex.ex_alu.u_sub.add0.n10 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.n11 dinB=aluex.ex_alu.u_sub.add0.u_clc_0.g dout=aluex.ex_alu.u_sub.add0.n5 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_0.p dinB=aluex.ex_alu.u_sub.add0.w_c_in_0[0] dout=aluex.ex_alu.u_sub.add0.n11 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_b3_0[0] dinB=aluex.ex_alu.u_sub.add0.w_a3_0[0] dout=aluex.ex_alu.u_sub.add0.n2 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_n3_0[1] dinB=aluex.ex_alu.u_sub.add0.n4 dout=aluex.ex_alu.u_sub.add0.sum[2] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_b2_0[0] dinB=aluex.ex_alu.u_sub.add0.w_a2_0[0] dout=aluex.ex_alu.u_sub.add0.n4 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_n5_0[1] dinB=aluex.ex_alu.u_sub.add0.n6 dout=aluex.ex_alu.u_sub.add0.sum[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_b1_0[0] dinB=aluex.ex_alu.u_sub.add0.w_a1_0[0] dout=aluex.ex_alu.u_sub.add0.n6 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_a0_0[0] dinB=aluex.ex_alu.u_sub.add0.n7 dout=aluex.ex_alu.u_sub.add0.sum[0] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.w_c_in_0[1] dinB=aluex.ex_alu.u_sub.add0.w_b0_0[0] dout=aluex.ex_alu.u_sub.add0.n7 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.n8 dinB=aluex.ex_alu.u_sub.add0.u_clc_3.g dout=aluex.ex_alu.u_sub.add0.c_out 
+.subckt jspl3 din=aluex.ex_alu.u_sub.w_mode_0[1] doutA=aluex.ex_alu.u_sub.add0.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add0.w_mode_0[1] doutC=aluex.ex_alu.u_sub.add0.w_mode_0[2] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[0] doutA=aluex.ex_alu.u_sub.add0.w_a0_0[0] doutB=aluex.ex_alu.u_sub.add0.w_a0_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[1] doutA=aluex.ex_alu.u_sub.add0.w_a1_0[0] doutB=aluex.ex_alu.u_sub.add0.w_a1_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[2] doutA=aluex.ex_alu.u_sub.add0.w_a2_0[0] doutB=aluex.ex_alu.u_sub.add0.w_a2_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[3] doutA=aluex.ex_alu.u_sub.add0.w_a3_0[0] doutB=aluex.ex_alu.u_sub.add0.w_a3_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[0] doutA=aluex.ex_alu.u_sub.add0.w_b0_0[0] doutB=aluex.ex_alu.u_sub.add0.w_b0_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[1] doutA=aluex.ex_alu.u_sub.add0.w_b1_0[0] doutB=aluex.ex_alu.u_sub.add0.w_b1_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[2] doutA=aluex.ex_alu.u_sub.add0.w_b2_0[0] doutB=aluex.ex_alu.u_sub.add0.w_b2_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[3] doutA=aluex.ex_alu.u_sub.add0.w_b3_0[0] doutB=aluex.ex_alu.u_sub.add0.w_b3_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.c_in doutA=aluex.ex_alu.u_sub.add0.w_c_in_0[0] doutB=aluex.ex_alu.u_sub.add0.w_c_in_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_mode_0[0] doutA=aluex.ex_alu.u_sub.add0.w_mode_1[0] doutB=aluex.ex_alu.u_sub.add0.w_mode_1[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.n1 doutA=aluex.ex_alu.u_sub.add0.w_n1_0[0] doutB=aluex.ex_alu.u_sub.add0.w_n1_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.n3 doutA=aluex.ex_alu.u_sub.add0.w_n3_0[0] doutB=aluex.ex_alu.u_sub.add0.w_n3_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.n5 doutA=aluex.ex_alu.u_sub.add0.w_n5_0[0] doutB=aluex.ex_alu.u_sub.add0.w_n5_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_0.n1 dinB=aluex.ex_alu.u_sub.add0.u_clc_0.w_mode_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_0.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.u_clc_0.w_a_0[1] dinB=aluex.ex_alu.u_sub.add0.u_clc_0.w_b_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_0.n1 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_0.w_b_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_0.n2 dout=aluex.ex_alu.u_sub.add0.u_clc_0.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_0.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_0.w_a_0[0] dout=aluex.ex_alu.u_sub.add0.u_clc_0.n2 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_a0_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_0.w_a_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_0.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_b0_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_0.w_b_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_0.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_mode_1[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_0.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_0.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_1.n4 dinB=aluex.ex_alu.u_sub.add0.u_clc_1.w_mode_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_1.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.u_clc_1.w_a_0[1] dinB=aluex.ex_alu.u_sub.add0.u_clc_1.w_b_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_1.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_1.w_b_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_1.n3 dout=aluex.ex_alu.u_sub.add0.u_clc_1.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_1.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_1.w_a_0[0] dout=aluex.ex_alu.u_sub.add0.u_clc_1.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_a1_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_1.w_a_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_1.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_b1_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_1.w_b_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_1.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_mode_1[0] doutA=aluex.ex_alu.u_sub.add0.u_clc_1.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_1.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_2.n4 dinB=aluex.ex_alu.u_sub.add0.u_clc_2.w_mode_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_2.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.u_clc_2.w_a_0[1] dinB=aluex.ex_alu.u_sub.add0.u_clc_2.w_b_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_2.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_2.w_b_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_2.n3 dout=aluex.ex_alu.u_sub.add0.u_clc_2.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_2.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_2.w_a_0[0] dout=aluex.ex_alu.u_sub.add0.u_clc_2.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_a2_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_2.w_a_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_2.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_b2_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_2.w_b_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_2.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_mode_0[2] doutA=aluex.ex_alu.u_sub.add0.u_clc_2.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_2.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_3.n4 dinB=aluex.ex_alu.u_sub.add0.u_clc_3.w_mode_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_3.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add0.u_clc_3.w_a_0[1] dinB=aluex.ex_alu.u_sub.add0.u_clc_3.w_b_0[1] dout=aluex.ex_alu.u_sub.add0.u_clc_3.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_3.w_b_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_3.n3 dout=aluex.ex_alu.u_sub.add0.u_clc_3.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add0.gclk dinA=aluex.ex_alu.u_sub.add0.u_clc_3.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add0.u_clc_3.w_a_0[0] dout=aluex.ex_alu.u_sub.add0.u_clc_3.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_a3_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_3.w_a_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_3.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_b3_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_3.w_b_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_3.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add0.w_mode_0[1] doutA=aluex.ex_alu.u_sub.add0.u_clc_3.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add0.u_clc_3.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_n22_0[1] dinB=aluex.ex_alu.u_sub.add1.n21 dout=aluex.ex_alu.u_sub.add1.sum[3] 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_3.p dinB=aluex.ex_alu.u_sub.add1.w_n22_0[0] dout=aluex.ex_alu.u_sub.add1.n15 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.n14 dinB=aluex.ex_alu.u_sub.add1.u_clc_2.g dout=aluex.ex_alu.u_sub.add1.n22 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_2.p dinB=aluex.ex_alu.u_sub.add1.w_n20_0[0] dout=aluex.ex_alu.u_sub.add1.n14 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.n13 dinB=aluex.ex_alu.u_sub.add1.u_clc_1.g dout=aluex.ex_alu.u_sub.add1.n20 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_1.p dinB=aluex.ex_alu.u_sub.add1.w_n18_0[0] dout=aluex.ex_alu.u_sub.add1.n13 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.n12 dinB=aluex.ex_alu.u_sub.add1.u_clc_0.g dout=aluex.ex_alu.u_sub.add1.n18 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_0.p dinB=aluex.ex_alu.u_sub.add1.w_c_in_0[0] dout=aluex.ex_alu.u_sub.add1.n12 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_b3_0[0] dinB=aluex.ex_alu.u_sub.add1.w_a3_0[0] dout=aluex.ex_alu.u_sub.add1.n21 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_n20_0[1] dinB=aluex.ex_alu.u_sub.add1.n19 dout=aluex.ex_alu.u_sub.add1.sum[2] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_b2_0[0] dinB=aluex.ex_alu.u_sub.add1.w_a2_0[0] dout=aluex.ex_alu.u_sub.add1.n19 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_n18_0[1] dinB=aluex.ex_alu.u_sub.add1.n17 dout=aluex.ex_alu.u_sub.add1.sum[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_b1_0[0] dinB=aluex.ex_alu.u_sub.add1.w_a1_0[0] dout=aluex.ex_alu.u_sub.add1.n17 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_a0_0[0] dinB=aluex.ex_alu.u_sub.add1.n16 dout=aluex.ex_alu.u_sub.add1.sum[0] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.w_c_in_0[1] dinB=aluex.ex_alu.u_sub.add1.w_b0_0[0] dout=aluex.ex_alu.u_sub.add1.n16 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.n15 dinB=aluex.ex_alu.u_sub.add1.u_clc_3.g dout=aluex.ex_alu.u_sub.add1.c_out 
+.subckt jspl3 din=aluex.ex_alu.u_sub.w_mode_0[0] doutA=aluex.ex_alu.u_sub.add1.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add1.w_mode_0[1] doutC=aluex.ex_alu.u_sub.add1.w_mode_0[2] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[4] doutA=aluex.ex_alu.u_sub.add1.w_a0_0[0] doutB=aluex.ex_alu.u_sub.add1.w_a0_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[5] doutA=aluex.ex_alu.u_sub.add1.w_a1_0[0] doutB=aluex.ex_alu.u_sub.add1.w_a1_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[6] doutA=aluex.ex_alu.u_sub.add1.w_a2_0[0] doutB=aluex.ex_alu.u_sub.add1.w_a2_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.a[7] doutA=aluex.ex_alu.u_sub.add1.w_a3_0[0] doutB=aluex.ex_alu.u_sub.add1.w_a3_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[4] doutA=aluex.ex_alu.u_sub.add1.w_b0_0[0] doutB=aluex.ex_alu.u_sub.add1.w_b0_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[5] doutA=aluex.ex_alu.u_sub.add1.w_b1_0[0] doutB=aluex.ex_alu.u_sub.add1.w_b1_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[6] doutA=aluex.ex_alu.u_sub.add1.w_b2_0[0] doutB=aluex.ex_alu.u_sub.add1.w_b2_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.b[7] doutA=aluex.ex_alu.u_sub.add1.w_b3_0[0] doutB=aluex.ex_alu.u_sub.add1.w_b3_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.cout doutA=aluex.ex_alu.u_sub.add1.w_c_in_0[0] doutB=aluex.ex_alu.u_sub.add1.w_c_in_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_mode_0[0] doutA=aluex.ex_alu.u_sub.add1.w_mode_1[0] doutB=aluex.ex_alu.u_sub.add1.w_mode_1[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.n18 doutA=aluex.ex_alu.u_sub.add1.w_n18_0[0] doutB=aluex.ex_alu.u_sub.add1.w_n18_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.n20 doutA=aluex.ex_alu.u_sub.add1.w_n20_0[0] doutB=aluex.ex_alu.u_sub.add1.w_n20_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.n22 doutA=aluex.ex_alu.u_sub.add1.w_n22_0[0] doutB=aluex.ex_alu.u_sub.add1.w_n22_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_0.n4 dinB=aluex.ex_alu.u_sub.add1.u_clc_0.w_mode_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_0.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.u_clc_0.w_a_0[1] dinB=aluex.ex_alu.u_sub.add1.u_clc_0.w_b_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_0.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_0.w_b_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_0.n3 dout=aluex.ex_alu.u_sub.add1.u_clc_0.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_0.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_0.w_a_0[0] dout=aluex.ex_alu.u_sub.add1.u_clc_0.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_a0_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_0.w_a_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_0.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_b0_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_0.w_b_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_0.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_mode_1[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_0.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_0.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_1.n4 dinB=aluex.ex_alu.u_sub.add1.u_clc_1.w_mode_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_1.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.u_clc_1.w_a_0[1] dinB=aluex.ex_alu.u_sub.add1.u_clc_1.w_b_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_1.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_1.w_b_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_1.n3 dout=aluex.ex_alu.u_sub.add1.u_clc_1.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_1.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_1.w_a_0[0] dout=aluex.ex_alu.u_sub.add1.u_clc_1.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_a1_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_1.w_a_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_1.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_b1_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_1.w_b_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_1.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_mode_1[0] doutA=aluex.ex_alu.u_sub.add1.u_clc_1.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_1.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_2.n4 dinB=aluex.ex_alu.u_sub.add1.u_clc_2.w_mode_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_2.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.u_clc_2.w_a_0[1] dinB=aluex.ex_alu.u_sub.add1.u_clc_2.w_b_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_2.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_2.w_b_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_2.n3 dout=aluex.ex_alu.u_sub.add1.u_clc_2.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_2.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_2.w_a_0[0] dout=aluex.ex_alu.u_sub.add1.u_clc_2.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_a2_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_2.w_a_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_2.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_b2_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_2.w_b_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_2.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_mode_0[2] doutA=aluex.ex_alu.u_sub.add1.u_clc_2.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_2.w_mode_0[1] 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_3.n4 dinB=aluex.ex_alu.u_sub.add1.u_clc_3.w_mode_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_3.p 
+.subckt jcb dinA=aluex.ex_alu.u_sub.add1.u_clc_3.w_a_0[1] dinB=aluex.ex_alu.u_sub.add1.u_clc_3.w_b_0[1] dout=aluex.ex_alu.u_sub.add1.u_clc_3.n4 
+.subckt jand clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_3.w_b_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_3.n3 dout=aluex.ex_alu.u_sub.add1.u_clc_3.g 
+.subckt jxor clk=aluex.ex_alu.u_sub.add1.gclk dinA=aluex.ex_alu.u_sub.add1.u_clc_3.w_mode_0[0] dinB=aluex.ex_alu.u_sub.add1.u_clc_3.w_a_0[0] dout=aluex.ex_alu.u_sub.add1.u_clc_3.n3 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_a3_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_3.w_a_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_3.w_a_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_b3_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_3.w_b_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_3.w_b_0[1] 
+.subckt jspl din=aluex.ex_alu.u_sub.add1.w_mode_0[1] doutA=aluex.ex_alu.u_sub.add1.u_clc_3.w_mode_0[0] doutB=aluex.ex_alu.u_sub.add1.u_clc_3.w_mode_0[1] 
+.subckt jspl din=aluex.ex_alu.w_n17_0[1] doutA=aluex.ex_alu.u_sub.w_mode_0[0] doutB=aluex.ex_alu.u_sub.w_mode_0[1] 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_N92_0[1] dout=cpuid.EX en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n146 dout=cpuid.LB en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_n148_1[2] dout=cpuid.NOOP en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n147 dout=cpuid.SB en=pclk 
+.subckt jnot clk=gclk din=cpuid.n158 dout=cpuid.n146 
+.subckt jnot clk=gclk din=cpuid.n160 dout=cpuid.n147 
+.subckt jnot clk=gclk din=cpuid.w_n172_0[2] dout=cpuid.n148 
+.subckt jnot clk=gclk din=cpuid.w_inst6_1[0] dout=cpuid.n149 
+.subckt jnot clk=gclk din=cpuid.n175 dout=cpuid.n150 
+.subckt jnot clk=gclk din=cpuid.w_n178_0[2] dout=cpuid.n151 
+.subckt jnot clk=gclk din=cpuid.n193 dout=cpuid.n152 
+.subckt jnot clk=gclk din=cpuid.w_inst3_0[1] dout=cpuid.n153 
+.subckt jnot clk=gclk din=cpuid.w_inst2_2[0] dout=cpuid.n154 
+.subckt jnot clk=gclk din=cpuid.w_inst1_2[0] dout=cpuid.n155 
+.subckt jnot clk=gclk din=cpuid.n161 dout=cpuid.n156 
+.subckt jnot clk=gclk din=cpuid.w_inst0_2[2] dout=cpuid.n157 
+.subckt jcb3 dinA=cpuid.w_inst1_1[2] dinB=cpuid.w_n148_1[1] dinC=cpuid.w_n159_1[1] dout=cpuid.n158 
+.subckt jcb3 dinA=cpuid.w_n148_1[0] dinB=cpuid.w_n155_1[2] dinC=cpuid.w_n159_1[0] dout=cpuid.n160 
+.subckt jcb dinA=cpuid.n162 dinB=cpuid.n163 dout=cpuid.n161 
+.subckt jcb3 dinA=w_datad07_0[0] dinB=cpuid.w_n157_1[1] dinC=cpuid.n164 dout=cpuid.n163 
+.subckt jcb dinA=w_datad05_0[0] dinB=w_datad06_0[0] dout=cpuid.n164 
+.subckt jcb3 dinA=w_datad03_0[0] dinB=w_datad04_0[0] dinC=cpuid.n165 dout=cpuid.n162 
+.subckt jcb3 dinA=w_datad00_0[0] dinB=w_datad01_0[0] dinC=w_datad02_0[0] dout=cpuid.n165 
+.subckt jcb dinA=cpuid.n166 dinB=cpuid.n167 dout=cpuid.n80 
+.subckt jand clk=gclk dinA=cpuid.w_rdnum1_0 dinB=cpuid.w_n148_0[2] dout=cpuid.n167 
+.subckt jand clk=gclk dinA=cpuid.w_numd1_0 dinB=cpuid.w_n168_0[1] dout=cpuid.n166 
+.subckt jand clk=gclk dinA=cpuid.w_n169_4[1] dinB=cpuid.w_inst5_1[0] dout=cpuid.numd_fa_1 
+.subckt jcb dinA=cpuid.n170 dinB=cpuid.n171 dout=cpuid.n79 
+.subckt jand clk=gclk dinA=cpuid.w_rdnum0_0 dinB=cpuid.w_n148_0[1] dout=cpuid.n171 
+.subckt jand clk=gclk dinA=cpuid.w_numd0_0 dinB=cpuid.w_n168_0[0] dout=cpuid.n170 
+.subckt jcb dinA=cpuid.n173 dinB=cpuid.w_N92_0[0] dout=cpuid.n168 
+.subckt jand clk=gclk dinA=cpuid.w_n172_0[1] dinB=cpuid.w_n155_1[1] dout=cpuid.n173 
+.subckt jand clk=gclk dinA=cpuid.w_n169_4[0] dinB=cpuid.w_inst4_1[0] dout=cpuid.numd_fa_0 
+.subckt jcb3 dinA=cpuid.w_n143_0[1] dinB=cpuid.n150 dinC=cpuid.n174 dout=cpuid.n78 
+.subckt jand clk=gclk dinA=cpuid.w_aluop2_0 dinB=cpuid.w_inst0_2[1] dout=cpuid.n174 
+.subckt jcb3 dinA=cpuid.w_inst0_2[0] dinB=cpuid.n176 dinC=cpuid.w_n153_0[2] dout=cpuid.n175 
+.subckt jand clk=gclk dinA=cpuid.n151 dinB=cpuid.n177 dout=cpuid.n176 
+.subckt jcb dinA=cpuid.w_inst2_1[2] dinB=cpuid.w_n155_1[0] dout=cpuid.n177 
+.subckt jcb3 dinA=cpuid.n179 dinB=cpuid.n180 dinC=cpuid.n181 dout=cpuid.n77 
+.subckt jcb dinA=cpuid.w_n152_0[1] dinB=cpuid.w_n143_0[0] dout=cpuid.n181 
+.subckt jcb3 dinA=cpuid.w_inst0_1[2] dinB=cpuid.w_n183_1[1] dinC=cpuid.w_n144_0[1] dout=cpuid.n182 
+.subckt jand clk=gclk dinA=cpuid.w_aluop1_0 dinB=cpuid.w_inst0_1[1] dout=cpuid.n180 
+.subckt jand clk=gclk dinA=cpuid.n184 dinB=cpuid.w_n157_1[0] dout=cpuid.n179 
+.subckt jcb dinA=cpuid.n185 dinB=cpuid.n186 dout=cpuid.n184 
+.subckt jand clk=gclk dinA=cpuid.w_inst6_0[2] dinB=cpuid.w_n145_1[1] dout=cpuid.n186 
+.subckt jand clk=gclk dinA=cpuid.w_n178_0[1] dinB=cpuid.w_inst1_1[1] dout=cpuid.n185 
+.subckt jcb3 dinA=cpuid.w_n152_0[0] dinB=cpuid.n187 dinC=cpuid.n188 dout=cpuid.n76 
+.subckt jand clk=gclk dinA=cpuid.w_aluop0_0 dinB=cpuid.w_inst0_1[0] dout=cpuid.n188 
+.subckt jand clk=gclk dinA=cpuid.n189 dinB=cpuid.w_n157_0[2] dout=cpuid.n187 
+.subckt jcb3 dinA=cpuid.n142 dinB=cpuid.n190 dinC=cpuid.n191 dout=cpuid.n189 
+.subckt jand clk=gclk dinA=cpuid.w_n145_1[0] dinB=cpuid.w_n149_0[1] dout=cpuid.n191 
+.subckt jand clk=gclk dinA=cpuid.w_n178_0[0] dinB=cpuid.w_n155_0[2] dout=cpuid.n190 
+.subckt jand clk=gclk dinA=cpuid.w_n183_1[0] dinB=cpuid.w_inst2_1[1] dout=cpuid.n178 
+.subckt jcb3 dinA=cpuid.w_n183_0[2] dinB=cpuid.w_n144_0[0] dinC=cpuid.w_n149_0[0] dout=cpuid.n192 
+.subckt jcb3 dinA=cpuid.w_inst0_0[2] dinB=cpuid.w_n153_0[1] dinC=cpuid.n194 dout=cpuid.n193 
+.subckt jcb dinA=cpuid.w_inst2_1[0] dinB=cpuid.w_inst1_1[0] dout=cpuid.n194 
+.subckt jand clk=gclk dinA=datas0[7] dinB=cpuid.w_n169_3[2] dout=cpuid.datas[7] 
+.subckt jand clk=gclk dinA=datas0[6] dinB=cpuid.w_n169_3[1] dout=cpuid.datas[6] 
+.subckt jand clk=gclk dinA=datas0[5] dinB=cpuid.w_n169_3[0] dout=cpuid.datas[5] 
+.subckt jand clk=gclk dinA=datas0[4] dinB=cpuid.w_n169_2[2] dout=cpuid.datas[4] 
+.subckt jand clk=gclk dinA=datas0[3] dinB=cpuid.w_n169_2[1] dout=cpuid.datas[3] 
+.subckt jand clk=gclk dinA=datas0[2] dinB=cpuid.w_n169_2[0] dout=cpuid.datas[2] 
+.subckt jcb dinA=cpuid.n195 dinB=cpuid.n196 dout=cpuid.datas[1] 
+.subckt jand clk=gclk dinA=datas0[1] dinB=cpuid.w_n169_1[2] dout=cpuid.n196 
+.subckt jand clk=gclk dinA=cpuid.w_n145_0[2] dinB=cpuid.w_inst5_0[2] dout=cpuid.n195 
+.subckt jcb dinA=cpuid.n197 dinB=cpuid.n198 dout=cpuid.datas[0] 
+.subckt jand clk=gclk dinA=datas0[0] dinB=cpuid.w_n169_1[1] dout=cpuid.n198 
+.subckt jand clk=gclk dinA=cpuid.w_n145_0[1] dinB=cpuid.w_inst4_0[2] dout=cpuid.n197 
+.subckt jcb dinA=cpuid.w_inst7_0[2] dinB=cpuid.w_n183_0[1] dout=cpuid.n169 
+.subckt jcb3 dinA=cpuid.w_n155_0[1] dinB=cpuid.n154 dinC=cpuid.w_n153_0[0] dout=cpuid.n183 
+.subckt jand clk=gclk dinA=cpuid.w_n172_0[0] dinB=cpuid.w_n159_0[2] dout=cpuid.N92 
+.subckt jand clk=gclk dinA=cpuid.w_n157_0[1] dinB=cpuid.n199 dout=cpuid.n172 
+.subckt jcb3 dinA=cpuid.w_n159_0[1] dinB=cpuid.n200 dinC=cpuid.n201 dout=cpuid.n199 
+.subckt jcb3 dinA=cpuid.w_inst7_0[1] dinB=cpuid.w_inst6_0[1] dinC=cpuid.w_inst5_0[1] dout=cpuid.n201 
+.subckt jcb dinA=cpuid.w_inst4_0[1] dinB=cpuid.w_inst1_0[2] dout=cpuid.n200 
+.subckt jcb dinA=cpuid.w_inst2_0[2] dinB=cpuid.w_inst3_0[0] dout=cpuid.n159 
+.subckt jnot clk=gclk din=cpuid.n192 dout=cpuid.n142 
+.subckt jnot clk=gclk din=cpuid.n182 dout=cpuid.n143 
+.subckt jnot clk=gclk din=cpuid.w_inst7_1[0] dout=cpuid.n144 
+.subckt jnot clk=gclk din=cpuid.w_n169_4[2] dout=cpuid.n145 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n76 dout=cpuid.aluop_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n77 dout=cpuid.aluop_fa_1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n78 dout=cpuid.aluop_fa_2 en=pclk 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_1[1] dout=cpuid.w_81a4_780 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_1[2] dout=cpuid.w_5d24_779 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_2[0] dout=cpuid.w_0025_778 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_2[1] dout=cpuid.w_ce53_777 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_2[2] dout=cpuid.w_6764_776 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_3[0] dout=cpuid.w_5e09_775 
+.subckt jand clk=gclk dinA=pclk dinB=cpuid.w_n156_3[1] dout=cpuid.w_2bdd_774 
+.subckt jspl3 din=instw[0] doutA=cpuid.w_inst0_0[0] doutB=cpuid.w_inst0_0[1] doutC=cpuid.w_inst0_0[2] 
+.subckt jspl3 din=cpuid.w_inst0_0[0] doutA=cpuid.w_inst0_1[0] doutB=cpuid.w_inst0_1[1] doutC=cpuid.w_inst0_1[2] 
+.subckt jspl3 din=cpuid.w_inst0_0[1] doutA=cpuid.w_inst0_2[0] doutB=cpuid.w_inst0_2[1] doutC=cpuid.w_inst0_2[2] 
+.subckt jspl3 din=instw[1] doutA=cpuid.w_inst1_0[0] doutB=cpuid.w_inst1_0[1] doutC=cpuid.w_inst1_0[2] 
+.subckt jspl3 din=cpuid.w_inst1_0[0] doutA=cpuid.w_inst1_1[0] doutB=cpuid.w_inst1_1[1] doutC=cpuid.w_inst1_1[2] 
+.subckt jspl3 din=instw[2] doutA=cpuid.w_inst2_0[0] doutB=cpuid.w_inst2_0[1] doutC=cpuid.w_inst2_0[2] 
+.subckt jspl3 din=cpuid.w_inst2_0[0] doutA=cpuid.w_inst2_1[0] doutB=cpuid.w_inst2_1[1] doutC=cpuid.w_inst2_1[2] 
+.subckt jspl3 din=instw[3] doutA=cpuid.w_inst3_0[0] doutB=cpuid.w_inst3_0[1] doutC=cpuid.w_inst3_0[2] 
+.subckt jspl3 din=instw[4] doutA=cpuid.w_inst4_0[0] doutB=cpuid.w_inst4_0[1] doutC=cpuid.w_inst4_0[2] 
+.subckt jspl3 din=instw[5] doutA=cpuid.w_inst5_0[0] doutB=cpuid.w_inst5_0[1] doutC=cpuid.w_inst5_0[2] 
+.subckt jspl3 din=instw[6] doutA=cpuid.w_inst6_0[0] doutB=cpuid.w_inst6_0[1] doutC=cpuid.w_inst6_0[2] 
+.subckt jspl3 din=cpuid.w_inst6_0[0] doutA=cpuid.w_inst6_1[0] doutB=cpuid.w_inst6_1[1] doutC=cpuid.w_inst6_1[2] 
+.subckt jspl3 din=instw[7] doutA=cpuid.w_inst7_0[0] doutB=cpuid.w_inst7_0[1] doutC=cpuid.w_inst7_0[2] 
+.subckt jspl3 din=cpuid.w_inst7_0[0] doutA=cpuid.w_inst7_1[0] doutB=cpuid.w_inst7_1[1] doutC=cpuid.w_inst7_1[2] 
+.subckt jspl3 din=cpuid.n145 doutA=cpuid.w_n145_0[0] doutB=cpuid.w_n145_0[1] doutC=cpuid.w_n145_0[2] 
+.subckt jspl3 din=cpuid.n148 doutA=cpuid.w_n148_0[0] doutB=cpuid.w_n148_0[1] doutC=cpuid.w_n148_0[2] 
+.subckt jspl3 din=cpuid.w_n148_0[0] doutA=cpuid.w_n148_1[0] doutB=cpuid.w_n148_1[1] doutC=cpuid.w_n148_1[2] 
+.subckt jspl3 din=cpuid.n153 doutA=cpuid.w_n153_0[0] doutB=cpuid.w_n153_0[1] doutC=cpuid.w_n153_0[2] 
+.subckt jspl3 din=cpuid.n155 doutA=cpuid.w_n155_0[0] doutB=cpuid.w_n155_0[1] doutC=cpuid.w_n155_0[2] 
+.subckt jspl3 din=cpuid.w_n155_0[0] doutA=cpuid.w_n155_1[0] doutB=cpuid.w_n155_1[1] doutC=cpuid.w_n155_1[2] 
+.subckt jspl3 din=cpuid.n156 doutA=cpuid.w_n156_0[0] doutB=cpuid.w_n156_0[1] doutC=cpuid.w_n156_0[2] 
+.subckt jspl3 din=cpuid.w_n156_0[0] doutA=cpuid.w_n156_1[0] doutB=cpuid.w_n156_1[1] doutC=cpuid.w_n156_1[2] 
+.subckt jspl3 din=cpuid.w_n156_0[1] doutA=cpuid.w_n156_2[0] doutB=cpuid.w_n156_2[1] doutC=cpuid.w_n156_2[2] 
+.subckt jspl3 din=cpuid.n157 doutA=cpuid.w_n157_0[0] doutB=cpuid.w_n157_0[1] doutC=cpuid.w_n157_0[2] 
+.subckt jspl3 din=cpuid.n159 doutA=cpuid.w_n159_0[0] doutB=cpuid.w_n159_0[1] doutC=cpuid.w_n159_0[2] 
+.subckt jspl3 din=cpuid.n169 doutA=cpuid.w_n169_0[0] doutB=cpuid.w_n169_0[1] doutC=cpuid.w_n169_0[2] 
+.subckt jspl3 din=cpuid.w_n169_0[0] doutA=cpuid.w_n169_1[0] doutB=cpuid.w_n169_1[1] doutC=cpuid.w_n169_1[2] 
+.subckt jspl3 din=cpuid.w_n169_0[1] doutA=cpuid.w_n169_2[0] doutB=cpuid.w_n169_2[1] doutC=cpuid.w_n169_2[2] 
+.subckt jspl3 din=cpuid.w_n169_0[2] doutA=cpuid.w_n169_3[0] doutB=cpuid.w_n169_3[1] doutC=cpuid.w_n169_3[2] 
+.subckt jspl3 din=cpuid.w_n169_1[0] doutA=cpuid.w_n169_4[0] doutB=cpuid.w_n169_4[1] doutC=cpuid.w_n169_4[2] 
+.subckt jspl3 din=cpuid.n172 doutA=cpuid.w_n172_0[0] doutB=cpuid.w_n172_0[1] doutC=cpuid.w_n172_0[2] 
+.subckt jspl3 din=cpuid.n178 doutA=cpuid.w_n178_0[0] doutB=cpuid.w_n178_0[1] doutC=cpuid.w_n178_0[2] 
+.subckt jspl3 din=cpuid.n183 doutA=cpuid.w_n183_0[0] doutB=cpuid.w_n183_0[1] doutC=cpuid.w_n183_0[2] 
+.subckt jspl din=cpuid.N92 doutA=cpuid.w_N92_0[0] doutB=cpuid.w_N92_0[1] 
+.subckt jspl din=cpuid.aluop_fa_0 doutA=cpuid.w_aluop0_0 doutB=cpuid.aluop[0] 
+.subckt jspl din=cpuid.aluop_fa_1 doutA=cpuid.w_aluop1_0 doutB=cpuid.aluop[1] 
+.subckt jspl din=cpuid.aluop_fa_2 doutA=cpuid.w_aluop2_0 doutB=cpuid.aluop[2] 
+.subckt jspl din=cpuid.w_inst1_0[1] doutA=cpuid.w_inst1_2[0] doutB=cpuid.w_inst1_2[1] 
+.subckt jspl din=cpuid.w_inst2_0[1] doutA=cpuid.w_inst2_2[0] doutB=cpuid.w_inst2_2[1] 
+.subckt jspl din=cpuid.w_inst4_0[0] doutA=cpuid.w_inst4_1[0] doutB=cpuid.w_inst4_1[1] 
+.subckt jspl din=cpuid.w_inst5_0[0] doutA=cpuid.w_inst5_1[0] doutB=cpuid.w_inst5_1[1] 
+.subckt jspl din=cpuid.n143 doutA=cpuid.w_n143_0[0] doutB=cpuid.w_n143_0[1] 
+.subckt jspl din=cpuid.n144 doutA=cpuid.w_n144_0[0] doutB=cpuid.w_n144_0[1] 
+.subckt jspl din=cpuid.w_n145_0[0] doutA=cpuid.w_n145_1[0] doutB=cpuid.w_n145_1[1] 
+.subckt jspl din=cpuid.n149 doutA=cpuid.w_n149_0[0] doutB=cpuid.w_n149_0[1] 
+.subckt jspl din=cpuid.n152 doutA=cpuid.w_n152_0[0] doutB=cpuid.w_n152_0[1] 
+.subckt jspl din=cpuid.w_n156_0[2] doutA=cpuid.w_n156_3[0] doutB=cpuid.w_n156_3[1] 
+.subckt jspl din=cpuid.w_n157_0[0] doutA=cpuid.w_n157_1[0] doutB=cpuid.w_n157_1[1] 
+.subckt jspl din=cpuid.w_n159_0[0] doutA=cpuid.w_n159_1[0] doutB=cpuid.w_n159_1[1] 
+.subckt jspl din=cpuid.n168 doutA=cpuid.w_n168_0[0] doutB=cpuid.w_n168_0[1] 
+.subckt jspl din=cpuid.w_n183_0[0] doutA=cpuid.w_n183_1[0] doutB=cpuid.w_n183_1[1] 
+.subckt jspl din=cpuid.numd_fa_0 doutA=cpuid.w_numd0_0 doutB=cpuid.numd[0] 
+.subckt jspl din=cpuid.numd_fa_1 doutA=cpuid.w_numd1_0 doutB=cpuid.numd[1] 
+.subckt jspl din=cpuid.rdnum_fa_0 doutA=cpuid.w_rdnum0_0 doutB=cpuid.rdnum[0] 
+.subckt jspl din=cpuid.rdnum_fa_1 doutA=cpuid.w_rdnum1_0 doutB=cpuid.rdnum[1] 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst1_2[1] dout=cpuid.newpc[0] en=cpuid.w_81a4_780 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst2_2[1] dout=cpuid.newpc[1] en=cpuid.w_5d24_779 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst3_0[2] dout=cpuid.newpc[2] en=cpuid.w_0025_778 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst4_1[1] dout=cpuid.newpc[3] en=cpuid.w_ce53_777 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst5_1[1] dout=cpuid.newpc[4] en=cpuid.w_6764_776 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst6_1[1] dout=cpuid.newpc[5] en=cpuid.w_5e09_775 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_inst7_1[1] dout=cpuid.newpc[6] en=cpuid.w_2bdd_774 
+.subckt jscdff clear=clear clk=gclk din=cpuid.w_n156_1[0] dout=cpuid.pcsrc en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n79 dout=cpuid.rdnum_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpuid.n80 dout=cpuid.rdnum_fa_1 en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.n11 dout=cpuif.Ird en=pclk 
+.subckt jnot clk=gclk din=cpuif.w_Iready_3[2] dout=cpuif.n11 
+.subckt jand clk=gclk dinA=ibus[4] dinB=cpuif.w_Iready_3[1] dout=cpuif.N9 
+.subckt jand clk=gclk dinA=ibus[3] dinB=cpuif.w_Iready_3[0] dout=cpuif.N8 
+.subckt jand clk=gclk dinA=ibus[2] dinB=cpuif.w_Iready_2[2] dout=cpuif.N7 
+.subckt jand clk=gclk dinA=ibus[1] dinB=cpuif.w_Iready_2[1] dout=cpuif.N6 
+.subckt jand clk=gclk dinA=ibus[0] dinB=cpuif.w_Iready_2[0] dout=cpuif.N5 
+.subckt jand clk=gclk dinA=ibus[7] dinB=cpuif.w_Iready_1[2] dout=cpuif.N12 
+.subckt jand clk=gclk dinA=ibus[6] dinB=cpuif.w_Iready_1[1] dout=cpuif.N11 
+.subckt jand clk=gclk dinA=ibus[5] dinB=cpuif.w_Iready_1[0] dout=cpuif.N10 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N5 dout=cpuif.insout[0] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N6 dout=cpuif.insout[1] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N7 dout=cpuif.insout[2] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N8 dout=cpuif.insout[3] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N9 dout=cpuif.insout[4] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N10 dout=cpuif.insout[5] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N11 dout=cpuif.insout[6] en=pclk 
+.subckt jscdff clear=n_0_net_ clk=gclk din=cpuif.N12 dout=cpuif.insout[7] en=pclk 
+.subckt jspl3 din=w_iwait_0[0] doutA=cpuif.w_Iready_0[0] doutB=cpuif.w_Iready_0[1] doutC=cpuif.w_Iready_0[2] 
+.subckt jspl3 din=cpuif.w_Iready_0[0] doutA=cpuif.w_Iready_1[0] doutB=cpuif.w_Iready_1[1] doutC=cpuif.w_Iready_1[2] 
+.subckt jspl3 din=cpuif.w_Iready_0[1] doutA=cpuif.w_Iready_2[0] doutB=cpuif.w_Iready_2[1] doutC=cpuif.w_Iready_2[2] 
+.subckt jspl3 din=cpuif.w_Iready_0[2] doutA=cpuif.w_Iready_3[0] doutB=cpuif.w_Iready_3[1] doutC=cpuif.w_Iready_3[2] 
+.subckt jscdff clear=cpuio.w_Clear_6[2] clk=gclk din=cpuio.n102 dout=cpuio.Adr_fa_0 en=cpuio.w_Sclk_6[2] 
+.subckt jscdff clear=cpuio.w_Clear_7[0] clk=gclk din=cpuio.n101 dout=cpuio.Adr_fa_1 en=cpuio.w_Sclk_7[0] 
+.subckt jscdff clear=cpuio.w_Clear_7[1] clk=gclk din=cpuio.n100 dout=cpuio.Adr_fa_2 en=cpuio.w_Sclk_7[1] 
+.subckt jscdff clear=cpuio.w_Clear_7[2] clk=gclk din=cpuio.n99 dout=cpuio.Adr_fa_3 en=cpuio.w_Sclk_7[2] 
+.subckt jscdff clear=cpuio.w_Clear_8[0] clk=gclk din=cpuio.n98 dout=cpuio.Adr_fa_4 en=cpuio.w_Sclk_8[0] 
+.subckt jscdff clear=cpuio.w_Clear_8[1] clk=gclk din=cpuio.n97 dout=cpuio.Adr_fa_5 en=cpuio.w_Sclk_8[1] 
+.subckt jscdff clear=cpuio.w_Clear_8[2] clk=gclk din=cpuio.n96 dout=cpuio.Adr_fa_6 en=cpuio.w_Sclk_8[2] 
+.subckt jscdff clear=cpuio.w_Clear_9[0] clk=gclk din=cpuio.n95 dout=cpuio.Adr_fa_7 en=cpuio.w_Sclk_9[0] 
+.subckt jscdff clear=cpuio.w_Clear_14[2] clk=gclk din=cpuio.w_In0_0[0] dout=cpuio.Din[0] en=cpuio.w_2984_1731 
+.subckt jscdff clear=cpuio.w_Clear_12[1] clk=gclk din=cpuio.w_In1_0[0] dout=cpuio.Din[1] en=cpuio.w_4341_1738 
+.subckt jscdff clear=cpuio.w_Clear_12[2] clk=gclk din=cpuio.w_In2_0[0] dout=cpuio.Din[2] en=cpuio.w_9f1c_1737 
+.subckt jscdff clear=cpuio.w_Clear_13[0] clk=gclk din=cpuio.w_In3_0[0] dout=cpuio.Din[3] en=cpuio.w_38ee_1736 
+.subckt jscdff clear=cpuio.w_Clear_13[1] clk=gclk din=cpuio.w_In4_0[0] dout=cpuio.Din[4] en=cpuio.w_4f78_1735 
+.subckt jscdff clear=cpuio.w_Clear_13[2] clk=gclk din=cpuio.w_In5_0[0] dout=cpuio.Din[5] en=cpuio.w_a1ad_1734 
+.subckt jscdff clear=cpuio.w_Clear_14[0] clk=gclk din=cpuio.w_In6_0[0] dout=cpuio.Din[6] en=cpuio.w_be7e_1733 
+.subckt jscdff clear=cpuio.w_Clear_14[1] clk=gclk din=cpuio.w_In7_0[0] dout=cpuio.Din[7] en=cpuio.w_8c8d_1732 
+.subckt jscdff clear=cpuio.w_Clear_19[0] clk=gclk din=cpuio.w_Drd_1[1] dout=cpuio.Drd1 en=cpuio.w_2a80_1718 
+.subckt jscdff clear=cpuio.w_Clear_15[1] clk=gclk din=cpuio.n104 dout=cpuio.Dwork en=cpuio.w_Sclk_15[1] 
+.subckt jscdff clear=cpuio.w_Clear_18[0] clk=gclk din=cpuio.w_In0_0[1] dout=cpuio.Iout[0] en=cpuio.w_cedb_1721 
+.subckt jscdff clear=cpuio.w_Clear_17[2] clk=gclk din=cpuio.w_In1_0[1] dout=cpuio.Iout[1] en=cpuio.w_d104_1722 
+.subckt jscdff clear=cpuio.w_Clear_17[1] clk=gclk din=cpuio.w_In2_0[1] dout=cpuio.Iout[2] en=cpuio.w_99e3_1723 
+.subckt jscdff clear=cpuio.w_Clear_17[0] clk=gclk din=cpuio.w_In3_0[1] dout=cpuio.Iout[3] en=cpuio.w_927e_1724 
+.subckt jscdff clear=cpuio.w_Clear_16[2] clk=gclk din=cpuio.w_In4_0[1] dout=cpuio.Iout[4] en=cpuio.w_c743_1725 
+.subckt jscdff clear=cpuio.w_Clear_16[1] clk=gclk din=cpuio.w_In5_0[1] dout=cpuio.Iout[5] en=cpuio.w_e15c_1726 
+.subckt jscdff clear=cpuio.w_Clear_16[0] clk=gclk din=cpuio.w_In6_0[1] dout=cpuio.Iout[6] en=cpuio.w_0602_1727 
+.subckt jscdff clear=cpuio.w_Clear_15[2] clk=gclk din=cpuio.w_In7_0[1] dout=cpuio.Iout[7] en=cpuio.w_943c_1728 
+.subckt jscdff clear=cpuio.w_Clear_9[1] clk=gclk din=cpuio.n16 dout=cpuio.Iready_fa_ en=cpuio.w_Sclk_9[1] 
+.subckt jscdff clear=cpuio.w_Clear_18[1] clk=gclk din=cpuio.w_N66_0[1] dout=cpuio.IworkD en=cpuio.w_Sclk_18[1] 
+.subckt jscdff clear=cpuio.w_Clear_18[2] clk=gclk din=cpuio.n105 dout=cpuio.Iwork en=cpuio.w_Sclk_18[2] 
+.subckt jscdff clear=cpuio.w_Clear_12[0] clk=gclk din=dout[0] dout=out[0] en=cpuio.w_b527_1739 
+.subckt jscdff clear=cpuio.w_Clear_11[2] clk=gclk din=dout[1] dout=out[1] en=cpuio.w_9f2d_1740 
+.subckt jscdff clear=cpuio.w_Clear_11[1] clk=gclk din=dout[2] dout=out[2] en=cpuio.w_532f_1741 
+.subckt jscdff clear=cpuio.w_Clear_11[0] clk=gclk din=dout[3] dout=out[3] en=cpuio.w_0e87_1742 
+.subckt jscdff clear=cpuio.w_Clear_10[2] clk=gclk din=dout[4] dout=out[4] en=cpuio.w_74e6_1743 
+.subckt jscdff clear=cpuio.w_Clear_10[1] clk=gclk din=dout[5] dout=out[5] en=cpuio.w_fd68_1744 
+.subckt jscdff clear=cpuio.w_Clear_10[0] clk=gclk din=dout[6] dout=out[6] en=cpuio.w_d802_1745 
+.subckt jscdff clear=cpuio.w_Clear_9[2] clk=gclk din=dout[7] dout=out[7] en=cpuio.w_c513_1746 
+.subckt jscdff clear=cpuio.w_Clear_6[1] clk=gclk din=cpuio.n94 dout=cpuio.Rd_fa_ en=cpuio.w_Sclk_6[1] 
+.subckt jnot clk=gclk din=cpuio.n216 dout=cpuio.n176 
+.subckt jnot clk=gclk din=cpuio.n244 dout=cpuio.n177 
+.subckt jnot clk=gclk din=cpuio.n213 dout=cpuio.n178 
+.subckt jnot clk=gclk din=cpuio.n223 dout=cpuio.n179 
+.subckt jnot clk=gclk din=cpuio.w_n218_0[1] dout=cpuio.n180 
+.subckt jnot clk=gclk din=cpuio.w_n240_0[2] dout=cpuio.n181 
+.subckt jnot clk=gclk din=cpuio.n241 dout=cpuio.n182 
+.subckt jnot clk=gclk din=cpuio.w_n219_0[2] dout=cpuio.n183 
+.subckt jnot clk=gclk din=cpuio.n225 dout=cpuio.n184 
+.subckt jnot clk=gclk din=cpuio.w_Dwork_1[1] dout=cpuio.n185 
+.subckt jnot clk=gclk din=cpuio.w_n215_0[2] dout=cpuio.n186 
+.subckt jnot clk=gclk din=cpuio.w_Iready_0[1] dout=cpuio.n187 
+.subckt jnot clk=gclk din=ird dout=cpuio.n188 
+.subckt jnot clk=gclk din=cpuio.w_Drd_1[0] dout=cpuio.n189 
+.subckt jnot clk=gclk din=cpuio.w_Dwr_0[2] dout=cpuio.n190 
+.subckt jnot clk=gclk din=cpuio.w_pcsrc_1[1] dout=cpuio.n191 
+.subckt jcb3 dinA=cpuio.n192 dinB=cpuio.n193 dinC=cpuio.n194 dout=cpuio.n99 
+.subckt jand clk=gclk dinA=cpuio.w_Adr3_0 dinB=cpuio.w_n181_3[1] dout=cpuio.n194 
+.subckt jand clk=gclk dinA=dadr[3] dinB=cpuio.w_n195_3[1] dout=cpuio.n193 
+.subckt jand clk=gclk dinA=iadr[3] dinB=cpuio.w_n196_3[1] dout=cpuio.n192 
+.subckt jcb3 dinA=cpuio.n197 dinB=cpuio.n198 dinC=cpuio.n199 dout=cpuio.n98 
+.subckt jand clk=gclk dinA=cpuio.w_Adr4_0 dinB=cpuio.w_n181_3[0] dout=cpuio.n199 
+.subckt jand clk=gclk dinA=dadr[4] dinB=cpuio.w_n195_3[0] dout=cpuio.n198 
+.subckt jand clk=gclk dinA=iadr[4] dinB=cpuio.w_n196_3[0] dout=cpuio.n197 
+.subckt jcb3 dinA=cpuio.n200 dinB=cpuio.n201 dinC=cpuio.n202 dout=cpuio.n97 
+.subckt jand clk=gclk dinA=cpuio.w_Adr5_0 dinB=cpuio.w_n181_2[2] dout=cpuio.n202 
+.subckt jand clk=gclk dinA=dadr[5] dinB=cpuio.w_n195_2[2] dout=cpuio.n201 
+.subckt jand clk=gclk dinA=iadr[5] dinB=cpuio.w_n196_2[2] dout=cpuio.n200 
+.subckt jcb3 dinA=cpuio.n203 dinB=cpuio.n204 dinC=cpuio.n205 dout=cpuio.n96 
+.subckt jand clk=gclk dinA=cpuio.w_Adr6_0 dinB=cpuio.w_n181_2[1] dout=cpuio.n205 
+.subckt jand clk=gclk dinA=dadr[6] dinB=cpuio.w_n195_2[1] dout=cpuio.n204 
+.subckt jand clk=gclk dinA=iadr[6] dinB=cpuio.w_n196_2[1] dout=cpuio.n203 
+.subckt jcb3 dinA=cpuio.n206 dinB=cpuio.n207 dinC=cpuio.n208 dout=cpuio.n95 
+.subckt jand clk=gclk dinA=cpuio.w_Adr7_0 dinB=cpuio.w_n181_2[0] dout=cpuio.n208 
+.subckt jand clk=gclk dinA=dadr[7] dinB=cpuio.w_n195_2[0] dout=cpuio.n207 
+.subckt jand clk=gclk dinA=iadr[7] dinB=cpuio.w_n196_2[0] dout=cpuio.n206 
+.subckt jcb3 dinA=cpuio.n209 dinB=cpuio.w_n210_0[1] dinC=cpuio.n211 dout=cpuio.n94 
+.subckt jand clk=gclk dinA=cpuio.w_Drd_0[2] dinB=cpuio.w_n43_2[2] dout=cpuio.n211 
+.subckt jand clk=gclk dinA=cpuio.n212 dinB=cpuio.n178 dout=cpuio.n209 
+.subckt jcb dinA=cpuio.w_n214_0[1] dinB=cpuio.w_n183_1[1] dout=cpuio.n213 
+.subckt jand clk=gclk dinA=cpuio.w_Rd_0 dinB=cpuio.w_n180_0[2] dout=cpuio.n212 
+.subckt jand clk=gclk dinA=cpuio.w_n214_0[0] dinB=cpuio.w_n191_2[1] dout=cpuio.n23 
+.subckt jand clk=gclk dinA=cpuio.w_n215_0[1] dinB=cpuio.w_Drd1_0[1] dout=cpuio.n214 
+.subckt jcb dinA=cpuio.n176 dinB=cpuio.w_n35_1[0] dout=cpuio.n16 
+.subckt jand clk=gclk dinA=cpuio.w_Ready_2[2] dinB=cpuio.w_N66_0[0] dout=cpuio.n35 
+.subckt jcb3 dinA=cpuio.n217 dinB=cpuio.w_n218_0[0] dinC=cpuio.n187 dout=cpuio.n216 
+.subckt jand clk=gclk dinA=cpuio.w_n219_0[1] dinB=cpuio.n220 dout=cpuio.n217 
+.subckt jcb dinA=cpuio.IworkD dinB=cpuio.n221 dout=cpuio.n220 
+.subckt jand clk=gclk dinA=cpuio.w_Dwork_1[0] dinB=cpuio.w_Nohold_0 dout=cpuio.n221 
+.subckt jcb dinA=cpuio.n179 dinB=cpuio.n222 dout=cpuio.n105 
+.subckt jand clk=gclk dinA=cpuio.w_n180_0[1] dinB=cpuio.w_Iwork_1[1] dout=cpuio.n222 
+.subckt jcb3 dinA=cpuio.w_pcsrc_1[0] dinB=cpuio.w_Ready_2[1] dinC=cpuio.w_n180_0[0] dout=cpuio.n223 
+.subckt jcb3 dinA=cpuio.w_pcsrc_0[2] dinB=cpuio.w_n182_0[2] dinC=cpuio.n224 dout=cpuio.n218 
+.subckt jand clk=gclk dinA=cpuio.w_Ready_2[0] dinB=cpuio.w_Iwork_1[0] dout=cpuio.n224 
+.subckt jcb dinA=cpuio.n184 dinB=cpuio.w_n43_2[1] dout=cpuio.n104 
+.subckt jcb3 dinA=cpuio.w_pcsrc_0[1] dinB=cpuio.w_Ready_1[2] dinC=cpuio.w_n185_0[1] dout=cpuio.n225 
+.subckt jcb dinA=cpuio.n226 dinB=cpuio.n227 dout=cpuio.n103 
+.subckt jand clk=gclk dinA=cpuio.w_Dwr_0[1] dinB=cpuio.w_n43_2[0] dout=cpuio.n227 
+.subckt jand clk=gclk dinA=cpuio.n228 dinB=cpuio.n229 dout=cpuio.n226 
+.subckt jand clk=gclk dinA=cpuio.w_n219_0[0] dinB=cpuio.w_n191_2[0] dout=cpuio.n229 
+.subckt jand clk=gclk dinA=cpuio.w_Wr_0 dinB=cpuio.n230 dout=cpuio.n228 
+.subckt jcb dinA=cpuio.w_Drd1_0[0] dinB=cpuio.n186 dout=cpuio.n230 
+.subckt jcb3 dinA=cpuio.n231 dinB=cpuio.n232 dinC=cpuio.n233 dout=cpuio.n102 
+.subckt jand clk=gclk dinA=cpuio.w_Adr0_0 dinB=cpuio.w_n181_1[2] dout=cpuio.n233 
+.subckt jand clk=gclk dinA=dadr[0] dinB=cpuio.w_n195_1[2] dout=cpuio.n232 
+.subckt jand clk=gclk dinA=iadr[0] dinB=cpuio.w_n196_1[2] dout=cpuio.n231 
+.subckt jcb3 dinA=cpuio.n234 dinB=cpuio.n235 dinC=cpuio.n236 dout=cpuio.n101 
+.subckt jand clk=gclk dinA=cpuio.w_Adr1_0 dinB=cpuio.w_n181_1[1] dout=cpuio.n236 
+.subckt jand clk=gclk dinA=dadr[1] dinB=cpuio.w_n195_1[1] dout=cpuio.n235 
+.subckt jand clk=gclk dinA=iadr[1] dinB=cpuio.w_n196_1[1] dout=cpuio.n234 
+.subckt jcb3 dinA=cpuio.n237 dinB=cpuio.n238 dinC=cpuio.n239 dout=cpuio.n100 
+.subckt jand clk=gclk dinA=cpuio.w_Adr2_0 dinB=cpuio.w_n181_1[0] dout=cpuio.n239 
+.subckt jand clk=gclk dinA=dadr[2] dinB=cpuio.w_n195_1[0] dout=cpuio.n238 
+.subckt jand clk=gclk dinA=cpuio.w_n240_0[1] dinB=cpuio.w_n183_1[0] dout=cpuio.n195 
+.subckt jand clk=gclk dinA=iadr[2] dinB=cpuio.w_n196_1[0] dout=cpuio.n237 
+.subckt jand clk=gclk dinA=cpuio.w_n240_0[0] dinB=cpuio.w_n182_0[1] dout=cpuio.n196 
+.subckt jcb dinA=cpuio.w_n210_0[0] dinB=cpuio.w_n43_1[2] dout=cpuio.n240 
+.subckt jand clk=gclk dinA=cpuio.w_n191_1[2] dinB=cpuio.w_n183_0[2] dout=cpuio.n43 
+.subckt jand clk=gclk dinA=cpuio.w_n182_0[0] dinB=cpuio.w_n191_1[1] dout=cpuio.n210 
+.subckt jcb3 dinA=cpuio.w_n183_0[1] dinB=cpuio.n188 dinC=cpuio.n242 dout=cpuio.n241 
+.subckt jcb3 dinA=cpuio.w_Ready_1[1] dinB=cpuio.w_Iready_0[0] dinC=cpuio.w_Dwork_0[2] dout=cpuio.n242 
+.subckt jcb3 dinA=cpuio.w_Ready_1[0] dinB=cpuio.w_Iwork_0[2] dinC=cpuio.w_n243_0[1] dout=cpuio.n219 
+.subckt jcb3 dinA=cpuio.w_n215_0[0] dinB=cpuio.w_n243_0[0] dinC=cpuio.n177 dout=cpuio.Nohold_fa_ 
+.subckt jcb dinA=cpuio.w_n185_0[0] dinB=cpuio.hold dout=cpuio.n244 
+.subckt jand clk=gclk dinA=cpuio.n189 dinB=cpuio.n190 dout=cpuio.n243 
+.subckt jand clk=gclk dinA=cpuio.w_Ready_0[2] dinB=cpuio.w_Dwork_0[1] dout=cpuio.n215 
+.subckt jand clk=gclk dinA=cpuio.w_n191_1[0] dinB=cpuio.w_Iwork_0[1] dout=cpuio.N66 
+.subckt jand clk=gclk dinA=cpuio.n245 dinB=cpuio.w_n191_0[2] dout=cpuio.N55 
+.subckt jcb dinA=cpuio.w_Drd_0[1] dinB=cpuio.w_Dwr_0[0] dout=cpuio.n245 
+.subckt jscdff clear=cpuio.w_Clear_15[0] clk=gclk din=cpuio.n103 dout=cpuio.Wr_fa_ en=cpuio.w_Sclk_15[0] 
+.subckt jscdff clear=cpuio.w_Clear_19[1] clk=gclk din=cpuio.N55 dout=cpuio.hold en=cpuio.w_Sclk_19[1] 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_14[2] dinB=cpuio.w_n23_3[1] dout=cpuio.w_2984_1731 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_12[1] dinB=cpuio.w_n23_1[0] dout=cpuio.w_4341_1738 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_12[2] dinB=cpuio.w_n23_1[1] dout=cpuio.w_9f1c_1737 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_13[0] dinB=cpuio.w_n23_1[2] dout=cpuio.w_38ee_1736 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_13[1] dinB=cpuio.w_n23_2[0] dout=cpuio.w_4f78_1735 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_13[2] dinB=cpuio.w_n23_2[1] dout=cpuio.w_a1ad_1734 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_14[0] dinB=cpuio.w_n23_2[2] dout=cpuio.w_be7e_1733 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_14[1] dinB=cpuio.w_n23_3[0] dout=cpuio.w_8c8d_1732 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_19[0] dinB=cpuio.w_n191_2[2] dout=cpuio.w_2a80_1718 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_18[0] dinB=cpuio.w_n35_3[2] dout=cpuio.w_cedb_1721 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_17[2] dinB=cpuio.w_n35_3[1] dout=cpuio.w_d104_1722 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_17[1] dinB=cpuio.w_n35_3[0] dout=cpuio.w_99e3_1723 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_17[0] dinB=cpuio.w_n35_2[2] dout=cpuio.w_927e_1724 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_16[2] dinB=cpuio.w_n35_2[1] dout=cpuio.w_c743_1725 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_16[1] dinB=cpuio.w_n35_2[0] dout=cpuio.w_e15c_1726 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_16[0] dinB=cpuio.w_n35_1[2] dout=cpuio.w_0602_1727 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_15[2] dinB=cpuio.w_n35_1[1] dout=cpuio.w_943c_1728 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_12[0] dinB=cpuio.w_n43_5[1] dout=cpuio.w_b527_1739 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_11[2] dinB=cpuio.w_n43_5[0] dout=cpuio.w_9f2d_1740 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_11[1] dinB=cpuio.w_n43_4[2] dout=cpuio.w_532f_1741 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_11[0] dinB=cpuio.w_n43_4[1] dout=cpuio.w_0e87_1742 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_10[2] dinB=cpuio.w_n43_4[0] dout=cpuio.w_74e6_1743 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_10[1] dinB=cpuio.w_n43_3[2] dout=cpuio.w_fd68_1744 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_10[0] dinB=cpuio.w_n43_3[1] dout=cpuio.w_d802_1745 
+.subckt jand clk=gclk dinA=cpuio.w_Sclk_9[2] dinB=cpuio.w_n43_3[0] dout=cpuio.w_c513_1746 
+.subckt jspl3 din=clear doutA=cpuio.w_Clear_0[0] doutB=cpuio.w_Clear_0[1] doutC=cpuio.w_Clear_0[2] 
+.subckt jspl3 din=cpuio.w_Clear_0[0] doutA=cpuio.w_Clear_1[0] doutB=cpuio.w_Clear_1[1] doutC=cpuio.w_Clear_1[2] 
+.subckt jspl3 din=cpuio.w_Clear_3[0] doutA=cpuio.w_Clear_10[0] doutB=cpuio.w_Clear_10[1] doutC=cpuio.w_Clear_10[2] 
+.subckt jspl3 din=cpuio.w_Clear_3[1] doutA=cpuio.w_Clear_11[0] doutB=cpuio.w_Clear_11[1] doutC=cpuio.w_Clear_11[2] 
+.subckt jspl3 din=cpuio.w_Clear_3[2] doutA=cpuio.w_Clear_12[0] doutB=cpuio.w_Clear_12[1] doutC=cpuio.w_Clear_12[2] 
+.subckt jspl3 din=cpuio.w_Clear_4[0] doutA=cpuio.w_Clear_13[0] doutB=cpuio.w_Clear_13[1] doutC=cpuio.w_Clear_13[2] 
+.subckt jspl3 din=cpuio.w_Clear_4[1] doutA=cpuio.w_Clear_14[0] doutB=cpuio.w_Clear_14[1] doutC=cpuio.w_Clear_14[2] 
+.subckt jspl3 din=cpuio.w_Clear_4[2] doutA=cpuio.w_Clear_15[0] doutB=cpuio.w_Clear_15[1] doutC=cpuio.w_Clear_15[2] 
+.subckt jspl3 din=cpuio.w_Clear_5[0] doutA=cpuio.w_Clear_16[0] doutB=cpuio.w_Clear_16[1] doutC=cpuio.w_Clear_16[2] 
+.subckt jspl3 din=cpuio.w_Clear_5[1] doutA=cpuio.w_Clear_17[0] doutB=cpuio.w_Clear_17[1] doutC=cpuio.w_Clear_17[2] 
+.subckt jspl3 din=cpuio.w_Clear_5[2] doutA=cpuio.w_Clear_18[0] doutB=cpuio.w_Clear_18[1] doutC=cpuio.w_Clear_18[2] 
+.subckt jspl3 din=cpuio.w_Clear_0[1] doutA=cpuio.w_Clear_2[0] doutB=cpuio.w_Clear_2[1] doutC=cpuio.w_Clear_2[2] 
+.subckt jspl3 din=cpuio.w_Clear_0[2] doutA=cpuio.w_Clear_3[0] doutB=cpuio.w_Clear_3[1] doutC=cpuio.w_Clear_3[2] 
+.subckt jspl3 din=cpuio.w_Clear_1[0] doutA=cpuio.w_Clear_4[0] doutB=cpuio.w_Clear_4[1] doutC=cpuio.w_Clear_4[2] 
+.subckt jspl3 din=cpuio.w_Clear_1[1] doutA=cpuio.w_Clear_5[0] doutB=cpuio.w_Clear_5[1] doutC=cpuio.w_Clear_5[2] 
+.subckt jspl3 din=cpuio.w_Clear_1[2] doutA=cpuio.w_Clear_6[0] doutB=cpuio.w_Clear_6[1] doutC=cpuio.w_Clear_6[2] 
+.subckt jspl3 din=cpuio.w_Clear_2[0] doutA=cpuio.w_Clear_7[0] doutB=cpuio.w_Clear_7[1] doutC=cpuio.w_Clear_7[2] 
+.subckt jspl3 din=cpuio.w_Clear_2[1] doutA=cpuio.w_Clear_8[0] doutB=cpuio.w_Clear_8[1] doutC=cpuio.w_Clear_8[2] 
+.subckt jspl3 din=cpuio.w_Clear_2[2] doutA=cpuio.w_Clear_9[0] doutB=cpuio.w_Clear_9[1] doutC=cpuio.w_Clear_9[2] 
+.subckt jspl3 din=drd doutA=cpuio.w_Drd_0[0] doutB=cpuio.w_Drd_0[1] doutC=cpuio.w_Drd_0[2] 
+.subckt jspl3 din=cpuio.Dwork doutA=cpuio.w_Dwork_0[0] doutB=cpuio.w_Dwork_0[1] doutC=cpuio.w_Dwork_0[2] 
+.subckt jspl3 din=dwr doutA=cpuio.w_Dwr_0[0] doutB=cpuio.w_Dwr_0[1] doutC=cpuio.w_Dwr_0[2] 
+.subckt jspl3 din=cpuio.Iready_fa_ doutA=cpuio.w_Iready_0[0] doutB=cpuio.w_Iready_0[1] doutC=cpuio.Iready 
+.subckt jspl3 din=cpuio.Iwork doutA=cpuio.w_Iwork_0[0] doutB=cpuio.w_Iwork_0[1] doutC=cpuio.w_Iwork_0[2] 
+.subckt jspl3 din=ready doutA=cpuio.w_Ready_0[0] doutB=cpuio.w_Ready_0[1] doutC=cpuio.w_Ready_0[2] 
+.subckt jspl3 din=cpuio.w_Ready_0[0] doutA=cpuio.w_Ready_1[0] doutB=cpuio.w_Ready_1[1] doutC=cpuio.w_Ready_1[2] 
+.subckt jspl3 din=cpuio.w_Ready_0[1] doutA=cpuio.w_Ready_2[0] doutB=cpuio.w_Ready_2[1] doutC=cpuio.w_Ready_2[2] 
+.subckt jspl3 din=sclk doutA=cpuio.w_Sclk_0[0] doutB=cpuio.w_Sclk_0[1] doutC=cpuio.w_Sclk_0[2] 
+.subckt jspl3 din=cpuio.w_Sclk_0[0] doutA=cpuio.w_Sclk_1[0] doutB=cpuio.w_Sclk_1[1] doutC=cpuio.w_Sclk_1[2] 
+.subckt jspl3 din=cpuio.w_Sclk_3[0] doutA=cpuio.w_Sclk_10[0] doutB=cpuio.w_Sclk_10[1] doutC=cpuio.w_Sclk_10[2] 
+.subckt jspl3 din=cpuio.w_Sclk_3[1] doutA=cpuio.w_Sclk_11[0] doutB=cpuio.w_Sclk_11[1] doutC=cpuio.w_Sclk_11[2] 
+.subckt jspl3 din=cpuio.w_Sclk_3[2] doutA=cpuio.w_Sclk_12[0] doutB=cpuio.w_Sclk_12[1] doutC=cpuio.w_Sclk_12[2] 
+.subckt jspl3 din=cpuio.w_Sclk_4[0] doutA=cpuio.w_Sclk_13[0] doutB=cpuio.w_Sclk_13[1] doutC=cpuio.w_Sclk_13[2] 
+.subckt jspl3 din=cpuio.w_Sclk_4[1] doutA=cpuio.w_Sclk_14[0] doutB=cpuio.w_Sclk_14[1] doutC=cpuio.w_Sclk_14[2] 
+.subckt jspl3 din=cpuio.w_Sclk_4[2] doutA=cpuio.w_Sclk_15[0] doutB=cpuio.w_Sclk_15[1] doutC=cpuio.w_Sclk_15[2] 
+.subckt jspl3 din=cpuio.w_Sclk_5[0] doutA=cpuio.w_Sclk_16[0] doutB=cpuio.w_Sclk_16[1] doutC=cpuio.w_Sclk_16[2] 
+.subckt jspl3 din=cpuio.w_Sclk_5[1] doutA=cpuio.w_Sclk_17[0] doutB=cpuio.w_Sclk_17[1] doutC=cpuio.w_Sclk_17[2] 
+.subckt jspl3 din=cpuio.w_Sclk_5[2] doutA=cpuio.w_Sclk_18[0] doutB=cpuio.w_Sclk_18[1] doutC=cpuio.w_Sclk_18[2] 
+.subckt jspl3 din=cpuio.w_Sclk_0[1] doutA=cpuio.w_Sclk_2[0] doutB=cpuio.w_Sclk_2[1] doutC=cpuio.w_Sclk_2[2] 
+.subckt jspl3 din=cpuio.w_Sclk_0[2] doutA=cpuio.w_Sclk_3[0] doutB=cpuio.w_Sclk_3[1] doutC=cpuio.w_Sclk_3[2] 
+.subckt jspl3 din=cpuio.w_Sclk_1[0] doutA=cpuio.w_Sclk_4[0] doutB=cpuio.w_Sclk_4[1] doutC=cpuio.w_Sclk_4[2] 
+.subckt jspl3 din=cpuio.w_Sclk_1[1] doutA=cpuio.w_Sclk_5[0] doutB=cpuio.w_Sclk_5[1] doutC=cpuio.w_Sclk_5[2] 
+.subckt jspl3 din=cpuio.w_Sclk_1[2] doutA=cpuio.w_Sclk_6[0] doutB=cpuio.w_Sclk_6[1] doutC=cpuio.w_Sclk_6[2] 
+.subckt jspl3 din=cpuio.w_Sclk_2[0] doutA=cpuio.w_Sclk_7[0] doutB=cpuio.w_Sclk_7[1] doutC=cpuio.w_Sclk_7[2] 
+.subckt jspl3 din=cpuio.w_Sclk_2[1] doutA=cpuio.w_Sclk_8[0] doutB=cpuio.w_Sclk_8[1] doutC=cpuio.w_Sclk_8[2] 
+.subckt jspl3 din=cpuio.w_Sclk_2[2] doutA=cpuio.w_Sclk_9[0] doutB=cpuio.w_Sclk_9[1] doutC=cpuio.w_Sclk_9[2] 
+.subckt jspl3 din=cpuio.n180 doutA=cpuio.w_n180_0[0] doutB=cpuio.w_n180_0[1] doutC=cpuio.w_n180_0[2] 
+.subckt jspl3 din=cpuio.n181 doutA=cpuio.w_n181_0[0] doutB=cpuio.w_n181_0[1] doutC=cpuio.w_n181_0[2] 
+.subckt jspl3 din=cpuio.w_n181_0[0] doutA=cpuio.w_n181_1[0] doutB=cpuio.w_n181_1[1] doutC=cpuio.w_n181_1[2] 
+.subckt jspl3 din=cpuio.w_n181_0[1] doutA=cpuio.w_n181_2[0] doutB=cpuio.w_n181_2[1] doutC=cpuio.w_n181_2[2] 
+.subckt jspl3 din=cpuio.n182 doutA=cpuio.w_n182_0[0] doutB=cpuio.w_n182_0[1] doutC=cpuio.w_n182_0[2] 
+.subckt jspl3 din=cpuio.n183 doutA=cpuio.w_n183_0[0] doutB=cpuio.w_n183_0[1] doutC=cpuio.w_n183_0[2] 
+.subckt jspl3 din=cpuio.n191 doutA=cpuio.w_n191_0[0] doutB=cpuio.w_n191_0[1] doutC=cpuio.w_n191_0[2] 
+.subckt jspl3 din=cpuio.w_n191_0[0] doutA=cpuio.w_n191_1[0] doutB=cpuio.w_n191_1[1] doutC=cpuio.w_n191_1[2] 
+.subckt jspl3 din=cpuio.w_n191_0[1] doutA=cpuio.w_n191_2[0] doutB=cpuio.w_n191_2[1] doutC=cpuio.w_n191_2[2] 
+.subckt jspl3 din=cpuio.n195 doutA=cpuio.w_n195_0[0] doutB=cpuio.w_n195_0[1] doutC=cpuio.w_n195_0[2] 
+.subckt jspl3 din=cpuio.w_n195_0[0] doutA=cpuio.w_n195_1[0] doutB=cpuio.w_n195_1[1] doutC=cpuio.w_n195_1[2] 
+.subckt jspl3 din=cpuio.w_n195_0[1] doutA=cpuio.w_n195_2[0] doutB=cpuio.w_n195_2[1] doutC=cpuio.w_n195_2[2] 
+.subckt jspl3 din=cpuio.n196 doutA=cpuio.w_n196_0[0] doutB=cpuio.w_n196_0[1] doutC=cpuio.w_n196_0[2] 
+.subckt jspl3 din=cpuio.w_n196_0[0] doutA=cpuio.w_n196_1[0] doutB=cpuio.w_n196_1[1] doutC=cpuio.w_n196_1[2] 
+.subckt jspl3 din=cpuio.w_n196_0[1] doutA=cpuio.w_n196_2[0] doutB=cpuio.w_n196_2[1] doutC=cpuio.w_n196_2[2] 
+.subckt jspl3 din=cpuio.n215 doutA=cpuio.w_n215_0[0] doutB=cpuio.w_n215_0[1] doutC=cpuio.w_n215_0[2] 
+.subckt jspl3 din=cpuio.n219 doutA=cpuio.w_n219_0[0] doutB=cpuio.w_n219_0[1] doutC=cpuio.w_n219_0[2] 
+.subckt jspl3 din=cpuio.n23 doutA=cpuio.w_n23_0[0] doutB=cpuio.w_n23_0[1] doutC=cpuio.w_n23_0[2] 
+.subckt jspl3 din=cpuio.w_n23_0[0] doutA=cpuio.w_n23_1[0] doutB=cpuio.w_n23_1[1] doutC=cpuio.w_n23_1[2] 
+.subckt jspl3 din=cpuio.w_n23_0[1] doutA=cpuio.w_n23_2[0] doutB=cpuio.w_n23_2[1] doutC=cpuio.w_n23_2[2] 
+.subckt jspl3 din=cpuio.n240 doutA=cpuio.w_n240_0[0] doutB=cpuio.w_n240_0[1] doutC=cpuio.w_n240_0[2] 
+.subckt jspl3 din=cpuio.n35 doutA=cpuio.w_n35_0[0] doutB=cpuio.w_n35_0[1] doutC=cpuio.w_n35_0[2] 
+.subckt jspl3 din=cpuio.w_n35_0[0] doutA=cpuio.w_n35_1[0] doutB=cpuio.w_n35_1[1] doutC=cpuio.w_n35_1[2] 
+.subckt jspl3 din=cpuio.w_n35_0[1] doutA=cpuio.w_n35_2[0] doutB=cpuio.w_n35_2[1] doutC=cpuio.w_n35_2[2] 
+.subckt jspl3 din=cpuio.w_n35_0[2] doutA=cpuio.w_n35_3[0] doutB=cpuio.w_n35_3[1] doutC=cpuio.w_n35_3[2] 
+.subckt jspl3 din=cpuio.n43 doutA=cpuio.w_n43_0[0] doutB=cpuio.w_n43_0[1] doutC=cpuio.w_n43_0[2] 
+.subckt jspl3 din=cpuio.w_n43_0[0] doutA=cpuio.w_n43_1[0] doutB=cpuio.w_n43_1[1] doutC=cpuio.w_n43_1[2] 
+.subckt jspl3 din=cpuio.w_n43_0[1] doutA=cpuio.w_n43_2[0] doutB=cpuio.w_n43_2[1] doutC=cpuio.w_n43_2[2] 
+.subckt jspl3 din=cpuio.w_n43_0[2] doutA=cpuio.w_n43_3[0] doutB=cpuio.w_n43_3[1] doutC=cpuio.w_n43_3[2] 
+.subckt jspl3 din=cpuio.w_n43_1[0] doutA=cpuio.w_n43_4[0] doutB=cpuio.w_n43_4[1] doutC=cpuio.w_n43_4[2] 
+.subckt jspl3 din=w_pcsrc_0[1] doutA=cpuio.w_pcsrc_0[0] doutB=cpuio.w_pcsrc_0[1] doutC=cpuio.w_pcsrc_0[2] 
+.subckt jspl din=cpuio.Adr_fa_0 doutA=cpuio.w_Adr0_0 doutB=adr[0] 
+.subckt jspl din=cpuio.Adr_fa_1 doutA=cpuio.w_Adr1_0 doutB=adr[1] 
+.subckt jspl din=cpuio.Adr_fa_2 doutA=cpuio.w_Adr2_0 doutB=adr[2] 
+.subckt jspl din=cpuio.Adr_fa_3 doutA=cpuio.w_Adr3_0 doutB=adr[3] 
+.subckt jspl din=cpuio.Adr_fa_4 doutA=cpuio.w_Adr4_0 doutB=adr[4] 
+.subckt jspl din=cpuio.Adr_fa_5 doutA=cpuio.w_Adr5_0 doutB=adr[5] 
+.subckt jspl din=cpuio.Adr_fa_6 doutA=cpuio.w_Adr6_0 doutB=adr[6] 
+.subckt jspl din=cpuio.Adr_fa_7 doutA=cpuio.w_Adr7_0 doutB=adr[7] 
+.subckt jspl din=cpuio.w_Clear_6[0] doutA=cpuio.w_Clear_19[0] doutB=cpuio.w_Clear_19[1] 
+.subckt jspl din=cpuio.Drd1 doutA=cpuio.w_Drd1_0[0] doutB=cpuio.w_Drd1_0[1] 
+.subckt jspl din=cpuio.w_Drd_0[0] doutA=cpuio.w_Drd_1[0] doutB=cpuio.w_Drd_1[1] 
+.subckt jspl din=cpuio.w_Dwork_0[0] doutA=cpuio.w_Dwork_1[0] doutB=cpuio.w_Dwork_1[1] 
+.subckt jspl din=in[0] doutA=cpuio.w_In0_0[0] doutB=cpuio.w_In0_0[1] 
+.subckt jspl din=in[1] doutA=cpuio.w_In1_0[0] doutB=cpuio.w_In1_0[1] 
+.subckt jspl din=in[2] doutA=cpuio.w_In2_0[0] doutB=cpuio.w_In2_0[1] 
+.subckt jspl din=in[3] doutA=cpuio.w_In3_0[0] doutB=cpuio.w_In3_0[1] 
+.subckt jspl din=in[4] doutA=cpuio.w_In4_0[0] doutB=cpuio.w_In4_0[1] 
+.subckt jspl din=in[5] doutA=cpuio.w_In5_0[0] doutB=cpuio.w_In5_0[1] 
+.subckt jspl din=in[6] doutA=cpuio.w_In6_0[0] doutB=cpuio.w_In6_0[1] 
+.subckt jspl din=in[7] doutA=cpuio.w_In7_0[0] doutB=cpuio.w_In7_0[1] 
+.subckt jspl din=cpuio.w_Iwork_0[0] doutA=cpuio.w_Iwork_1[0] doutB=cpuio.w_Iwork_1[1] 
+.subckt jspl din=cpuio.N66 doutA=cpuio.w_N66_0[0] doutB=cpuio.w_N66_0[1] 
+.subckt jspl din=cpuio.Nohold_fa_ doutA=cpuio.w_Nohold_0 doutB=cpuio.Nohold 
+.subckt jspl din=cpuio.Rd_fa_ doutA=cpuio.w_Rd_0 doutB=rd 
+.subckt jspl din=cpuio.w_Sclk_6[0] doutA=cpuio.w_Sclk_19[0] doutB=cpuio.w_Sclk_19[1] 
+.subckt jspl din=cpuio.Wr_fa_ doutA=cpuio.w_Wr_0 doutB=wr 
+.subckt jspl din=cpuio.w_n181_0[2] doutA=cpuio.w_n181_3[0] doutB=cpuio.w_n181_3[1] 
+.subckt jspl din=cpuio.w_n183_0[0] doutA=cpuio.w_n183_1[0] doutB=cpuio.w_n183_1[1] 
+.subckt jspl din=cpuio.n185 doutA=cpuio.w_n185_0[0] doutB=cpuio.w_n185_0[1] 
+.subckt jspl din=cpuio.w_n195_0[2] doutA=cpuio.w_n195_3[0] doutB=cpuio.w_n195_3[1] 
+.subckt jspl din=cpuio.w_n196_0[2] doutA=cpuio.w_n196_3[0] doutB=cpuio.w_n196_3[1] 
+.subckt jspl din=cpuio.n210 doutA=cpuio.w_n210_0[0] doutB=cpuio.w_n210_0[1] 
+.subckt jspl din=cpuio.n214 doutA=cpuio.w_n214_0[0] doutB=cpuio.w_n214_0[1] 
+.subckt jspl din=cpuio.n218 doutA=cpuio.w_n218_0[0] doutB=cpuio.w_n218_0[1] 
+.subckt jspl din=cpuio.w_n23_0[2] doutA=cpuio.w_n23_3[0] doutB=cpuio.w_n23_3[1] 
+.subckt jspl din=cpuio.n243 doutA=cpuio.w_n243_0[0] doutB=cpuio.w_n243_0[1] 
+.subckt jspl din=cpuio.w_n43_1[1] doutA=cpuio.w_n43_5[0] doutB=cpuio.w_n43_5[1] 
+.subckt jspl din=cpuio.w_pcsrc_0[0] doutA=cpuio.w_pcsrc_1[0] doutB=cpuio.w_pcsrc_1[1] 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n100 dout=cpumem.Dadr_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n101 dout=cpumem.Dadr_fa_1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n102 dout=cpumem.Dadr_fa_2 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n103 dout=cpumem.Dadr_fa_3 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n104 dout=cpumem.Dadr_fa_4 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n105 dout=cpumem.Dadr_fa_5 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n106 dout=cpumem.Dadr_fa_6 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n107 dout=cpumem.Dadr_fa_7 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n108 dout=cpumem.Dout_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n109 dout=cpumem.Dout_fa_1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n110 dout=cpumem.Dout_fa_2 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n111 dout=cpumem.Dout_fa_3 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n112 dout=cpumem.Dout_fa_4 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n113 dout=cpumem.Dout_fa_5 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n114 dout=cpumem.Dout_fa_6 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n115 dout=cpumem.Dout_fa_7 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.w_LB_1[1] dout=cpumem.Drd en=cpumem.w_4c57_1415 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n124 dout=cpumem.Dwr_fa_ en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n125 dout=cpumem.IOwb_fa_ en=pclk 
+.subckt jnot clk=gclk din=cpumem.w_n82_2[0] dout=cpumem.n32 
+.subckt jnot clk=gclk din=cpumem.w_N6_4[1] dout=cpumem.n191 
+.subckt jnot clk=gclk din=cpumem.w_n213_0[0] dout=cpumem.n33 
+.subckt jnot clk=gclk din=SB dout=cpumem.n193 
+.subckt jand clk=gclk dinA=clear dinB=cpumem.w_N6_4[0] dout=cpumem.n31 
+.subckt jcb dinA=cpumem.n194 dinB=cpumem.w_n82_5[2] dout=cpumem.n125 
+.subckt jand clk=gclk dinA=cpumem.w_IOwb_0 dinB=cpumem.w_LB_1[0] dout=cpumem.n194 
+.subckt jcb dinA=cpumem.n195 dinB=cpumem.w_n33_7[2] dout=cpumem.n124 
+.subckt jand clk=gclk dinA=cpumem.w_Dwr_0 dinB=cpumem.w_n82_5[1] dout=cpumem.n195 
+.subckt jcb dinA=cpumem.n196 dinB=cpumem.n197 dout=cpumem.n123 
+.subckt jand clk=gclk dinA=dbus[7] dinB=cpumem.w_n82_5[0] dout=cpumem.n197 
+.subckt jand clk=gclk dinA=cpumem.w_res7_0 dinB=cpumem.w_n198_3[1] dout=cpumem.n196 
+.subckt jcb dinA=cpumem.n199 dinB=cpumem.n200 dout=cpumem.n122 
+.subckt jand clk=gclk dinA=dbus[6] dinB=cpumem.w_n82_4[2] dout=cpumem.n200 
+.subckt jand clk=gclk dinA=cpumem.w_res6_0 dinB=cpumem.w_n198_3[0] dout=cpumem.n199 
+.subckt jcb dinA=cpumem.n201 dinB=cpumem.n202 dout=cpumem.n121 
+.subckt jand clk=gclk dinA=dbus[5] dinB=cpumem.w_n82_4[1] dout=cpumem.n202 
+.subckt jand clk=gclk dinA=cpumem.w_res5_0 dinB=cpumem.w_n198_2[2] dout=cpumem.n201 
+.subckt jcb dinA=cpumem.n203 dinB=cpumem.n204 dout=cpumem.n120 
+.subckt jand clk=gclk dinA=dbus[4] dinB=cpumem.w_n82_4[0] dout=cpumem.n204 
+.subckt jand clk=gclk dinA=cpumem.w_res4_0 dinB=cpumem.w_n198_2[1] dout=cpumem.n203 
+.subckt jcb dinA=cpumem.n205 dinB=cpumem.n206 dout=cpumem.n119 
+.subckt jand clk=gclk dinA=dbus[3] dinB=cpumem.w_n82_3[2] dout=cpumem.n206 
+.subckt jand clk=gclk dinA=cpumem.w_res3_0 dinB=cpumem.w_n198_2[0] dout=cpumem.n205 
+.subckt jcb dinA=cpumem.n207 dinB=cpumem.n208 dout=cpumem.n118 
+.subckt jand clk=gclk dinA=dbus[2] dinB=cpumem.w_n82_3[1] dout=cpumem.n208 
+.subckt jand clk=gclk dinA=cpumem.w_res2_0 dinB=cpumem.w_n198_1[2] dout=cpumem.n207 
+.subckt jcb dinA=cpumem.n209 dinB=cpumem.n210 dout=cpumem.n117 
+.subckt jand clk=gclk dinA=dbus[1] dinB=cpumem.w_n82_3[0] dout=cpumem.n210 
+.subckt jand clk=gclk dinA=cpumem.w_res1_0 dinB=cpumem.w_n198_1[1] dout=cpumem.n209 
+.subckt jcb dinA=cpumem.n211 dinB=cpumem.n212 dout=cpumem.n116 
+.subckt jand clk=gclk dinA=dbus[0] dinB=cpumem.w_n82_2[2] dout=cpumem.n212 
+.subckt jand clk=gclk dinA=cpumem.w_res0_0 dinB=cpumem.w_n198_1[0] dout=cpumem.n211 
+.subckt jand clk=gclk dinA=cpumem.w_n32_0[1] dinB=cpumem.w_n213_0[2] dout=cpumem.n198 
+.subckt jcb dinA=cpumem.n214 dinB=cpumem.n215 dout=cpumem.n115 
+.subckt jand clk=gclk dinA=cpumem.w_datas27_0[1] dinB=cpumem.w_n33_7[1] dout=cpumem.n215 
+.subckt jand clk=gclk dinA=cpumem.w_Dout7_0 dinB=cpumem.w_n216_7[1] dout=cpumem.n214 
+.subckt jcb dinA=cpumem.n217 dinB=cpumem.n218 dout=cpumem.n114 
+.subckt jand clk=gclk dinA=cpumem.w_datas26_0[1] dinB=cpumem.w_n33_7[0] dout=cpumem.n218 
+.subckt jand clk=gclk dinA=cpumem.w_Dout6_0 dinB=cpumem.w_n216_7[0] dout=cpumem.n217 
+.subckt jcb dinA=cpumem.n219 dinB=cpumem.n220 dout=cpumem.n113 
+.subckt jand clk=gclk dinA=cpumem.w_datas25_0[1] dinB=cpumem.w_n33_6[2] dout=cpumem.n220 
+.subckt jand clk=gclk dinA=cpumem.w_Dout5_0 dinB=cpumem.w_n216_6[2] dout=cpumem.n219 
+.subckt jcb dinA=cpumem.n221 dinB=cpumem.n222 dout=cpumem.n112 
+.subckt jand clk=gclk dinA=cpumem.w_datas24_0[1] dinB=cpumem.w_n33_6[1] dout=cpumem.n222 
+.subckt jand clk=gclk dinA=cpumem.w_Dout4_0 dinB=cpumem.w_n216_6[1] dout=cpumem.n221 
+.subckt jcb dinA=cpumem.n223 dinB=cpumem.n224 dout=cpumem.n111 
+.subckt jand clk=gclk dinA=cpumem.w_datas23_0[1] dinB=cpumem.w_n33_6[0] dout=cpumem.n224 
+.subckt jand clk=gclk dinA=cpumem.w_Dout3_0 dinB=cpumem.w_n216_6[0] dout=cpumem.n223 
+.subckt jcb dinA=cpumem.n225 dinB=cpumem.n226 dout=cpumem.n110 
+.subckt jand clk=gclk dinA=cpumem.w_datas22_0[1] dinB=cpumem.w_n33_5[2] dout=cpumem.n226 
+.subckt jand clk=gclk dinA=cpumem.w_Dout2_0 dinB=cpumem.w_n216_5[2] dout=cpumem.n225 
+.subckt jcb dinA=cpumem.n227 dinB=cpumem.n228 dout=cpumem.n109 
+.subckt jand clk=gclk dinA=cpumem.w_datas21_0[1] dinB=cpumem.w_n33_5[1] dout=cpumem.n228 
+.subckt jand clk=gclk dinA=cpumem.w_Dout1_0 dinB=cpumem.w_n216_5[1] dout=cpumem.n227 
+.subckt jcb dinA=cpumem.n229 dinB=cpumem.n230 dout=cpumem.n108 
+.subckt jand clk=gclk dinA=cpumem.w_datas20_0[1] dinB=cpumem.w_n33_5[0] dout=cpumem.n230 
+.subckt jand clk=gclk dinA=cpumem.w_Dout0_0 dinB=cpumem.w_n216_5[0] dout=cpumem.n229 
+.subckt jcb3 dinA=cpumem.n231 dinB=cpumem.n232 dinC=cpumem.n233 dout=cpumem.n107 
+.subckt jand clk=gclk dinA=cpumem.w_datas27_0[0] dinB=cpumem.w_N6_3[2] dout=cpumem.n233 
+.subckt jand clk=gclk dinA=w_datad0_0[0] dinB=cpumem.w_n33_4[2] dout=cpumem.n232 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr7_0 dinB=cpumem.w_n216_4[2] dout=cpumem.n231 
+.subckt jcb3 dinA=cpumem.n234 dinB=cpumem.n235 dinC=cpumem.n236 dout=cpumem.n106 
+.subckt jand clk=gclk dinA=cpumem.w_datas26_0[0] dinB=cpumem.w_N6_3[1] dout=cpumem.n236 
+.subckt jand clk=gclk dinA=w_datad1_0[0] dinB=cpumem.w_n33_4[1] dout=cpumem.n235 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr6_0 dinB=cpumem.w_n216_4[1] dout=cpumem.n234 
+.subckt jcb3 dinA=cpumem.n237 dinB=cpumem.n238 dinC=cpumem.n239 dout=cpumem.n105 
+.subckt jand clk=gclk dinA=cpumem.w_datas25_0[0] dinB=cpumem.w_N6_3[0] dout=cpumem.n239 
+.subckt jand clk=gclk dinA=w_datad2_0[0] dinB=cpumem.w_n33_4[0] dout=cpumem.n238 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr5_0 dinB=cpumem.w_n216_4[0] dout=cpumem.n237 
+.subckt jcb3 dinA=cpumem.n240 dinB=cpumem.n241 dinC=cpumem.n242 dout=cpumem.n104 
+.subckt jand clk=gclk dinA=cpumem.w_datas24_0[0] dinB=cpumem.w_N6_2[2] dout=cpumem.n242 
+.subckt jand clk=gclk dinA=w_datad3_0[0] dinB=cpumem.w_n33_3[2] dout=cpumem.n241 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr4_0 dinB=cpumem.w_n216_3[2] dout=cpumem.n240 
+.subckt jcb3 dinA=cpumem.n243 dinB=cpumem.n244 dinC=cpumem.n245 dout=cpumem.n103 
+.subckt jand clk=gclk dinA=cpumem.w_datas23_0[0] dinB=cpumem.w_N6_2[1] dout=cpumem.n245 
+.subckt jand clk=gclk dinA=w_datad4_0[0] dinB=cpumem.w_n33_3[1] dout=cpumem.n244 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr3_0 dinB=cpumem.w_n216_3[1] dout=cpumem.n243 
+.subckt jcb3 dinA=cpumem.n246 dinB=cpumem.n247 dinC=cpumem.n248 dout=cpumem.n102 
+.subckt jand clk=gclk dinA=cpumem.w_datas22_0[0] dinB=cpumem.w_N6_2[0] dout=cpumem.n248 
+.subckt jand clk=gclk dinA=w_datad5_0[0] dinB=cpumem.w_n33_3[0] dout=cpumem.n247 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr2_0 dinB=cpumem.w_n216_3[0] dout=cpumem.n246 
+.subckt jcb3 dinA=cpumem.n249 dinB=cpumem.n250 dinC=cpumem.n251 dout=cpumem.n101 
+.subckt jand clk=gclk dinA=cpumem.w_datas21_0[0] dinB=cpumem.w_N6_1[2] dout=cpumem.n251 
+.subckt jand clk=gclk dinA=w_datad6_0[0] dinB=cpumem.w_n33_2[2] dout=cpumem.n250 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr1_0 dinB=cpumem.w_n216_2[2] dout=cpumem.n249 
+.subckt jcb3 dinA=cpumem.n252 dinB=cpumem.n253 dinC=cpumem.n254 dout=cpumem.n100 
+.subckt jand clk=gclk dinA=cpumem.w_datas20_0[0] dinB=cpumem.w_N6_1[1] dout=cpumem.n254 
+.subckt jand clk=gclk dinA=w_datad7_0[0] dinB=cpumem.w_n33_2[1] dout=cpumem.n253 
+.subckt jand clk=gclk dinA=cpumem.w_Dadr0_0 dinB=cpumem.w_n216_2[1] dout=cpumem.n252 
+.subckt jand clk=gclk dinA=cpumem.n191 dinB=cpumem.w_n213_0[1] dout=cpumem.n216 
+.subckt jcb3 dinA=cpumem.w_LB_0[2] dinB=cpumem.w_n82_2[1] dinC=cpumem.n193 dout=cpumem.n213 
+.subckt jand clk=gclk dinA=cpumem.w_n32_0[0] dinB=cpumem.w_LB_0[1] dout=cpumem.N6 
+.subckt jand clk=gclk dinA=cpumem.tmpwb1 dinB=wNOOP dout=cpumem.n82 
+.subckt jand clk=gclk dinA=pclk dinB=cpumem.w_n32_0[2] dout=cpumem.w_4c57_1415 
+.subckt jand clk=gclk dinA=pclk dinB=cpumem.w_n82_6[0] dout=cpumem.w_1208_1419 
+.subckt jand clk=gclk dinA=pclk dinB=cpumem.w_n82_6[1] dout=cpumem.w_81f9_1417 
+.subckt jand clk=gclk dinA=pclk dinB=cpumem.w_n31_0[0] dout=cpumem.w_5568_1418 
+.subckt jand clk=gclk dinA=pclk dinB=cpumem.w_n31_0[1] dout=cpumem.w_5039_1416 
+.subckt jspl3 din=LB doutA=cpumem.w_LB_0[0] doutB=cpumem.w_LB_0[1] doutC=cpumem.w_LB_0[2] 
+.subckt jspl3 din=cpumem.N6 doutA=cpumem.w_N6_0[0] doutB=cpumem.w_N6_0[1] doutC=cpumem.w_N6_0[2] 
+.subckt jspl3 din=cpumem.w_N6_0[0] doutA=cpumem.w_N6_1[0] doutB=cpumem.w_N6_1[1] doutC=cpumem.w_N6_1[2] 
+.subckt jspl3 din=cpumem.w_N6_0[1] doutA=cpumem.w_N6_2[0] doutB=cpumem.w_N6_2[1] doutC=cpumem.w_N6_2[2] 
+.subckt jspl3 din=cpumem.w_N6_0[2] doutA=cpumem.w_N6_3[0] doutB=cpumem.w_N6_3[1] doutC=cpumem.w_N6_3[2] 
+.subckt jspl3 din=cpumem.w_N6_1[0] doutA=cpumem.w_N6_4[0] doutB=cpumem.w_N6_4[1] doutC=cpumem.w_N6_4[2] 
+.subckt jspl3 din=cpumem.n198 doutA=cpumem.w_n198_0[0] doutB=cpumem.w_n198_0[1] doutC=cpumem.w_n198_0[2] 
+.subckt jspl3 din=cpumem.w_n198_0[0] doutA=cpumem.w_n198_1[0] doutB=cpumem.w_n198_1[1] doutC=cpumem.w_n198_1[2] 
+.subckt jspl3 din=cpumem.w_n198_0[1] doutA=cpumem.w_n198_2[0] doutB=cpumem.w_n198_2[1] doutC=cpumem.w_n198_2[2] 
+.subckt jspl3 din=cpumem.n213 doutA=cpumem.w_n213_0[0] doutB=cpumem.w_n213_0[1] doutC=cpumem.w_n213_0[2] 
+.subckt jspl3 din=cpumem.n216 doutA=cpumem.w_n216_0[0] doutB=cpumem.w_n216_0[1] doutC=cpumem.w_n216_0[2] 
+.subckt jspl3 din=cpumem.w_n216_0[0] doutA=cpumem.w_n216_1[0] doutB=cpumem.w_n216_1[1] doutC=cpumem.w_n216_1[2] 
+.subckt jspl3 din=cpumem.w_n216_0[1] doutA=cpumem.w_n216_2[0] doutB=cpumem.w_n216_2[1] doutC=cpumem.w_n216_2[2] 
+.subckt jspl3 din=cpumem.w_n216_0[2] doutA=cpumem.w_n216_3[0] doutB=cpumem.w_n216_3[1] doutC=cpumem.w_n216_3[2] 
+.subckt jspl3 din=cpumem.w_n216_1[0] doutA=cpumem.w_n216_4[0] doutB=cpumem.w_n216_4[1] doutC=cpumem.w_n216_4[2] 
+.subckt jspl3 din=cpumem.w_n216_1[1] doutA=cpumem.w_n216_5[0] doutB=cpumem.w_n216_5[1] doutC=cpumem.w_n216_5[2] 
+.subckt jspl3 din=cpumem.w_n216_1[2] doutA=cpumem.w_n216_6[0] doutB=cpumem.w_n216_6[1] doutC=cpumem.w_n216_6[2] 
+.subckt jspl3 din=cpumem.n32 doutA=cpumem.w_n32_0[0] doutB=cpumem.w_n32_0[1] doutC=cpumem.w_n32_0[2] 
+.subckt jspl3 din=cpumem.n33 doutA=cpumem.w_n33_0[0] doutB=cpumem.w_n33_0[1] doutC=cpumem.w_n33_0[2] 
+.subckt jspl3 din=cpumem.w_n33_0[0] doutA=cpumem.w_n33_1[0] doutB=cpumem.w_n33_1[1] doutC=cpumem.w_n33_1[2] 
+.subckt jspl3 din=cpumem.w_n33_0[1] doutA=cpumem.w_n33_2[0] doutB=cpumem.w_n33_2[1] doutC=cpumem.w_n33_2[2] 
+.subckt jspl3 din=cpumem.w_n33_0[2] doutA=cpumem.w_n33_3[0] doutB=cpumem.w_n33_3[1] doutC=cpumem.w_n33_3[2] 
+.subckt jspl3 din=cpumem.w_n33_1[0] doutA=cpumem.w_n33_4[0] doutB=cpumem.w_n33_4[1] doutC=cpumem.w_n33_4[2] 
+.subckt jspl3 din=cpumem.w_n33_1[1] doutA=cpumem.w_n33_5[0] doutB=cpumem.w_n33_5[1] doutC=cpumem.w_n33_5[2] 
+.subckt jspl3 din=cpumem.w_n33_1[2] doutA=cpumem.w_n33_6[0] doutB=cpumem.w_n33_6[1] doutC=cpumem.w_n33_6[2] 
+.subckt jspl3 din=cpumem.w_n33_2[0] doutA=cpumem.w_n33_7[0] doutB=cpumem.w_n33_7[1] doutC=cpumem.w_n33_7[2] 
+.subckt jspl3 din=cpumem.n82 doutA=cpumem.w_n82_0[0] doutB=cpumem.w_n82_0[1] doutC=cpumem.w_n82_0[2] 
+.subckt jspl3 din=cpumem.w_n82_0[0] doutA=cpumem.w_n82_1[0] doutB=cpumem.w_n82_1[1] doutC=cpumem.w_n82_1[2] 
+.subckt jspl3 din=cpumem.w_n82_0[1] doutA=cpumem.w_n82_2[0] doutB=cpumem.w_n82_2[1] doutC=cpumem.w_n82_2[2] 
+.subckt jspl3 din=cpumem.w_n82_0[2] doutA=cpumem.w_n82_3[0] doutB=cpumem.w_n82_3[1] doutC=cpumem.w_n82_3[2] 
+.subckt jspl3 din=cpumem.w_n82_1[0] doutA=cpumem.w_n82_4[0] doutB=cpumem.w_n82_4[1] doutC=cpumem.w_n82_4[2] 
+.subckt jspl3 din=cpumem.w_n82_1[1] doutA=cpumem.w_n82_5[0] doutB=cpumem.w_n82_5[1] doutC=cpumem.w_n82_5[2] 
+.subckt jspl din=cpumem.Dadr_fa_0 doutA=cpumem.w_Dadr0_0 doutB=cpumem.Dadr[0] 
+.subckt jspl din=cpumem.Dadr_fa_1 doutA=cpumem.w_Dadr1_0 doutB=cpumem.Dadr[1] 
+.subckt jspl din=cpumem.Dadr_fa_2 doutA=cpumem.w_Dadr2_0 doutB=cpumem.Dadr[2] 
+.subckt jspl din=cpumem.Dadr_fa_3 doutA=cpumem.w_Dadr3_0 doutB=cpumem.Dadr[3] 
+.subckt jspl din=cpumem.Dadr_fa_4 doutA=cpumem.w_Dadr4_0 doutB=cpumem.Dadr[4] 
+.subckt jspl din=cpumem.Dadr_fa_5 doutA=cpumem.w_Dadr5_0 doutB=cpumem.Dadr[5] 
+.subckt jspl din=cpumem.Dadr_fa_6 doutA=cpumem.w_Dadr6_0 doutB=cpumem.Dadr[6] 
+.subckt jspl din=cpumem.Dadr_fa_7 doutA=cpumem.w_Dadr7_0 doutB=cpumem.Dadr[7] 
+.subckt jspl din=cpumem.Dout_fa_0 doutA=cpumem.w_Dout0_0 doutB=cpumem.Dout[0] 
+.subckt jspl din=cpumem.Dout_fa_1 doutA=cpumem.w_Dout1_0 doutB=cpumem.Dout[1] 
+.subckt jspl din=cpumem.Dout_fa_2 doutA=cpumem.w_Dout2_0 doutB=cpumem.Dout[2] 
+.subckt jspl din=cpumem.Dout_fa_3 doutA=cpumem.w_Dout3_0 doutB=cpumem.Dout[3] 
+.subckt jspl din=cpumem.Dout_fa_4 doutA=cpumem.w_Dout4_0 doutB=cpumem.Dout[4] 
+.subckt jspl din=cpumem.Dout_fa_5 doutA=cpumem.w_Dout5_0 doutB=cpumem.Dout[5] 
+.subckt jspl din=cpumem.Dout_fa_6 doutA=cpumem.w_Dout6_0 doutB=cpumem.Dout[6] 
+.subckt jspl din=cpumem.Dout_fa_7 doutA=cpumem.w_Dout7_0 doutB=cpumem.Dout[7] 
+.subckt jspl din=cpumem.Dwr_fa_ doutA=cpumem.w_Dwr_0 doutB=cpumem.Dwr 
+.subckt jspl din=cpumem.IOwb_fa_ doutA=cpumem.w_IOwb_0 doutB=cpumem.IOwb 
+.subckt jspl din=cpumem.w_LB_0[0] doutA=cpumem.w_LB_1[0] doutB=cpumem.w_LB_1[1] 
+.subckt jspl din=w_datas17_0[0] doutA=cpumem.w_datas20_0[0] doutB=cpumem.w_datas20_0[1] 
+.subckt jspl din=w_datas16_0[0] doutA=cpumem.w_datas21_0[0] doutB=cpumem.w_datas21_0[1] 
+.subckt jspl din=w_datas15_0[0] doutA=cpumem.w_datas22_0[0] doutB=cpumem.w_datas22_0[1] 
+.subckt jspl din=w_datas14_0[0] doutA=cpumem.w_datas23_0[0] doutB=cpumem.w_datas23_0[1] 
+.subckt jspl din=w_datas13_0[0] doutA=cpumem.w_datas24_0[0] doutB=cpumem.w_datas24_0[1] 
+.subckt jspl din=w_datas12_0[0] doutA=cpumem.w_datas25_0[0] doutB=cpumem.w_datas25_0[1] 
+.subckt jspl din=w_datas11_0[0] doutA=cpumem.w_datas26_0[0] doutB=cpumem.w_datas26_0[1] 
+.subckt jspl din=w_datas10_0[0] doutA=cpumem.w_datas27_0[0] doutB=cpumem.w_datas27_0[1] 
+.subckt jspl din=cpumem.w_n198_0[2] doutA=cpumem.w_n198_3[0] doutB=cpumem.w_n198_3[1] 
+.subckt jspl din=cpumem.w_n216_2[0] doutA=cpumem.w_n216_7[0] doutB=cpumem.w_n216_7[1] 
+.subckt jspl din=cpumem.n31 doutA=cpumem.w_n31_0[0] doutB=cpumem.w_n31_0[1] 
+.subckt jspl din=cpumem.w_n82_1[2] doutA=cpumem.w_n82_6[0] doutB=cpumem.w_n82_6[1] 
+.subckt jspl din=cpumem.res_fa_0 doutA=cpumem.w_res0_0 doutB=cpumem.res[0] 
+.subckt jspl din=cpumem.res_fa_1 doutA=cpumem.w_res1_0 doutB=cpumem.res[1] 
+.subckt jspl din=cpumem.res_fa_2 doutA=cpumem.w_res2_0 doutB=cpumem.res[2] 
+.subckt jspl din=cpumem.res_fa_3 doutA=cpumem.w_res3_0 doutB=cpumem.res[3] 
+.subckt jspl din=cpumem.res_fa_4 doutA=cpumem.w_res4_0 doutB=cpumem.res[4] 
+.subckt jspl din=cpumem.res_fa_5 doutA=cpumem.w_res5_0 doutB=cpumem.res[5] 
+.subckt jspl din=cpumem.res_fa_6 doutA=cpumem.w_res6_0 doutB=cpumem.res[6] 
+.subckt jspl din=cpumem.res_fa_7 doutA=cpumem.w_res7_0 doutB=cpumem.res[7] 
+.subckt jscdff clear=clear clk=gclk din=cpumem.tmprdnum[0] dout=cpumem.rdnum3[0] en=cpumem.w_1208_1419 
+.subckt jscdff clear=clear clk=gclk din=cpumem.tmprdnum[1] dout=cpumem.rdnum3[1] en=cpumem.w_81f9_1417 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n116 dout=cpumem.res_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n117 dout=cpumem.res_fa_1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n118 dout=cpumem.res_fa_2 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n119 dout=cpumem.res_fa_3 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n120 dout=cpumem.res_fa_4 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n121 dout=cpumem.res_fa_5 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n122 dout=cpumem.res_fa_6 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.n123 dout=cpumem.res_fa_7 en=pclk 
+.subckt jscdff clear=$true clk=gclk din=w_rdnumw11_0[0] dout=cpumem.tmprdnum[0] en=cpumem.w_5568_1418 
+.subckt jscdff clear=$true clk=gclk din=w_rdnumw10_0[0] dout=cpumem.tmprdnum[1] en=cpumem.w_5039_1416 
+.subckt jscdff clear=clear clk=gclk din=cpumem.tmpwb dout=cpumem.tmpwb1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpumem.w_N6_4[2] dout=cpumem.tmpwb en=pclk 
+.subckt jcb3 dinA=cpupc.n105 dinB=cpupc.n158 dinC=cpupc.n159 dout=cpupc.n37 
+.subckt jand clk=gclk dinA=cpupc.newpc[7] dinB=cpupc.w_pcsrc_1[0] dout=cpupc.n159 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg7_0[1] dinB=cpupc.n160 dout=cpupc.n158 
+.subckt jcb dinA=cpupc.n161 dinB=cpupc.w_n155_0[0] dout=cpupc.n160 
+.subckt jcb dinA=cpupc.n162 dinB=cpupc.w_n150_0[0] dout=cpupc.n155 
+.subckt jcb dinA=cpupc.n163 dinB=cpupc.w_n124_0[1] dout=cpupc.n150 
+.subckt jand clk=gclk dinA=cpupc.w_n120_0[1] dinB=cpupc.w_n119_1[0] dout=cpupc.n124 
+.subckt jand clk=gclk dinA=cpupc.w_n133_1[2] dinB=cpupc.w_n152_0[1] dout=cpupc.n163 
+.subckt jand clk=gclk dinA=cpupc.w_n133_1[1] dinB=cpupc.w_n117_0[1] dout=cpupc.n162 
+.subckt jand clk=gclk dinA=cpupc.w_n133_1[0] dinB=cpupc.w_n118_0[1] dout=cpupc.n161 
+.subckt jcb3 dinA=cpupc.w_pcreg7_0[0] dinB=cpupc.w_n157_0[0] dinC=cpupc.w_n118_0[0] dout=cpupc.n164 
+.subckt jcb3 dinA=cpupc.w_n119_0[2] dinB=cpupc.w_n152_0[0] dinC=cpupc.w_n117_0[0] dout=cpupc.n157 
+.subckt jcb3 dinA=cpupc.w_n140_0[1] dinB=cpupc.w_n115_0[0] dinC=cpupc.n116 dout=cpupc.n152 
+.subckt jcb3 dinA=cpupc.w_n112_0[1] dinB=cpupc.w_n113_0[0] dinC=cpupc.n114 dout=cpupc.n140 
+.subckt jand clk=gclk dinA=cpupc.w_n120_0[0] dinB=w_iwait_0[1] dout=cpupc.n133 
+.subckt jnot clk=gclk din=cpupc.n164 dout=cpupc.n105 
+.subckt jnot clk=gclk din=cpupc.n156 dout=cpupc.n106 
+.subckt jnot clk=gclk din=cpupc.n151 dout=cpupc.n107 
+.subckt jnot clk=gclk din=cpupc.n146 dout=cpupc.n108 
+.subckt jnot clk=gclk din=cpupc.n139 dout=cpupc.n109 
+.subckt jnot clk=gclk din=cpupc.n134 dout=cpupc.n110 
+.subckt jnot clk=gclk din=cpupc.n128 dout=cpupc.n111 
+.subckt jnot clk=gclk din=cpupc.w_pcreg0_0[1] dout=cpupc.n112 
+.subckt jnot clk=gclk din=cpupc.w_pcreg1_1 dout=cpupc.n113 
+.subckt jnot clk=gclk din=cpupc.w_pcreg2_1 dout=cpupc.n114 
+.subckt jnot clk=gclk din=cpupc.w_pcreg3_1 dout=cpupc.n115 
+.subckt jnot clk=gclk din=cpupc.w_pcreg4_1 dout=cpupc.n116 
+.subckt jnot clk=gclk din=cpupc.w_pcreg5_1 dout=cpupc.n117 
+.subckt jnot clk=gclk din=cpupc.w_pcreg6_1 dout=cpupc.n118 
+.subckt jnot clk=gclk din=cpupc.w_n133_3[1] dout=cpupc.n119 
+.subckt jnot clk=gclk din=cpupc.w_pcsrc_3[2] dout=cpupc.n120 
+.subckt jcb3 dinA=cpupc.n121 dinB=cpupc.w_n122_0[1] dinC=cpupc.n123 dout=cpupc.n44 
+.subckt jand clk=gclk dinA=cpupc.w_pcsrc_3[1] dinB=pcbus[0] dout=cpupc.n123 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg0_0[0] dinB=cpupc.w_n124_1[1] dout=cpupc.n121 
+.subckt jcb3 dinA=cpupc.n111 dinB=cpupc.n125 dinC=cpupc.n126 dout=cpupc.n43 
+.subckt jand clk=gclk dinA=pcbus[1] dinB=cpupc.w_pcsrc_3[0] dout=cpupc.n126 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg1_0[2] dinB=cpupc.w_n127_0[1] dout=cpupc.n125 
+.subckt jcb3 dinA=cpupc.w_pcreg1_0[1] dinB=cpupc.w_n112_1[1] dinC=cpupc.w_n119_2[2] dout=cpupc.n128 
+.subckt jcb3 dinA=cpupc.n110 dinB=cpupc.n129 dinC=cpupc.n130 dout=cpupc.n42 
+.subckt jand clk=gclk dinA=pcbus[2] dinB=cpupc.w_pcsrc_2[2] dout=cpupc.n130 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg2_0[2] dinB=cpupc.n131 dout=cpupc.n129 
+.subckt jcb dinA=cpupc.n132 dinB=cpupc.w_n127_0[0] dout=cpupc.n131 
+.subckt jcb dinA=cpupc.w_n122_0[0] dinB=cpupc.w_n124_1[0] dout=cpupc.n127 
+.subckt jand clk=gclk dinA=cpupc.w_n133_3[0] dinB=cpupc.w_n112_1[0] dout=cpupc.n122 
+.subckt jand clk=gclk dinA=cpupc.w_n133_2[2] dinB=cpupc.w_n113_0[2] dout=cpupc.n132 
+.subckt jcb3 dinA=cpupc.w_n119_2[1] dinB=cpupc.w_n113_0[1] dinC=cpupc.n135 dout=cpupc.n134 
+.subckt jcb dinA=cpupc.w_pcreg2_0[1] dinB=cpupc.w_n112_0[2] dout=cpupc.n135 
+.subckt jcb3 dinA=cpupc.n109 dinB=cpupc.n136 dinC=cpupc.n137 dout=cpupc.n41 
+.subckt jand clk=gclk dinA=pcbus[3] dinB=cpupc.w_pcsrc_2[1] dout=cpupc.n137 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg3_0[2] dinB=cpupc.w_n138_0[1] dout=cpupc.n136 
+.subckt jcb3 dinA=cpupc.w_pcreg3_0[1] dinB=cpupc.w_n119_2[0] dinC=cpupc.w_n140_1[1] dout=cpupc.n139 
+.subckt jcb3 dinA=cpupc.n108 dinB=cpupc.n141 dinC=cpupc.n142 dout=cpupc.n40 
+.subckt jand clk=gclk dinA=pcbus[4] dinB=cpupc.w_pcsrc_2[0] dout=cpupc.n142 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg4_0[2] dinB=cpupc.n143 dout=cpupc.n141 
+.subckt jcb dinA=cpupc.n144 dinB=cpupc.w_n138_0[0] dout=cpupc.n143 
+.subckt jcb dinA=cpupc.n145 dinB=cpupc.w_n124_0[2] dout=cpupc.n138 
+.subckt jand clk=gclk dinA=cpupc.w_n133_2[1] dinB=cpupc.w_n140_1[0] dout=cpupc.n145 
+.subckt jand clk=gclk dinA=cpupc.w_n133_2[0] dinB=cpupc.w_n115_0[2] dout=cpupc.n144 
+.subckt jcb3 dinA=cpupc.w_n140_0[2] dinB=cpupc.w_n115_0[1] dinC=cpupc.n147 dout=cpupc.n146 
+.subckt jcb dinA=cpupc.w_pcreg4_0[1] dinB=cpupc.w_n119_1[2] dout=cpupc.n147 
+.subckt jcb3 dinA=cpupc.n107 dinB=cpupc.n148 dinC=cpupc.n149 dout=cpupc.n39 
+.subckt jand clk=gclk dinA=pcbus[5] dinB=cpupc.w_pcsrc_1[2] dout=cpupc.n149 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg5_0[2] dinB=cpupc.w_n150_0[1] dout=cpupc.n148 
+.subckt jcb3 dinA=cpupc.w_pcreg5_0[1] dinB=cpupc.w_n119_1[1] dinC=cpupc.w_n152_0[2] dout=cpupc.n151 
+.subckt jcb3 dinA=cpupc.n106 dinB=cpupc.n153 dinC=cpupc.n154 dout=cpupc.n38 
+.subckt jand clk=gclk dinA=pcbus[6] dinB=cpupc.w_pcsrc_1[1] dout=cpupc.n154 
+.subckt jand clk=gclk dinA=cpupc.w_pcreg6_0[2] dinB=cpupc.w_n155_0[1] dout=cpupc.n153 
+.subckt jcb dinA=cpupc.w_n157_0[1] dinB=cpupc.w_pcreg6_0[1] dout=cpupc.n156 
+.subckt jspl3 din=cpupc.n112 doutA=cpupc.w_n112_0[0] doutB=cpupc.w_n112_0[1] doutC=cpupc.w_n112_0[2] 
+.subckt jspl3 din=cpupc.n113 doutA=cpupc.w_n113_0[0] doutB=cpupc.w_n113_0[1] doutC=cpupc.w_n113_0[2] 
+.subckt jspl3 din=cpupc.n115 doutA=cpupc.w_n115_0[0] doutB=cpupc.w_n115_0[1] doutC=cpupc.w_n115_0[2] 
+.subckt jspl3 din=cpupc.n119 doutA=cpupc.w_n119_0[0] doutB=cpupc.w_n119_0[1] doutC=cpupc.w_n119_0[2] 
+.subckt jspl3 din=cpupc.w_n119_0[0] doutA=cpupc.w_n119_1[0] doutB=cpupc.w_n119_1[1] doutC=cpupc.w_n119_1[2] 
+.subckt jspl3 din=cpupc.w_n119_0[1] doutA=cpupc.w_n119_2[0] doutB=cpupc.w_n119_2[1] doutC=cpupc.w_n119_2[2] 
+.subckt jspl3 din=cpupc.n124 doutA=cpupc.w_n124_0[0] doutB=cpupc.w_n124_0[1] doutC=cpupc.w_n124_0[2] 
+.subckt jspl3 din=cpupc.n133 doutA=cpupc.w_n133_0[0] doutB=cpupc.w_n133_0[1] doutC=cpupc.w_n133_0[2] 
+.subckt jspl3 din=cpupc.w_n133_0[0] doutA=cpupc.w_n133_1[0] doutB=cpupc.w_n133_1[1] doutC=cpupc.w_n133_1[2] 
+.subckt jspl3 din=cpupc.w_n133_0[1] doutA=cpupc.w_n133_2[0] doutB=cpupc.w_n133_2[1] doutC=cpupc.w_n133_2[2] 
+.subckt jspl3 din=cpupc.n140 doutA=cpupc.w_n140_0[0] doutB=cpupc.w_n140_0[1] doutC=cpupc.w_n140_0[2] 
+.subckt jspl3 din=cpupc.n152 doutA=cpupc.w_n152_0[0] doutB=cpupc.w_n152_0[1] doutC=cpupc.w_n152_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_0 doutA=cpupc.w_pcreg0_0[0] doutB=cpupc.w_pcreg0_0[1] doutC=cpupc.pcreg[0] 
+.subckt jspl3 din=cpupc.pcreg_fa_1 doutA=cpupc.w_pcreg1_0[0] doutB=cpupc.w_pcreg1_0[1] doutC=cpupc.w_pcreg1_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_2 doutA=cpupc.w_pcreg2_0[0] doutB=cpupc.w_pcreg2_0[1] doutC=cpupc.w_pcreg2_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_3 doutA=cpupc.w_pcreg3_0[0] doutB=cpupc.w_pcreg3_0[1] doutC=cpupc.w_pcreg3_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_4 doutA=cpupc.w_pcreg4_0[0] doutB=cpupc.w_pcreg4_0[1] doutC=cpupc.w_pcreg4_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_5 doutA=cpupc.w_pcreg5_0[0] doutB=cpupc.w_pcreg5_0[1] doutC=cpupc.w_pcreg5_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_6 doutA=cpupc.w_pcreg6_0[0] doutB=cpupc.w_pcreg6_0[1] doutC=cpupc.w_pcreg6_0[2] 
+.subckt jspl3 din=cpupc.pcreg_fa_7 doutA=cpupc.w_pcreg7_0[0] doutB=cpupc.w_pcreg7_0[1] doutC=cpupc.pcreg[7] 
+.subckt jspl3 din=w_pcsrc_0[2] doutA=cpupc.w_pcsrc_0[0] doutB=cpupc.w_pcsrc_0[1] doutC=cpupc.w_pcsrc_0[2] 
+.subckt jspl3 din=cpupc.w_pcsrc_0[0] doutA=cpupc.w_pcsrc_1[0] doutB=cpupc.w_pcsrc_1[1] doutC=cpupc.w_pcsrc_1[2] 
+.subckt jspl3 din=cpupc.w_pcsrc_0[1] doutA=cpupc.w_pcsrc_2[0] doutB=cpupc.w_pcsrc_2[1] doutC=cpupc.w_pcsrc_2[2] 
+.subckt jspl3 din=cpupc.w_pcsrc_0[2] doutA=cpupc.w_pcsrc_3[0] doutB=cpupc.w_pcsrc_3[1] doutC=cpupc.w_pcsrc_3[2] 
+.subckt jspl din=cpupc.w_n112_0[0] doutA=cpupc.w_n112_1[0] doutB=cpupc.w_n112_1[1] 
+.subckt jspl din=cpupc.n117 doutA=cpupc.w_n117_0[0] doutB=cpupc.w_n117_0[1] 
+.subckt jspl din=cpupc.n118 doutA=cpupc.w_n118_0[0] doutB=cpupc.w_n118_0[1] 
+.subckt jspl din=cpupc.n120 doutA=cpupc.w_n120_0[0] doutB=cpupc.w_n120_0[1] 
+.subckt jspl din=cpupc.n122 doutA=cpupc.w_n122_0[0] doutB=cpupc.w_n122_0[1] 
+.subckt jspl din=cpupc.w_n124_0[0] doutA=cpupc.w_n124_1[0] doutB=cpupc.w_n124_1[1] 
+.subckt jspl din=cpupc.n127 doutA=cpupc.w_n127_0[0] doutB=cpupc.w_n127_0[1] 
+.subckt jspl din=cpupc.w_n133_0[2] doutA=cpupc.w_n133_3[0] doutB=cpupc.w_n133_3[1] 
+.subckt jspl din=cpupc.n138 doutA=cpupc.w_n138_0[0] doutB=cpupc.w_n138_0[1] 
+.subckt jspl din=cpupc.w_n140_0[0] doutA=cpupc.w_n140_1[0] doutB=cpupc.w_n140_1[1] 
+.subckt jspl din=cpupc.n150 doutA=cpupc.w_n150_0[0] doutB=cpupc.w_n150_0[1] 
+.subckt jspl din=cpupc.n155 doutA=cpupc.w_n155_0[0] doutB=cpupc.w_n155_0[1] 
+.subckt jspl din=cpupc.n157 doutA=cpupc.w_n157_0[0] doutB=cpupc.w_n157_0[1] 
+.subckt jspl din=cpupc.w_pcreg1_0[0] doutA=cpupc.w_pcreg1_1 doutB=cpupc.pcreg[1] 
+.subckt jspl din=cpupc.w_pcreg2_0[0] doutA=cpupc.w_pcreg2_1 doutB=cpupc.pcreg[2] 
+.subckt jspl din=cpupc.w_pcreg3_0[0] doutA=cpupc.w_pcreg3_1 doutB=cpupc.pcreg[3] 
+.subckt jspl din=cpupc.w_pcreg4_0[0] doutA=cpupc.w_pcreg4_1 doutB=cpupc.pcreg[4] 
+.subckt jspl din=cpupc.w_pcreg5_0[0] doutA=cpupc.w_pcreg5_1 doutB=cpupc.pcreg[5] 
+.subckt jspl din=cpupc.w_pcreg6_0[0] doutA=cpupc.w_pcreg6_1 doutB=cpupc.pcreg[6] 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n44 dout=cpupc.pcreg_fa_0 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n43 dout=cpupc.pcreg_fa_1 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n42 dout=cpupc.pcreg_fa_2 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n41 dout=cpupc.pcreg_fa_3 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n40 dout=cpupc.pcreg_fa_4 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n39 dout=cpupc.pcreg_fa_5 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n38 dout=cpupc.pcreg_fa_6 en=pclk 
+.subckt jscdff clear=clear clk=gclk din=cpupc.n37 dout=cpupc.pcreg_fa_7 en=pclk 
+.subckt jnot clk=gclk din=cpuwb.w_IOwb_5[1] dout=cpuwb.n1 
+.subckt jand clk=gclk dinA=datamw[7] dinB=cpuwb.w_IOwb_4[0] dout=cpuwb.n7 
+.subckt jand clk=gclk dinA=alures[7] dinB=cpuwb.w_n1_3[2] dout=cpuwb.n6 
+.subckt jcb dinA=cpuwb.n8 dinB=cpuwb.n9 dout=cpuwb.wdata[6] 
+.subckt jand clk=gclk dinA=datamw[6] dinB=cpuwb.w_IOwb_3[2] dout=cpuwb.n9 
+.subckt jand clk=gclk dinA=alures[6] dinB=cpuwb.w_n1_3[1] dout=cpuwb.n8 
+.subckt jcb dinA=cpuwb.n10 dinB=cpuwb.n11 dout=cpuwb.wdata[5] 
+.subckt jand clk=gclk dinA=datamw[5] dinB=cpuwb.w_IOwb_3[1] dout=cpuwb.n11 
+.subckt jand clk=gclk dinA=alures[5] dinB=cpuwb.w_n1_3[0] dout=cpuwb.n10 
+.subckt jcb dinA=cpuwb.n12 dinB=cpuwb.n13 dout=cpuwb.wdata[4] 
+.subckt jand clk=gclk dinA=datamw[4] dinB=cpuwb.w_IOwb_3[0] dout=cpuwb.n13 
+.subckt jcb dinA=EXwb dinB=cpuwb.w_IOwb_5[0] dout=cpuwb.wreg 
+.subckt jand clk=gclk dinA=alures[4] dinB=cpuwb.w_n1_2[2] dout=cpuwb.n12 
+.subckt jcb dinA=cpuwb.n14 dinB=cpuwb.n15 dout=cpuwb.wdata[3] 
+.subckt jand clk=gclk dinA=datamw[3] dinB=cpuwb.w_IOwb_2[2] dout=cpuwb.n15 
+.subckt jand clk=gclk dinA=alures[3] dinB=cpuwb.w_n1_2[1] dout=cpuwb.n14 
+.subckt jcb dinA=cpuwb.n16 dinB=cpuwb.n17 dout=cpuwb.wdata[2] 
+.subckt jand clk=gclk dinA=datamw[2] dinB=cpuwb.w_IOwb_2[1] dout=cpuwb.n17 
+.subckt jand clk=gclk dinA=alures[2] dinB=cpuwb.w_n1_2[0] dout=cpuwb.n16 
+.subckt jcb dinA=cpuwb.n18 dinB=cpuwb.n19 dout=cpuwb.wdata[1] 
+.subckt jand clk=gclk dinA=datamw[1] dinB=cpuwb.w_IOwb_2[0] dout=cpuwb.n19 
+.subckt jand clk=gclk dinA=alures[1] dinB=cpuwb.w_n1_1[2] dout=cpuwb.n18 
+.subckt jcb dinA=cpuwb.n2 dinB=cpuwb.n3 dout=cpuwb.wnum[1] 
+.subckt jcb dinA=cpuwb.n20 dinB=cpuwb.n21 dout=cpuwb.wdata[0] 
+.subckt jand clk=gclk dinA=datamw[0] dinB=cpuwb.w_IOwb_1[2] dout=cpuwb.n21 
+.subckt jand clk=gclk dinA=alures[0] dinB=cpuwb.w_n1_1[1] dout=cpuwb.n20 
+.subckt jand clk=gclk dinA=cpuwb.w_IOwb_4[2] dinB=num[1] dout=cpuwb.n3 
+.subckt jand clk=gclk dinA=rdnumw2[1] dinB=cpuwb.w_n1_4[1] dout=cpuwb.n2 
+.subckt jcb dinA=cpuwb.n4 dinB=cpuwb.n5 dout=cpuwb.wnum[0] 
+.subckt jand clk=gclk dinA=num[0] dinB=cpuwb.w_IOwb_4[1] dout=cpuwb.n5 
+.subckt jand clk=gclk dinA=rdnumw2[0] dinB=cpuwb.w_n1_4[0] dout=cpuwb.n4 
+.subckt jcb dinA=cpuwb.n6 dinB=cpuwb.n7 dout=cpuwb.wdata[7] 
+.subckt jspl3 din=IOwb doutA=cpuwb.w_IOwb_0[0] doutB=cpuwb.w_IOwb_0[1] doutC=cpuwb.w_IOwb_0[2] 
+.subckt jspl3 din=cpuwb.w_IOwb_0[0] doutA=cpuwb.w_IOwb_1[0] doutB=cpuwb.w_IOwb_1[1] doutC=cpuwb.w_IOwb_1[2] 
+.subckt jspl3 din=cpuwb.w_IOwb_0[1] doutA=cpuwb.w_IOwb_2[0] doutB=cpuwb.w_IOwb_2[1] doutC=cpuwb.w_IOwb_2[2] 
+.subckt jspl3 din=cpuwb.w_IOwb_0[2] doutA=cpuwb.w_IOwb_3[0] doutB=cpuwb.w_IOwb_3[1] doutC=cpuwb.w_IOwb_3[2] 
+.subckt jspl3 din=cpuwb.w_IOwb_1[0] doutA=cpuwb.w_IOwb_4[0] doutB=cpuwb.w_IOwb_4[1] doutC=cpuwb.w_IOwb_4[2] 
+.subckt jspl3 din=cpuwb.n1 doutA=cpuwb.w_n1_0[0] doutB=cpuwb.w_n1_0[1] doutC=cpuwb.w_n1_0[2] 
+.subckt jspl3 din=cpuwb.w_n1_0[0] doutA=cpuwb.w_n1_1[0] doutB=cpuwb.w_n1_1[1] doutC=cpuwb.w_n1_1[2] 
+.subckt jspl3 din=cpuwb.w_n1_0[1] doutA=cpuwb.w_n1_2[0] doutB=cpuwb.w_n1_2[1] doutC=cpuwb.w_n1_2[2] 
+.subckt jspl3 din=cpuwb.w_n1_0[2] doutA=cpuwb.w_n1_3[0] doutB=cpuwb.w_n1_3[1] doutC=cpuwb.w_n1_3[2] 
+.subckt jspl din=cpuwb.w_IOwb_1[1] doutA=cpuwb.w_IOwb_5[0] doutB=cpuwb.w_IOwb_5[1] 
+.subckt jspl din=cpuwb.w_n1_1[0] doutA=cpuwb.w_n1_4[0] doutB=cpuwb.w_n1_4[1] 
+.subckt jspl3 din=cpuid.pcsrc doutA=w_pcsrc_0[0] doutB=w_pcsrc_0[1] doutC=w_pcsrc_0[2] 
+.subckt jspl din=zregisters.datad[0] doutA=w_datad00_0[0] doutB=w_datad00_0[1] 
+.subckt jspl din=zregisters.datad[1] doutA=w_datad01_0[0] doutB=w_datad01_0[1] 
+.subckt jspl din=zregisters.datad[2] doutA=w_datad02_0[0] doutB=w_datad02_0[1] 
+.subckt jspl din=zregisters.datad[3] doutA=w_datad03_0[0] doutB=w_datad03_0[1] 
+.subckt jspl din=zregisters.datad[4] doutA=w_datad04_0[0] doutB=w_datad04_0[1] 
+.subckt jspl din=zregisters.datad[5] doutA=w_datad05_0[0] doutB=w_datad05_0[1] 
+.subckt jspl din=zregisters.datad[6] doutA=w_datad06_0[0] doutB=w_datad06_0[1] 
+.subckt jspl din=zregisters.datad[7] doutA=w_datad07_0[0] doutB=w_datad07_0[1] 
+.subckt jspl din=BP8_1.aout[0] doutA=w_datad0_0[0] doutB=w_datad0_0[1] 
+.subckt jspl din=BP8_1.aout[1] doutA=w_datad1_0[0] doutB=w_datad1_0[1] 
+.subckt jspl din=BP8_1.aout[2] doutA=w_datad2_0[0] doutB=w_datad2_0[1] 
+.subckt jspl din=BP8_1.aout[3] doutA=w_datad3_0[0] doutB=w_datad3_0[1] 
+.subckt jspl din=BP8_1.aout[4] doutA=w_datad4_0[0] doutB=w_datad4_0[1] 
+.subckt jspl din=BP8_1.aout[5] doutA=w_datad5_0[0] doutB=w_datad5_0[1] 
+.subckt jspl din=BP8_1.aout[6] doutA=w_datad6_0[0] doutB=w_datad6_0[1] 
+.subckt jspl din=BP8_1.aout[7] doutA=w_datad7_0[0] doutB=w_datad7_0[1] 
+.subckt jspl din=BP8_2.aout[0] doutA=w_datas10_0[0] doutB=w_datas10_0[1] 
+.subckt jspl din=BP8_2.aout[1] doutA=w_datas11_0[0] doutB=w_datas11_0[1] 
+.subckt jspl din=BP8_2.aout[2] doutA=w_datas12_0[0] doutB=w_datas12_0[1] 
+.subckt jspl din=BP8_2.aout[3] doutA=w_datas13_0[0] doutB=w_datas13_0[1] 
+.subckt jspl din=BP8_2.aout[4] doutA=w_datas14_0[0] doutB=w_datas14_0[1] 
+.subckt jspl din=BP8_2.aout[5] doutA=w_datas15_0[0] doutB=w_datas15_0[1] 
+.subckt jspl din=BP8_2.aout[6] doutA=w_datas16_0[0] doutB=w_datas16_0[1] 
+.subckt jspl din=BP8_2.aout[7] doutA=w_datas17_0[0] doutB=w_datas17_0[1] 
+.subckt jspl din=cpuio.Iready doutA=w_iwait_0[0] doutB=w_iwait_0[1] 
+.subckt jspl din=cpuid.rdnum[0] doutA=w_rdnumw10_0[0] doutB=w_rdnumw10_0[1] 
+.subckt jspl din=cpuid.rdnum[1] doutA=w_rdnumw11_0[0] doutB=w_rdnumw11_0[1] 
+.subckt jnot clk=gclk din=zregisters.n106 dout=zregisters.n9 
+.subckt jcb3 dinA=zregisters.w_wnum0_0[2] dinB=zregisters.w_n107_1[1] dinC=zregisters.w_n108_0[1] dout=zregisters.n106 
+.subckt jnot clk=gclk din=zregisters.n109 dout=zregisters.n8 
+.subckt jcb3 dinA=zregisters.w_wnum1_0[2] dinB=zregisters.w_n107_1[0] dinC=zregisters.w_n110_0[1] dout=zregisters.n109 
+.subckt jnot clk=gclk din=zregisters.n111 dout=zregisters.n7 
+.subckt jcb3 dinA=zregisters.w_wnum1_0[1] dinB=zregisters.w_wnum0_0[1] dinC=zregisters.w_n107_0[2] dout=zregisters.n111 
+.subckt jnot clk=gclk din=zregisters.n112 dout=zregisters.n10 
+.subckt jcb3 dinA=zregisters.w_n107_0[1] dinB=zregisters.w_n108_0[0] dinC=zregisters.w_n110_0[0] dout=zregisters.n112 
+.subckt jnot clk=gclk din=zregisters.w_wnum0_0[0] dout=zregisters.n110 
+.subckt jnot clk=gclk din=zregisters.w_wnum1_0[0] dout=zregisters.n108 
+.subckt jnot clk=gclk din=wreg dout=zregisters.n107 
+.subckt jcb3 dinA=zregisters.n113 dinB=zregisters.n114 dinC=zregisters.n115 dout=zregisters.datas[7] 
+.subckt jcb dinA=zregisters.n116 dinB=zregisters.n117 dout=zregisters.n115 
+.subckt jand clk=gclk dinA=zregisters.regs0[7] dinB=zregisters.w_n118_3[2] dout=zregisters.n117 
+.subckt jand clk=gclk dinA=zregisters.regs1[7] dinB=zregisters.w_n119_3[2] dout=zregisters.n116 
+.subckt jand clk=gclk dinA=zregisters.regs2[7] dinB=zregisters.w_n120_3[2] dout=zregisters.n114 
+.subckt jand clk=gclk dinA=zregisters.regs3[7] dinB=zregisters.w_n121_3[1] dout=zregisters.n113 
+.subckt jcb3 dinA=zregisters.n122 dinB=zregisters.n123 dinC=zregisters.n124 dout=zregisters.datas[6] 
+.subckt jcb dinA=zregisters.n125 dinB=zregisters.n126 dout=zregisters.n124 
+.subckt jand clk=gclk dinA=zregisters.regs0[6] dinB=zregisters.w_n118_3[1] dout=zregisters.n126 
+.subckt jand clk=gclk dinA=zregisters.regs1[6] dinB=zregisters.w_n119_3[1] dout=zregisters.n125 
+.subckt jand clk=gclk dinA=zregisters.regs2[6] dinB=zregisters.w_n120_3[1] dout=zregisters.n123 
+.subckt jand clk=gclk dinA=zregisters.regs3[6] dinB=zregisters.w_n121_3[0] dout=zregisters.n122 
+.subckt jcb3 dinA=zregisters.n127 dinB=zregisters.n128 dinC=zregisters.n129 dout=zregisters.datas[5] 
+.subckt jcb dinA=zregisters.n130 dinB=zregisters.n131 dout=zregisters.n129 
+.subckt jand clk=gclk dinA=zregisters.regs0[5] dinB=zregisters.w_n118_3[0] dout=zregisters.n131 
+.subckt jand clk=gclk dinA=zregisters.regs1[5] dinB=zregisters.w_n119_3[0] dout=zregisters.n130 
+.subckt jand clk=gclk dinA=zregisters.regs2[5] dinB=zregisters.w_n120_3[0] dout=zregisters.n128 
+.subckt jand clk=gclk dinA=zregisters.regs3[5] dinB=zregisters.w_n121_2[2] dout=zregisters.n127 
+.subckt jcb3 dinA=zregisters.n132 dinB=zregisters.n133 dinC=zregisters.n134 dout=zregisters.datas[4] 
+.subckt jcb dinA=zregisters.n135 dinB=zregisters.n136 dout=zregisters.n134 
+.subckt jand clk=gclk dinA=zregisters.regs0[4] dinB=zregisters.w_n118_2[2] dout=zregisters.n136 
+.subckt jand clk=gclk dinA=zregisters.regs1[4] dinB=zregisters.w_n119_2[2] dout=zregisters.n135 
+.subckt jand clk=gclk dinA=zregisters.regs2[4] dinB=zregisters.w_n120_2[2] dout=zregisters.n133 
+.subckt jand clk=gclk dinA=zregisters.regs3[4] dinB=zregisters.w_n121_2[1] dout=zregisters.n132 
+.subckt jcb3 dinA=zregisters.n137 dinB=zregisters.n138 dinC=zregisters.n139 dout=zregisters.datas[3] 
+.subckt jcb dinA=zregisters.n140 dinB=zregisters.n141 dout=zregisters.n139 
+.subckt jand clk=gclk dinA=zregisters.regs0[3] dinB=zregisters.w_n118_2[1] dout=zregisters.n141 
+.subckt jand clk=gclk dinA=zregisters.regs1[3] dinB=zregisters.w_n119_2[1] dout=zregisters.n140 
+.subckt jand clk=gclk dinA=zregisters.regs2[3] dinB=zregisters.w_n120_2[1] dout=zregisters.n138 
+.subckt jand clk=gclk dinA=zregisters.regs3[3] dinB=zregisters.w_n121_2[0] dout=zregisters.n137 
+.subckt jcb3 dinA=zregisters.n142 dinB=zregisters.n143 dinC=zregisters.n144 dout=zregisters.datas[2] 
+.subckt jcb dinA=zregisters.n145 dinB=zregisters.n146 dout=zregisters.n144 
+.subckt jand clk=gclk dinA=zregisters.regs0[2] dinB=zregisters.w_n118_2[0] dout=zregisters.n146 
+.subckt jand clk=gclk dinA=zregisters.regs1[2] dinB=zregisters.w_n119_2[0] dout=zregisters.n145 
+.subckt jand clk=gclk dinA=zregisters.regs2[2] dinB=zregisters.w_n120_2[0] dout=zregisters.n143 
+.subckt jand clk=gclk dinA=zregisters.regs3[2] dinB=zregisters.w_n121_1[2] dout=zregisters.n142 
+.subckt jcb3 dinA=zregisters.n147 dinB=zregisters.n148 dinC=zregisters.n149 dout=zregisters.datas[1] 
+.subckt jcb dinA=zregisters.n150 dinB=zregisters.n151 dout=zregisters.n149 
+.subckt jand clk=gclk dinA=zregisters.regs0[1] dinB=zregisters.w_n118_1[2] dout=zregisters.n151 
+.subckt jand clk=gclk dinA=zregisters.regs1[1] dinB=zregisters.w_n119_1[2] dout=zregisters.n150 
+.subckt jand clk=gclk dinA=zregisters.regs2[1] dinB=zregisters.w_n120_1[2] dout=zregisters.n148 
+.subckt jand clk=gclk dinA=zregisters.regs3[1] dinB=zregisters.w_n121_1[1] dout=zregisters.n147 
+.subckt jcb3 dinA=zregisters.n152 dinB=zregisters.n153 dinC=zregisters.n154 dout=zregisters.datas[0] 
+.subckt jcb dinA=zregisters.n155 dinB=zregisters.n156 dout=zregisters.n154 
+.subckt jand clk=gclk dinA=zregisters.regs0[0] dinB=zregisters.w_n118_1[1] dout=zregisters.n156 
+.subckt jand clk=gclk dinA=zregisters.regs1[0] dinB=zregisters.w_n119_1[1] dout=zregisters.n155 
+.subckt jand clk=gclk dinA=zregisters.regs2[0] dinB=zregisters.w_n120_1[1] dout=zregisters.n153 
+.subckt jand clk=gclk dinA=zregisters.regs3[0] dinB=zregisters.w_n121_1[0] dout=zregisters.n152 
+.subckt jnot clk=gclk din=zregisters.n157 dout=zregisters.n121 
+.subckt jcb3 dinA=zregisters.w_n118_1[0] dinB=zregisters.w_n119_1[0] dinC=zregisters.w_n120_1[0] dout=zregisters.n157 
+.subckt jand clk=gclk dinA=zregisters.w_n158_0[1] dinB=zregisters.w_nums1_0[1] dout=zregisters.n120 
+.subckt jand clk=gclk dinA=zregisters.w_n159_0[1] dinB=zregisters.w_nums0_0[1] dout=zregisters.n119 
+.subckt jand clk=gclk dinA=zregisters.w_n159_0[0] dinB=zregisters.w_n158_0[0] dout=zregisters.n118 
+.subckt jnot clk=gclk din=zregisters.w_nums0_0[0] dout=zregisters.n158 
+.subckt jnot clk=gclk din=zregisters.w_nums1_0[0] dout=zregisters.n159 
+.subckt jcb3 dinA=zregisters.n160 dinB=zregisters.n161 dinC=zregisters.n162 dout=zregisters.datad[7] 
+.subckt jcb dinA=zregisters.n163 dinB=zregisters.n164 dout=zregisters.n162 
+.subckt jand clk=gclk dinA=zregisters.regd0[7] dinB=zregisters.w_n165_3[2] dout=zregisters.n164 
+.subckt jand clk=gclk dinA=zregisters.regd1[7] dinB=zregisters.w_n166_3[2] dout=zregisters.n163 
+.subckt jand clk=gclk dinA=zregisters.regd2[7] dinB=zregisters.w_n167_3[2] dout=zregisters.n161 
+.subckt jand clk=gclk dinA=zregisters.regd3[7] dinB=zregisters.w_n168_3[1] dout=zregisters.n160 
+.subckt jcb3 dinA=zregisters.n169 dinB=zregisters.n170 dinC=zregisters.n171 dout=zregisters.datad[6] 
+.subckt jcb dinA=zregisters.n172 dinB=zregisters.n173 dout=zregisters.n171 
+.subckt jand clk=gclk dinA=zregisters.regd0[6] dinB=zregisters.w_n165_3[1] dout=zregisters.n173 
+.subckt jand clk=gclk dinA=zregisters.regd1[6] dinB=zregisters.w_n166_3[1] dout=zregisters.n172 
+.subckt jand clk=gclk dinA=zregisters.regd2[6] dinB=zregisters.w_n167_3[1] dout=zregisters.n170 
+.subckt jand clk=gclk dinA=zregisters.regd3[6] dinB=zregisters.w_n168_3[0] dout=zregisters.n169 
+.subckt jcb3 dinA=zregisters.n174 dinB=zregisters.n175 dinC=zregisters.n176 dout=zregisters.datad[5] 
+.subckt jcb dinA=zregisters.n177 dinB=zregisters.n178 dout=zregisters.n176 
+.subckt jand clk=gclk dinA=zregisters.regd0[5] dinB=zregisters.w_n165_3[0] dout=zregisters.n178 
+.subckt jand clk=gclk dinA=zregisters.regd1[5] dinB=zregisters.w_n166_3[0] dout=zregisters.n177 
+.subckt jand clk=gclk dinA=zregisters.regd2[5] dinB=zregisters.w_n167_3[0] dout=zregisters.n175 
+.subckt jand clk=gclk dinA=zregisters.regd3[5] dinB=zregisters.w_n168_2[2] dout=zregisters.n174 
+.subckt jcb3 dinA=zregisters.n179 dinB=zregisters.n180 dinC=zregisters.n181 dout=zregisters.datad[4] 
+.subckt jcb dinA=zregisters.n182 dinB=zregisters.n183 dout=zregisters.n181 
+.subckt jand clk=gclk dinA=zregisters.regd0[4] dinB=zregisters.w_n165_2[2] dout=zregisters.n183 
+.subckt jand clk=gclk dinA=zregisters.regd1[4] dinB=zregisters.w_n166_2[2] dout=zregisters.n182 
+.subckt jand clk=gclk dinA=zregisters.regd2[4] dinB=zregisters.w_n167_2[2] dout=zregisters.n180 
+.subckt jand clk=gclk dinA=zregisters.regd3[4] dinB=zregisters.w_n168_2[1] dout=zregisters.n179 
+.subckt jcb3 dinA=zregisters.n184 dinB=zregisters.n185 dinC=zregisters.n186 dout=zregisters.datad[3] 
+.subckt jcb dinA=zregisters.n187 dinB=zregisters.n188 dout=zregisters.n186 
+.subckt jand clk=gclk dinA=zregisters.regd0[3] dinB=zregisters.w_n165_2[1] dout=zregisters.n188 
+.subckt jand clk=gclk dinA=zregisters.regd1[3] dinB=zregisters.w_n166_2[1] dout=zregisters.n187 
+.subckt jand clk=gclk dinA=zregisters.regd2[3] dinB=zregisters.w_n167_2[1] dout=zregisters.n185 
+.subckt jand clk=gclk dinA=zregisters.regd3[3] dinB=zregisters.w_n168_2[0] dout=zregisters.n184 
+.subckt jcb3 dinA=zregisters.n189 dinB=zregisters.n190 dinC=zregisters.n191 dout=zregisters.datad[2] 
+.subckt jcb dinA=zregisters.n192 dinB=zregisters.n193 dout=zregisters.n191 
+.subckt jand clk=gclk dinA=zregisters.regd0[2] dinB=zregisters.w_n165_2[0] dout=zregisters.n193 
+.subckt jand clk=gclk dinA=zregisters.regd1[2] dinB=zregisters.w_n166_2[0] dout=zregisters.n192 
+.subckt jand clk=gclk dinA=zregisters.regd2[2] dinB=zregisters.w_n167_2[0] dout=zregisters.n190 
+.subckt jand clk=gclk dinA=zregisters.regd3[2] dinB=zregisters.w_n168_1[2] dout=zregisters.n189 
+.subckt jcb3 dinA=zregisters.n194 dinB=zregisters.n195 dinC=zregisters.n196 dout=zregisters.datad[1] 
+.subckt jcb dinA=zregisters.n197 dinB=zregisters.n198 dout=zregisters.n196 
+.subckt jand clk=gclk dinA=zregisters.regd0[1] dinB=zregisters.w_n165_1[2] dout=zregisters.n198 
+.subckt jand clk=gclk dinA=zregisters.regd1[1] dinB=zregisters.w_n166_1[2] dout=zregisters.n197 
+.subckt jand clk=gclk dinA=zregisters.regd2[1] dinB=zregisters.w_n167_1[2] dout=zregisters.n195 
+.subckt jand clk=gclk dinA=zregisters.regd3[1] dinB=zregisters.w_n168_1[1] dout=zregisters.n194 
+.subckt jcb3 dinA=zregisters.n199 dinB=zregisters.n200 dinC=zregisters.n201 dout=zregisters.datad[0] 
+.subckt jcb dinA=zregisters.n202 dinB=zregisters.n203 dout=zregisters.n201 
+.subckt jand clk=gclk dinA=zregisters.regd0[0] dinB=zregisters.w_n165_1[1] dout=zregisters.n203 
+.subckt jand clk=gclk dinA=zregisters.regd1[0] dinB=zregisters.w_n166_1[1] dout=zregisters.n202 
+.subckt jand clk=gclk dinA=zregisters.regd2[0] dinB=zregisters.w_n167_1[1] dout=zregisters.n200 
+.subckt jand clk=gclk dinA=zregisters.regd3[0] dinB=zregisters.w_n168_1[0] dout=zregisters.n199 
+.subckt jnot clk=gclk din=zregisters.n204 dout=zregisters.n168 
+.subckt jcb3 dinA=zregisters.w_n165_1[0] dinB=zregisters.w_n166_1[0] dinC=zregisters.w_n167_1[0] dout=zregisters.n204 
+.subckt jand clk=gclk dinA=zregisters.w_n205_0[1] dinB=zregisters.w_numd1_0[1] dout=zregisters.n167 
+.subckt jand clk=gclk dinA=zregisters.w_n206_0[1] dinB=zregisters.w_numd0_0[1] dout=zregisters.n166 
+.subckt jand clk=gclk dinA=zregisters.w_n206_0[0] dinB=zregisters.w_n205_0[0] dout=zregisters.n165 
+.subckt jnot clk=gclk din=zregisters.w_numd0_0[0] dout=zregisters.n205 
+.subckt jnot clk=gclk din=zregisters.w_numd1_0[0] dout=zregisters.n206 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_2[1] dout=zregisters.w_2ce8_821 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_2[2] dout=zregisters.w_9f49_820 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_3[0] dout=zregisters.w_162d_819 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_3[1] dout=zregisters.w_7640_818 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_3[2] dout=zregisters.w_7406_817 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_4[0] dout=zregisters.w_afb7_816 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_4[1] dout=zregisters.w_464f_815 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_4[2] dout=zregisters.w_4c56_814 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_5[0] dout=zregisters.w_5dbd_765 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_5[1] dout=zregisters.w_033b_764 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_5[2] dout=zregisters.w_bead_763 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_6[0] dout=zregisters.w_df23_762 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_6[1] dout=zregisters.w_03dd_761 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_6[2] dout=zregisters.w_8497_760 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_7[0] dout=zregisters.w_bbef_759 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_7[1] dout=zregisters.w_c5ac_758 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_2[1] dout=zregisters.w_9b1d_805 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_2[2] dout=zregisters.w_6a2a_804 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_3[0] dout=zregisters.w_5f32_803 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_3[1] dout=zregisters.w_880b_802 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_3[2] dout=zregisters.w_ac23_801 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_4[0] dout=zregisters.w_5e87_800 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_4[1] dout=zregisters.w_7c90_799 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_4[2] dout=zregisters.w_2225_798 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_5[0] dout=zregisters.w_02eb_773 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_5[1] dout=zregisters.w_8cf1_772 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_5[2] dout=zregisters.w_846a_771 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_6[0] dout=zregisters.w_bd15_770 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_6[1] dout=zregisters.w_b549_769 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_6[2] dout=zregisters.w_1ff5_768 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_7[0] dout=zregisters.w_28b7_767 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_7[1] dout=zregisters.w_2b27_766 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_5[0] dout=zregisters.w_e0ad_797 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_5[1] dout=zregisters.w_d729_796 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_5[2] dout=zregisters.w_d3fd_795 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_6[0] dout=zregisters.w_ca3d_794 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_6[1] dout=zregisters.w_237b_793 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_6[2] dout=zregisters.w_d392_792 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_7[0] dout=zregisters.w_8ccb_791 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n7_7[1] dout=zregisters.w_e2e8_790 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_2[1] dout=zregisters.w_fc85_789 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_2[2] dout=zregisters.w_47c2_788 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_3[0] dout=zregisters.w_a81c_787 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_3[1] dout=zregisters.w_34ea_786 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_3[2] dout=zregisters.w_8cbf_785 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_4[0] dout=zregisters.w_3301_784 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_4[1] dout=zregisters.w_92db_783 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n8_4[2] dout=zregisters.w_37f2_782 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_5[0] dout=zregisters.w_686e_781 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_5[1] dout=zregisters.w_2f5a_780 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_5[2] dout=zregisters.w_71d0_779 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_6[0] dout=zregisters.w_7773_778 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_6[1] dout=zregisters.w_9acc_777 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_6[2] dout=zregisters.w_8943_776 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_7[0] dout=zregisters.w_fca9_775 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n9_7[1] dout=zregisters.w_cb49_774 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_2[1] dout=zregisters.w_7207_813 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_2[2] dout=zregisters.w_08b3_812 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_3[0] dout=zregisters.w_675e_811 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_3[1] dout=zregisters.w_7e51_810 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_3[2] dout=zregisters.w_52f3_809 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_4[0] dout=zregisters.w_ad85_808 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_4[1] dout=zregisters.w_f603_807 
+.subckt jand clk=gclk dinA=sclk dinB=zregisters.w_n10_4[2] dout=zregisters.w_0a0e_806 
+.subckt jspl3 din=zregisters.n107 doutA=zregisters.w_n107_0[0] doutB=zregisters.w_n107_0[1] doutC=zregisters.w_n107_0[2] 
+.subckt jspl3 din=zregisters.n10 doutA=zregisters.w_n10_0[0] doutB=zregisters.w_n10_0[1] doutC=zregisters.w_n10_0[2] 
+.subckt jspl3 din=zregisters.w_n10_0[0] doutA=zregisters.w_n10_1[0] doutB=zregisters.w_n10_1[1] doutC=zregisters.w_n10_1[2] 
+.subckt jspl3 din=zregisters.w_n10_0[1] doutA=zregisters.w_n10_2[0] doutB=zregisters.w_n10_2[1] doutC=zregisters.w_n10_2[2] 
+.subckt jspl3 din=zregisters.w_n10_0[2] doutA=zregisters.w_n10_3[0] doutB=zregisters.w_n10_3[1] doutC=zregisters.w_n10_3[2] 
+.subckt jspl3 din=zregisters.w_n10_1[0] doutA=zregisters.w_n10_4[0] doutB=zregisters.w_n10_4[1] doutC=zregisters.w_n10_4[2] 
+.subckt jspl3 din=zregisters.w_n10_1[1] doutA=zregisters.w_n10_5[0] doutB=zregisters.w_n10_5[1] doutC=zregisters.w_n10_5[2] 
+.subckt jspl3 din=zregisters.w_n10_1[2] doutA=zregisters.w_n10_6[0] doutB=zregisters.w_n10_6[1] doutC=zregisters.w_n10_6[2] 
+.subckt jspl3 din=zregisters.n118 doutA=zregisters.w_n118_0[0] doutB=zregisters.w_n118_0[1] doutC=zregisters.w_n118_0[2] 
+.subckt jspl3 din=zregisters.w_n118_0[0] doutA=zregisters.w_n118_1[0] doutB=zregisters.w_n118_1[1] doutC=zregisters.w_n118_1[2] 
+.subckt jspl3 din=zregisters.w_n118_0[1] doutA=zregisters.w_n118_2[0] doutB=zregisters.w_n118_2[1] doutC=zregisters.w_n118_2[2] 
+.subckt jspl3 din=zregisters.w_n118_0[2] doutA=zregisters.w_n118_3[0] doutB=zregisters.w_n118_3[1] doutC=zregisters.w_n118_3[2] 
+.subckt jspl3 din=zregisters.n119 doutA=zregisters.w_n119_0[0] doutB=zregisters.w_n119_0[1] doutC=zregisters.w_n119_0[2] 
+.subckt jspl3 din=zregisters.w_n119_0[0] doutA=zregisters.w_n119_1[0] doutB=zregisters.w_n119_1[1] doutC=zregisters.w_n119_1[2] 
+.subckt jspl3 din=zregisters.w_n119_0[1] doutA=zregisters.w_n119_2[0] doutB=zregisters.w_n119_2[1] doutC=zregisters.w_n119_2[2] 
+.subckt jspl3 din=zregisters.w_n119_0[2] doutA=zregisters.w_n119_3[0] doutB=zregisters.w_n119_3[1] doutC=zregisters.w_n119_3[2] 
+.subckt jspl3 din=zregisters.n120 doutA=zregisters.w_n120_0[0] doutB=zregisters.w_n120_0[1] doutC=zregisters.w_n120_0[2] 
+.subckt jspl3 din=zregisters.w_n120_0[0] doutA=zregisters.w_n120_1[0] doutB=zregisters.w_n120_1[1] doutC=zregisters.w_n120_1[2] 
+.subckt jspl3 din=zregisters.w_n120_0[1] doutA=zregisters.w_n120_2[0] doutB=zregisters.w_n120_2[1] doutC=zregisters.w_n120_2[2] 
+.subckt jspl3 din=zregisters.w_n120_0[2] doutA=zregisters.w_n120_3[0] doutB=zregisters.w_n120_3[1] doutC=zregisters.w_n120_3[2] 
+.subckt jspl3 din=zregisters.n121 doutA=zregisters.w_n121_0[0] doutB=zregisters.w_n121_0[1] doutC=zregisters.w_n121_0[2] 
+.subckt jspl3 din=zregisters.w_n121_0[0] doutA=zregisters.w_n121_1[0] doutB=zregisters.w_n121_1[1] doutC=zregisters.w_n121_1[2] 
+.subckt jspl3 din=zregisters.w_n121_0[1] doutA=zregisters.w_n121_2[0] doutB=zregisters.w_n121_2[1] doutC=zregisters.w_n121_2[2] 
+.subckt jspl3 din=zregisters.n165 doutA=zregisters.w_n165_0[0] doutB=zregisters.w_n165_0[1] doutC=zregisters.w_n165_0[2] 
+.subckt jspl3 din=zregisters.w_n165_0[0] doutA=zregisters.w_n165_1[0] doutB=zregisters.w_n165_1[1] doutC=zregisters.w_n165_1[2] 
+.subckt jspl3 din=zregisters.w_n165_0[1] doutA=zregisters.w_n165_2[0] doutB=zregisters.w_n165_2[1] doutC=zregisters.w_n165_2[2] 
+.subckt jspl3 din=zregisters.w_n165_0[2] doutA=zregisters.w_n165_3[0] doutB=zregisters.w_n165_3[1] doutC=zregisters.w_n165_3[2] 
+.subckt jspl3 din=zregisters.n166 doutA=zregisters.w_n166_0[0] doutB=zregisters.w_n166_0[1] doutC=zregisters.w_n166_0[2] 
+.subckt jspl3 din=zregisters.w_n166_0[0] doutA=zregisters.w_n166_1[0] doutB=zregisters.w_n166_1[1] doutC=zregisters.w_n166_1[2] 
+.subckt jspl3 din=zregisters.w_n166_0[1] doutA=zregisters.w_n166_2[0] doutB=zregisters.w_n166_2[1] doutC=zregisters.w_n166_2[2] 
+.subckt jspl3 din=zregisters.w_n166_0[2] doutA=zregisters.w_n166_3[0] doutB=zregisters.w_n166_3[1] doutC=zregisters.w_n166_3[2] 
+.subckt jspl3 din=zregisters.n167 doutA=zregisters.w_n167_0[0] doutB=zregisters.w_n167_0[1] doutC=zregisters.w_n167_0[2] 
+.subckt jspl3 din=zregisters.w_n167_0[0] doutA=zregisters.w_n167_1[0] doutB=zregisters.w_n167_1[1] doutC=zregisters.w_n167_1[2] 
+.subckt jspl3 din=zregisters.w_n167_0[1] doutA=zregisters.w_n167_2[0] doutB=zregisters.w_n167_2[1] doutC=zregisters.w_n167_2[2] 
+.subckt jspl3 din=zregisters.w_n167_0[2] doutA=zregisters.w_n167_3[0] doutB=zregisters.w_n167_3[1] doutC=zregisters.w_n167_3[2] 
+.subckt jspl3 din=zregisters.n168 doutA=zregisters.w_n168_0[0] doutB=zregisters.w_n168_0[1] doutC=zregisters.w_n168_0[2] 
+.subckt jspl3 din=zregisters.w_n168_0[0] doutA=zregisters.w_n168_1[0] doutB=zregisters.w_n168_1[1] doutC=zregisters.w_n168_1[2] 
+.subckt jspl3 din=zregisters.w_n168_0[1] doutA=zregisters.w_n168_2[0] doutB=zregisters.w_n168_2[1] doutC=zregisters.w_n168_2[2] 
+.subckt jspl3 din=zregisters.n7 doutA=zregisters.w_n7_0[0] doutB=zregisters.w_n7_0[1] doutC=zregisters.w_n7_0[2] 
+.subckt jspl3 din=zregisters.w_n7_0[0] doutA=zregisters.w_n7_1[0] doutB=zregisters.w_n7_1[1] doutC=zregisters.w_n7_1[2] 
+.subckt jspl3 din=zregisters.w_n7_0[1] doutA=zregisters.w_n7_2[0] doutB=zregisters.w_n7_2[1] doutC=zregisters.w_n7_2[2] 
+.subckt jspl3 din=zregisters.w_n7_0[2] doutA=zregisters.w_n7_3[0] doutB=zregisters.w_n7_3[1] doutC=zregisters.w_n7_3[2] 
+.subckt jspl3 din=zregisters.w_n7_1[0] doutA=zregisters.w_n7_4[0] doutB=zregisters.w_n7_4[1] doutC=zregisters.w_n7_4[2] 
+.subckt jspl3 din=zregisters.w_n7_1[1] doutA=zregisters.w_n7_5[0] doutB=zregisters.w_n7_5[1] doutC=zregisters.w_n7_5[2] 
+.subckt jspl3 din=zregisters.w_n7_1[2] doutA=zregisters.w_n7_6[0] doutB=zregisters.w_n7_6[1] doutC=zregisters.w_n7_6[2] 
+.subckt jspl3 din=zregisters.n8 doutA=zregisters.w_n8_0[0] doutB=zregisters.w_n8_0[1] doutC=zregisters.w_n8_0[2] 
+.subckt jspl3 din=zregisters.w_n8_0[0] doutA=zregisters.w_n8_1[0] doutB=zregisters.w_n8_1[1] doutC=zregisters.w_n8_1[2] 
+.subckt jspl3 din=zregisters.w_n8_0[1] doutA=zregisters.w_n8_2[0] doutB=zregisters.w_n8_2[1] doutC=zregisters.w_n8_2[2] 
+.subckt jspl3 din=zregisters.w_n8_0[2] doutA=zregisters.w_n8_3[0] doutB=zregisters.w_n8_3[1] doutC=zregisters.w_n8_3[2] 
+.subckt jspl3 din=zregisters.w_n8_1[0] doutA=zregisters.w_n8_4[0] doutB=zregisters.w_n8_4[1] doutC=zregisters.w_n8_4[2] 
+.subckt jspl3 din=zregisters.w_n8_1[1] doutA=zregisters.w_n8_5[0] doutB=zregisters.w_n8_5[1] doutC=zregisters.w_n8_5[2] 
+.subckt jspl3 din=zregisters.w_n8_1[2] doutA=zregisters.w_n8_6[0] doutB=zregisters.w_n8_6[1] doutC=zregisters.w_n8_6[2] 
+.subckt jspl3 din=zregisters.n9 doutA=zregisters.w_n9_0[0] doutB=zregisters.w_n9_0[1] doutC=zregisters.w_n9_0[2] 
+.subckt jspl3 din=zregisters.w_n9_0[0] doutA=zregisters.w_n9_1[0] doutB=zregisters.w_n9_1[1] doutC=zregisters.w_n9_1[2] 
+.subckt jspl3 din=zregisters.w_n9_0[1] doutA=zregisters.w_n9_2[0] doutB=zregisters.w_n9_2[1] doutC=zregisters.w_n9_2[2] 
+.subckt jspl3 din=zregisters.w_n9_0[2] doutA=zregisters.w_n9_3[0] doutB=zregisters.w_n9_3[1] doutC=zregisters.w_n9_3[2] 
+.subckt jspl3 din=zregisters.w_n9_1[0] doutA=zregisters.w_n9_4[0] doutB=zregisters.w_n9_4[1] doutC=zregisters.w_n9_4[2] 
+.subckt jspl3 din=zregisters.w_n9_1[1] doutA=zregisters.w_n9_5[0] doutB=zregisters.w_n9_5[1] doutC=zregisters.w_n9_5[2] 
+.subckt jspl3 din=zregisters.w_n9_1[2] doutA=zregisters.w_n9_6[0] doutB=zregisters.w_n9_6[1] doutC=zregisters.w_n9_6[2] 
+.subckt jspl3 din=resdata[0] doutA=zregisters.w_wdata0_0[0] doutB=zregisters.w_wdata0_0[1] doutC=zregisters.w_wdata0_0[2] 
+.subckt jspl3 din=zregisters.w_wdata0_0[0] doutA=zregisters.w_wdata0_1[0] doutB=zregisters.w_wdata0_1[1] doutC=zregisters.w_wdata0_1[2] 
+.subckt jspl3 din=zregisters.w_wdata0_0[1] doutA=zregisters.w_wdata0_2[0] doutB=zregisters.w_wdata0_2[1] doutC=zregisters.w_wdata0_2[2] 
+.subckt jspl3 din=resdata[1] doutA=zregisters.w_wdata1_0[0] doutB=zregisters.w_wdata1_0[1] doutC=zregisters.w_wdata1_0[2] 
+.subckt jspl3 din=zregisters.w_wdata1_0[0] doutA=zregisters.w_wdata1_1[0] doutB=zregisters.w_wdata1_1[1] doutC=zregisters.w_wdata1_1[2] 
+.subckt jspl3 din=zregisters.w_wdata1_0[1] doutA=zregisters.w_wdata1_2[0] doutB=zregisters.w_wdata1_2[1] doutC=zregisters.w_wdata1_2[2] 
+.subckt jspl3 din=resdata[2] doutA=zregisters.w_wdata2_0[0] doutB=zregisters.w_wdata2_0[1] doutC=zregisters.w_wdata2_0[2] 
+.subckt jspl3 din=zregisters.w_wdata2_0[0] doutA=zregisters.w_wdata2_1[0] doutB=zregisters.w_wdata2_1[1] doutC=zregisters.w_wdata2_1[2] 
+.subckt jspl3 din=zregisters.w_wdata2_0[1] doutA=zregisters.w_wdata2_2[0] doutB=zregisters.w_wdata2_2[1] doutC=zregisters.w_wdata2_2[2] 
+.subckt jspl3 din=resdata[3] doutA=zregisters.w_wdata3_0[0] doutB=zregisters.w_wdata3_0[1] doutC=zregisters.w_wdata3_0[2] 
+.subckt jspl3 din=zregisters.w_wdata3_0[0] doutA=zregisters.w_wdata3_1[0] doutB=zregisters.w_wdata3_1[1] doutC=zregisters.w_wdata3_1[2] 
+.subckt jspl3 din=zregisters.w_wdata3_0[1] doutA=zregisters.w_wdata3_2[0] doutB=zregisters.w_wdata3_2[1] doutC=zregisters.w_wdata3_2[2] 
+.subckt jspl3 din=resdata[4] doutA=zregisters.w_wdata4_0[0] doutB=zregisters.w_wdata4_0[1] doutC=zregisters.w_wdata4_0[2] 
+.subckt jspl3 din=zregisters.w_wdata4_0[0] doutA=zregisters.w_wdata4_1[0] doutB=zregisters.w_wdata4_1[1] doutC=zregisters.w_wdata4_1[2] 
+.subckt jspl3 din=zregisters.w_wdata4_0[1] doutA=zregisters.w_wdata4_2[0] doutB=zregisters.w_wdata4_2[1] doutC=zregisters.w_wdata4_2[2] 
+.subckt jspl3 din=resdata[5] doutA=zregisters.w_wdata5_0[0] doutB=zregisters.w_wdata5_0[1] doutC=zregisters.w_wdata5_0[2] 
+.subckt jspl3 din=zregisters.w_wdata5_0[0] doutA=zregisters.w_wdata5_1[0] doutB=zregisters.w_wdata5_1[1] doutC=zregisters.w_wdata5_1[2] 
+.subckt jspl3 din=zregisters.w_wdata5_0[1] doutA=zregisters.w_wdata5_2[0] doutB=zregisters.w_wdata5_2[1] doutC=zregisters.w_wdata5_2[2] 
+.subckt jspl3 din=resdata[6] doutA=zregisters.w_wdata6_0[0] doutB=zregisters.w_wdata6_0[1] doutC=zregisters.w_wdata6_0[2] 
+.subckt jspl3 din=zregisters.w_wdata6_0[0] doutA=zregisters.w_wdata6_1[0] doutB=zregisters.w_wdata6_1[1] doutC=zregisters.w_wdata6_1[2] 
+.subckt jspl3 din=zregisters.w_wdata6_0[1] doutA=zregisters.w_wdata6_2[0] doutB=zregisters.w_wdata6_2[1] doutC=zregisters.w_wdata6_2[2] 
+.subckt jspl3 din=resdata[7] doutA=zregisters.w_wdata7_0[0] doutB=zregisters.w_wdata7_0[1] doutC=zregisters.w_wdata7_0[2] 
+.subckt jspl3 din=zregisters.w_wdata7_0[0] doutA=zregisters.w_wdata7_1[0] doutB=zregisters.w_wdata7_1[1] doutC=zregisters.w_wdata7_1[2] 
+.subckt jspl3 din=zregisters.w_wdata7_0[1] doutA=zregisters.w_wdata7_2[0] doutB=zregisters.w_wdata7_2[1] doutC=zregisters.w_wdata7_2[2] 
+.subckt jspl3 din=wregnum[0] doutA=zregisters.w_wnum0_0[0] doutB=zregisters.w_wnum0_0[1] doutC=zregisters.w_wnum0_0[2] 
+.subckt jspl3 din=wregnum[1] doutA=zregisters.w_wnum1_0[0] doutB=zregisters.w_wnum1_0[1] doutC=zregisters.w_wnum1_0[2] 
+.subckt jspl din=zregisters.w_n107_0[0] doutA=zregisters.w_n107_1[0] doutB=zregisters.w_n107_1[1] 
+.subckt jspl din=zregisters.n108 doutA=zregisters.w_n108_0[0] doutB=zregisters.w_n108_0[1] 
+.subckt jspl din=zregisters.w_n10_2[0] doutA=zregisters.w_n10_7[0] doutB=zregisters.w_n10_7[1] 
+.subckt jspl din=zregisters.n110 doutA=zregisters.w_n110_0[0] doutB=zregisters.w_n110_0[1] 
+.subckt jspl din=zregisters.w_n121_0[2] doutA=zregisters.w_n121_3[0] doutB=zregisters.w_n121_3[1] 
+.subckt jspl din=zregisters.n158 doutA=zregisters.w_n158_0[0] doutB=zregisters.w_n158_0[1] 
+.subckt jspl din=zregisters.n159 doutA=zregisters.w_n159_0[0] doutB=zregisters.w_n159_0[1] 
+.subckt jspl din=zregisters.w_n168_0[2] doutA=zregisters.w_n168_3[0] doutB=zregisters.w_n168_3[1] 
+.subckt jspl din=zregisters.n205 doutA=zregisters.w_n205_0[0] doutB=zregisters.w_n205_0[1] 
+.subckt jspl din=zregisters.n206 doutA=zregisters.w_n206_0[0] doutB=zregisters.w_n206_0[1] 
+.subckt jspl din=zregisters.w_n7_2[0] doutA=zregisters.w_n7_7[0] doutB=zregisters.w_n7_7[1] 
+.subckt jspl din=zregisters.w_n8_2[0] doutA=zregisters.w_n8_7[0] doutB=zregisters.w_n8_7[1] 
+.subckt jspl din=zregisters.w_n9_2[0] doutA=zregisters.w_n9_7[0] doutB=zregisters.w_n9_7[1] 
+.subckt jspl din=numd[0] doutA=zregisters.w_numd0_0[0] doutB=zregisters.w_numd0_0[1] 
+.subckt jspl din=numd[1] doutA=zregisters.w_numd1_0[0] doutB=zregisters.w_numd1_0[1] 
+.subckt jspl din=nums[0] doutA=zregisters.w_nums0_0[0] doutB=zregisters.w_nums0_0[1] 
+.subckt jspl din=nums[1] doutA=zregisters.w_nums1_0[0] doutB=zregisters.w_nums1_0[1] 
+.subckt jspl din=zregisters.w_wdata0_0[2] doutA=zregisters.w_wdata0_3[0] doutB=zregisters.w_wdata0_3[1] 
+.subckt jspl din=zregisters.w_wdata1_0[2] doutA=zregisters.w_wdata1_3[0] doutB=zregisters.w_wdata1_3[1] 
+.subckt jspl din=zregisters.w_wdata2_0[2] doutA=zregisters.w_wdata2_3[0] doutB=zregisters.w_wdata2_3[1] 
+.subckt jspl din=zregisters.w_wdata3_0[2] doutA=zregisters.w_wdata3_3[0] doutB=zregisters.w_wdata3_3[1] 
+.subckt jspl din=zregisters.w_wdata4_0[2] doutA=zregisters.w_wdata4_3[0] doutB=zregisters.w_wdata4_3[1] 
+.subckt jspl din=zregisters.w_wdata5_0[2] doutA=zregisters.w_wdata5_3[0] doutB=zregisters.w_wdata5_3[1] 
+.subckt jspl din=zregisters.w_wdata6_0[2] doutA=zregisters.w_wdata6_3[0] doutB=zregisters.w_wdata6_3[1] 
+.subckt jspl din=zregisters.w_wdata7_0[2] doutA=zregisters.w_wdata7_3[0] doutB=zregisters.w_wdata7_3[1] 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_1[0] dout=zregisters.regd0[0] en=zregisters.w_2ce8_821 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_1[0] dout=zregisters.regd0[1] en=zregisters.w_9f49_820 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_1[0] dout=zregisters.regd0[2] en=zregisters.w_162d_819 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_1[0] dout=zregisters.regd0[3] en=zregisters.w_7640_818 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_1[0] dout=zregisters.regd0[4] en=zregisters.w_7406_817 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_1[0] dout=zregisters.regd0[5] en=zregisters.w_afb7_816 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_1[0] dout=zregisters.regd0[6] en=zregisters.w_464f_815 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_1[0] dout=zregisters.regd0[7] en=zregisters.w_4c56_814 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_3[1] dout=zregisters.regd1[0] en=zregisters.w_5dbd_765 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_3[1] dout=zregisters.regd1[1] en=zregisters.w_033b_764 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_3[1] dout=zregisters.regd1[2] en=zregisters.w_bead_763 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_3[1] dout=zregisters.regd1[3] en=zregisters.w_df23_762 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_3[1] dout=zregisters.regd1[4] en=zregisters.w_03dd_761 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_3[1] dout=zregisters.regd1[5] en=zregisters.w_8497_760 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_3[1] dout=zregisters.regd1[6] en=zregisters.w_bbef_759 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_3[1] dout=zregisters.regd1[7] en=zregisters.w_c5ac_758 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_1[2] dout=zregisters.regd2[0] en=zregisters.w_9b1d_805 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_1[2] dout=zregisters.regd2[1] en=zregisters.w_6a2a_804 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_1[2] dout=zregisters.regd2[2] en=zregisters.w_5f32_803 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_1[2] dout=zregisters.regd2[3] en=zregisters.w_880b_802 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_1[2] dout=zregisters.regd2[4] en=zregisters.w_ac23_801 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_1[2] dout=zregisters.regd2[5] en=zregisters.w_5e87_800 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_1[2] dout=zregisters.regd2[6] en=zregisters.w_7c90_799 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_1[2] dout=zregisters.regd2[7] en=zregisters.w_2225_798 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_3[0] dout=zregisters.regd3[0] en=zregisters.w_02eb_773 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_3[0] dout=zregisters.regd3[1] en=zregisters.w_8cf1_772 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_3[0] dout=zregisters.regd3[2] en=zregisters.w_846a_771 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_3[0] dout=zregisters.regd3[3] en=zregisters.w_bd15_770 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_3[0] dout=zregisters.regd3[4] en=zregisters.w_b549_769 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_3[0] dout=zregisters.regd3[5] en=zregisters.w_1ff5_768 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_3[0] dout=zregisters.regd3[6] en=zregisters.w_28b7_767 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_3[0] dout=zregisters.regd3[7] en=zregisters.w_2b27_766 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_2[0] dout=zregisters.regs0[0] en=zregisters.w_e0ad_797 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_2[0] dout=zregisters.regs0[1] en=zregisters.w_d729_796 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_2[0] dout=zregisters.regs0[2] en=zregisters.w_d3fd_795 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_2[0] dout=zregisters.regs0[3] en=zregisters.w_ca3d_794 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_2[0] dout=zregisters.regs0[4] en=zregisters.w_237b_793 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_2[0] dout=zregisters.regs0[5] en=zregisters.w_d392_792 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_2[0] dout=zregisters.regs0[6] en=zregisters.w_8ccb_791 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_2[0] dout=zregisters.regs0[7] en=zregisters.w_e2e8_790 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_2[1] dout=zregisters.regs1[0] en=zregisters.w_fc85_789 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_2[1] dout=zregisters.regs1[1] en=zregisters.w_47c2_788 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_2[1] dout=zregisters.regs1[2] en=zregisters.w_a81c_787 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_2[1] dout=zregisters.regs1[3] en=zregisters.w_34ea_786 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_2[1] dout=zregisters.regs1[4] en=zregisters.w_8cbf_785 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_2[1] dout=zregisters.regs1[5] en=zregisters.w_3301_784 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_2[1] dout=zregisters.regs1[6] en=zregisters.w_92db_783 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_2[1] dout=zregisters.regs1[7] en=zregisters.w_37f2_782 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_2[2] dout=zregisters.regs2[0] en=zregisters.w_686e_781 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_2[2] dout=zregisters.regs2[1] en=zregisters.w_2f5a_780 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_2[2] dout=zregisters.regs2[2] en=zregisters.w_71d0_779 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_2[2] dout=zregisters.regs2[3] en=zregisters.w_7773_778 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_2[2] dout=zregisters.regs2[4] en=zregisters.w_9acc_777 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_2[2] dout=zregisters.regs2[5] en=zregisters.w_8943_776 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_2[2] dout=zregisters.regs2[6] en=zregisters.w_fca9_775 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_2[2] dout=zregisters.regs2[7] en=zregisters.w_cb49_774 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata0_1[1] dout=zregisters.regs3[0] en=zregisters.w_7207_813 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata1_1[1] dout=zregisters.regs3[1] en=zregisters.w_08b3_812 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata2_1[1] dout=zregisters.regs3[2] en=zregisters.w_675e_811 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata3_1[1] dout=zregisters.regs3[3] en=zregisters.w_7e51_810 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata4_1[1] dout=zregisters.regs3[4] en=zregisters.w_52f3_809 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata5_1[1] dout=zregisters.regs3[5] en=zregisters.w_ad85_808 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata6_1[1] dout=zregisters.regs3[6] en=zregisters.w_f603_807 
+.subckt jscdff clear=clear clk=gclk din=zregisters.w_wdata7_1[1] dout=zregisters.regs3[7] en=zregisters.w_0a0e_806 
+
+.end
